@@ -1,0 +1,922 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Nigerian Brands Logos — Admin Panel</title>
+<style>
+:root {
+  --bg:#f8f9fa;--card:#fff;--border:#e0e0e0;--text:#1a1a1a;--muted:#666;
+  --accent:#008751;--accent-h:#006a3f;--accent-bg:rgba(0,135,81,.08);
+  --badge-svg-bg:rgba(0,135,81,.12);--badge-svg:#008751;
+  --badge-hq-bg:rgba(0,102,204,.12);--badge-hq:#0066cc;
+  --badge-lq-bg:rgba(204,85,0,.12);--badge-lq:#cc5500;
+  --danger:#cc0000;--shadow:0 1px 4px rgba(0,0,0,.08);
+}
+@media(prefers-color-scheme:dark){
+  :root{--bg:#121212;--card:#1e1e1e;--border:#2a2a2a;--text:#f0f0f0;--muted:#888;
+    --accent:#00c47a;--accent-h:#00a86b;--accent-bg:rgba(0,196,122,.08);
+    --badge-svg-bg:rgba(0,196,122,.15);--badge-svg:#00c47a;
+    --badge-hq-bg:rgba(66,153,255,.15);--badge-hq:#4299ff;
+    --badge-lq-bg:rgba(255,153,50,.15);--badge-lq:#ff9932;
+    --danger:#ff6666;--shadow:0 1px 4px rgba(0,0,0,.3);}
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:var(--bg);color:var(--text);font-size:14px;min-height:100vh}
+a{color:var(--accent);text-decoration:none}a:hover{text-decoration:underline}
+.hidden{display:none!important}
+/* Layout */
+.nav{background:var(--card);border-bottom:1px solid var(--border);padding:0 24px;display:flex;align-items:center;gap:16px;height:56px}
+.nav-brand{font-size:16px;font-weight:700;display:flex;align-items:center;gap:8px}
+.nav-links{display:flex;gap:0;margin-left:auto}
+.nav-link{padding:8px 14px;font-size:13px;font-weight:500;color:var(--muted);border-bottom:2px solid transparent;cursor:pointer;background:none;border-top:none;border-left:none;border-right:none;font-family:inherit}
+.nav-link.active{color:var(--accent);border-bottom-color:var(--accent)}
+.main{max-width:1100px;margin:0 auto;padding:24px}
+.card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:20px;box-shadow:var(--shadow)}
+/* Auth screen */
+#authScreen{display:flex;align-items:center;justify-content:center;min-height:80vh}
+.auth-box{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:32px;width:360px;display:flex;flex-direction:column;gap:14px;box-shadow:var(--shadow)}
+.auth-box h1{font-size:20px;text-align:center}
+.auth-box p{font-size:13px;color:var(--muted);text-align:center;line-height:1.5}
+/* Forms */
+.form-group{display:flex;flex-direction:column;gap:5px}
+label{font-size:13px;font-weight:500}
+.req{color:var(--accent)}
+input[type=text],input[type=password],input[type=file],textarea,select{padding:9px 12px;border:1px solid var(--border);border-radius:8px;background:var(--card);color:var(--text);font-size:13px;font-family:inherit;outline:none;width:100%;transition:border-color .15s}
+input:focus,textarea:focus,select:focus{border-color:var(--accent)}
+textarea{resize:vertical;min-height:90px}
+.hint{font-size:11px;color:var(--muted);margin-top:2px}
+/* Buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;border:none;border-radius:8px;font-size:13px;font-weight:600;cursor:pointer;padding:9px 18px;transition:background .15s;font-family:inherit}
+.btn-primary{background:var(--accent);color:#fff}
+.btn-primary:hover{background:var(--accent-h)}
+.btn-primary:disabled{opacity:.5;cursor:not-allowed}
+.btn-secondary{background:none;border:1px solid var(--border);color:var(--text)}
+.btn-secondary:hover{background:var(--bg)}
+.btn-danger{background:none;border:1px solid var(--danger);color:var(--danger)}
+.btn-danger:hover{background:rgba(204,0,0,.08)}
+.btn-sm{padding:5px 12px;font-size:12px;border-radius:6px}
+.btn-block{width:100%}
+/* Badges */
+.q-badge{display:inline-block;font-size:10px;font-weight:700;padding:2px 6px;border-radius:4px;text-transform:uppercase;letter-spacing:.3px}
+.q-badge.svg{background:var(--badge-svg-bg);color:var(--badge-svg)}
+.q-badge.png-hq{background:var(--badge-hq-bg);color:var(--badge-hq)}
+.q-badge.png-lq{background:var(--badge-lq-bg);color:var(--badge-lq)}
+/* Table */
+.table-wrap{overflow-x:auto}
+table{width:100%;border-collapse:collapse;font-size:13px}
+th{font-size:11px;font-weight:600;text-transform:uppercase;color:var(--muted);padding:8px 10px;text-align:left;border-bottom:1px solid var(--border);letter-spacing:.4px;white-space:nowrap}
+td{padding:10px;border-bottom:1px solid var(--border);vertical-align:middle}
+tr:last-child td{border-bottom:none}
+tr:hover td{background:var(--accent-bg)}
+.thumb{width:40px;height:40px;object-fit:contain;border:1px solid var(--border);border-radius:6px;background:#f5f5f5;padding:3px}
+/* Grid cards */
+.logo-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:12px;margin-top:12px}
+.lq-card{border:1px solid var(--badge-lq);border-radius:10px;overflow:hidden;background:var(--card)}
+.lq-card-img{width:100%;aspect-ratio:1;display:flex;align-items:center;justify-content:center;padding:12px;background:#f5f5f5}
+.lq-card-img img{max-width:100%;max-height:80px;object-fit:contain}
+.lq-card-info{padding:8px}
+.lq-name{font-size:12px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+/* Tabs */
+.tabs{display:flex;border-bottom:1px solid var(--border);margin-bottom:20px}
+.tab{padding:10px 16px;background:none;border:none;border-bottom:2px solid transparent;cursor:pointer;font-size:13px;font-weight:500;color:var(--muted);font-family:inherit;transition:color .15s}
+.tab.active{color:var(--accent);border-bottom-color:var(--accent)}
+/* Stats */
+.stats{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:12px;margin-bottom:20px}
+.stat-card{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:16px;display:flex;flex-direction:column;gap:4px;box-shadow:var(--shadow)}
+.stat-num{font-size:28px;font-weight:700;color:var(--accent)}
+.stat-label{font-size:12px;color:var(--muted)}
+/* Search/filter row */
+.filter-row{display:flex;gap:10px;margin-bottom:14px;flex-wrap:wrap}
+.filter-row input{flex:1;min-width:200px}
+.filter-row select{width:160px}
+/* Live preview */
+.live-preview{width:100%;height:120px;border:1px solid var(--border);border-radius:8px;display:flex;align-items:center;justify-content:center;padding:12px;background:#f5f5f5;overflow:hidden;margin-top:4px}
+.live-preview img{max-width:100%;max-height:96px;object-fit:contain}
+.lp-empty{font-size:12px;color:var(--muted)}
+/* Toast */
+#toast{position:fixed;bottom:24px;right:24px;background:#1a1a1a;color:#fff;padding:10px 18px;border-radius:10px;font-size:13px;font-weight:500;z-index:200;opacity:0;transition:opacity .2s,transform .2s;transform:translateY(10px);pointer-events:none}
+#toast.show{opacity:1;transform:translateY(0)}
+/* Modal */
+.modal-bg{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:100;display:flex;align-items:center;justify-content:center;padding:20px}
+.modal-box{background:var(--card);border-radius:14px;width:100%;max-width:520px;max-height:90vh;overflow-y:auto;padding:24px;display:flex;flex-direction:column;gap:14px;box-shadow:0 8px 40px rgba(0,0,0,.2)}
+.modal-hdr{display:flex;align-items:center;justify-content:space-between}
+.modal-title{font-size:16px;font-weight:600}
+.close-btn{background:none;border:none;cursor:pointer;font-size:20px;color:var(--muted);line-height:1;padding:0 4px}
+.close-btn:hover{color:var(--text)}
+/* Info note */
+.info-note{background:var(--accent-bg);border-left:3px solid var(--accent);padding:10px 12px;border-radius:0 8px 8px 0;font-size:12px;line-height:1.5}
+/* Spinner */
+.spinner{width:24px;height:24px;border:2px solid var(--border);border-top-color:var(--accent);border-radius:50%;animation:spin .6s linear infinite;margin:40px auto;display:block}
+@keyframes spin{to{transform:rotate(360deg)}}
+/* Empty state */
+.empty-state{display:flex;flex-direction:column;align-items:center;justify-content:center;padding:60px 20px;gap:12px;text-align:center}
+.empty-icon{font-size:48px}
+.empty-title{font-size:16px;font-weight:600}
+.empty-msg{font-size:13px;color:var(--muted);max-width:320px;line-height:1.5}
+/* Auth error */
+.auth-err{color:var(--danger);font-size:13px;text-align:center;min-height:18px}
+</style>
+</head>
+<body>
+
+<!-- LOGIN SCREEN -->
+<div id="authScreen">
+  <div class="auth-box">
+    <div style="text-align:center;font-size:48px">🇳🇬</div>
+    <h1>Admin Panel</h1>
+    <p>Nigerian Brands Logos — Owner dashboard for managing the logo library.</p>
+    <div class="form-group">
+      <label>Admin Password</label>
+      <input type="password" id="loginPw" placeholder="Enter admin password" onkeydown="if(event.key==='Enter')login()" />
+    </div>
+    <div class="auth-err" id="loginErr"></div>
+    <button class="btn btn-primary btn-block" onclick="login()">Sign In</button>
+    <div class="hint" style="text-align:center">First time? Your password will be saved in this browser.</div>
+  </div>
+</div>
+
+<!-- MAIN APP (hidden until login) -->
+<div id="mainApp" class="hidden">
+  <nav class="nav">
+    <div class="nav-brand">🇳🇬 <span>Nigerian Brands Admin</span></div>
+    <div class="nav-links">
+      <button class="nav-link active" data-page="dashboard" onclick="switchPage('dashboard',this)">Dashboard</button>
+      <button class="nav-link" data-page="manage" onclick="switchPage('manage',this)">Manage Logos</button>
+      <button class="nav-link" data-page="add" onclick="switchPage('add',this)">Add Logo</button>
+      <button class="nav-link" data-page="upgrade" onclick="switchPage('upgrade',this)">Upgrade LQ</button>
+      <button class="nav-link" data-page="inbox" onclick="switchPage('inbox',this)">Inbox</button>
+      <button class="nav-link" data-page="settings" onclick="switchPage('settings',this)">Settings</button>
+    </div>
+  </nav>
+
+  <div class="main">
+
+    <!-- DASHBOARD -->
+    <div id="page-dashboard">
+      <h2 style="margin-bottom:16px">Dashboard</h2>
+      <div class="stats" id="dashStats">
+        <div class="stat-card"><div class="stat-num" id="stat-total">-</div><div class="stat-label">Total Logos</div></div>
+        <div class="stat-card"><div class="stat-num" id="stat-svg">-</div><div class="stat-label">SVG Logos</div></div>
+        <div class="stat-card"><div class="stat-num" id="stat-hq">-</div><div class="stat-label">PNG High Quality</div></div>
+        <div class="stat-card"><div class="stat-num" id="stat-lq" style="color:var(--badge-lq)">-</div><div class="stat-label">PNG Low Quality (need upgrade)</div></div>
+      </div>
+      <div class="card">
+        <h3 style="margin-bottom:10px">Quick Actions</h3>
+        <div style="display:flex;gap:10px;flex-wrap:wrap">
+          <button class="btn btn-secondary" onclick="switchPage('manage',document.querySelector('[data-page=manage]'))">Manage All Logos</button>
+          <button class="btn btn-secondary" onclick="switchPage('upgrade',document.querySelector('[data-page=upgrade]'))">⚠️ Upgrade Low Quality</button>
+          <button class="btn btn-primary" onclick="switchPage('add',document.querySelector('[data-page=add]'))">+ Add New Logo</button>
+          <button class="btn btn-secondary" onclick="downloadAllJson()">⬇ Export logos.json</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- MANAGE LOGOS -->
+    <div id="page-manage" class="hidden">
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:16px">
+        <h2>Manage Logos</h2>
+        <button class="btn btn-primary btn-sm" onclick="switchPage('add',document.querySelector('[data-page=add]'))">+ Add Logo</button>
+      </div>
+      <div class="filter-row">
+        <input type="text" id="manageSearch" placeholder="Search by name or tag…" oninput="filterManageTable()" />
+        <select id="manageCatFilter" onchange="filterManageTable()">
+          <option value="">All Categories</option>
+          <option>Banking</option><option>Telecom</option><option>FMCG</option>
+          <option>Media</option><option>Energy</option><option>Tech</option>
+          <option>Insurance</option><option>Transport</option><option>Retail</option><option>Other</option>
+        </select>
+        <select id="manageQualityFilter" onchange="filterManageTable()">
+          <option value="">All Quality</option>
+          <option value="svg">SVG</option>
+          <option value="png-hq">PNG HQ</option>
+          <option value="png-lq">PNG LQ</option>
+        </select>
+      </div>
+      <div class="card">
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th></th>
+                <th onclick="sortManage('name')" style="cursor:pointer">Name ↕</th>
+                <th onclick="sortManage('category')" style="cursor:pointer">Category ↕</th>
+                <th>Quality</th>
+                <th>Updated</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody id="manageBody"></tbody>
+          </table>
+        </div>
+        <div id="manageEmpty" class="empty-state hidden">
+          <div class="empty-icon">📭</div>
+          <div class="empty-title">No logos yet</div>
+          <div class="empty-msg">Add your first logo to get started.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ADD LOGO -->
+    <div id="page-add" class="hidden">
+      <h2 style="margin-bottom:16px">Add New Logo</h2>
+      <div class="card">
+        <form id="addForm" onsubmit="submitAddLogo(event)" style="display:flex;flex-direction:column;gap:12px;max-width:600px">
+          <div class="form-group">
+            <label>Brand Name <span class="req">*</span></label>
+            <input type="text" id="a_name" required placeholder="e.g. Dangote Group" oninput="aAutoSlug()" />
+          </div>
+          <div class="form-group">
+            <label>Slug / ID <span class="req">*</span></label>
+            <input type="text" id="a_slug" required placeholder="dangote-group" />
+            <div class="hint">Lowercase letters, numbers, hyphens only</div>
+          </div>
+          <div class="form-group">
+            <label>Category <span class="req">*</span></label>
+            <select id="a_category" required>
+              <option value="">Select…</option>
+              <option>Banking</option><option>Telecom</option><option>FMCG</option>
+              <option>Media</option><option>Energy</option><option>Tech</option>
+              <option>Insurance</option><option>Transport</option><option>Retail</option><option>Other</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Tags <span class="hint">(comma-separated)</span></label>
+            <input type="text" id="a_tags" placeholder="cement, conglomerate, lagos" />
+          </div>
+          <div class="form-group">
+            <label>SVG Code</label>
+            <textarea id="a_svg" rows="5" placeholder="Paste raw SVG here…" oninput="aUpdatePreview()"></textarea>
+          </div>
+          <div class="form-group">
+            <label>OR PNG Upload <span class="hint">(only if no SVG available)</span></label>
+            <input type="file" id="a_png" accept=".png,.jpg,.jpeg,.webp" onchange="aHandlePng(this)" />
+          </div>
+          <div class="form-group">
+            <label>Preview</label>
+            <div class="live-preview" id="a_preview"><span class="lp-empty">No preview yet</span></div>
+          </div>
+          <div class="form-group">
+            <label>Figma Node ID <span class="hint">(optional)</span></label>
+            <input type="text" id="a_nodeId" placeholder="0:0" />
+          </div>
+          <div id="addErr" style="color:var(--danger);font-size:13px"></div>
+          <div style="display:flex;gap:10px">
+            <button type="button" class="btn btn-secondary" onclick="document.getElementById('addForm').reset();document.getElementById('a_preview').innerHTML='<span class=lp-empty>No preview yet</span>';A.pngData=null">Clear</button>
+            <button type="submit" class="btn btn-primary" id="addBtn">Add to Library</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- UPGRADE LQ -->
+    <div id="page-upgrade" class="hidden">
+      <h2 style="margin-bottom:8px">Upgrade Low-Quality Logos</h2>
+      <p style="color:var(--muted);font-size:13px;margin-bottom:16px">These logos are low-quality PNGs. Replace them with SVGs for crisp rendering.</p>
+      <div id="upgradeGrid" class="logo-grid"></div>
+      <div id="upgradeEmpty" class="empty-state hidden">
+        <div class="empty-icon">✅</div>
+        <div class="empty-title">All logos are high quality!</div>
+        <div class="empty-msg">No PNG LQ logos found. Great work!</div>
+      </div>
+    </div>
+
+    <!-- INBOX -->
+    <div id="page-inbox" class="hidden">
+      <h2 style="margin-bottom:16px">Community Inbox</h2>
+      <div class="tabs">
+        <button class="tab active" data-itab="submissions" onclick="switchInboxTab('submissions',this)">Logo Submissions</button>
+        <button class="tab" data-itab="requests" onclick="switchInboxTab('requests',this)">Logo Requests</button>
+      </div>
+      <div id="inbox-loading" style="text-align:center;padding:40px"><div class="spinner"></div></div>
+      <div id="inbox-submissions">
+        <div id="sub-list"></div>
+        <div id="sub-empty" class="empty-state hidden"><div class="empty-icon">📭</div><div class="empty-title">No submissions</div><div class="empty-msg">No logo submissions yet.</div></div>
+      </div>
+      <div id="inbox-requests" class="hidden">
+        <div id="req-list"></div>
+        <div id="req-empty" class="empty-state hidden"><div class="empty-icon">📭</div><div class="empty-title">No requests</div><div class="empty-msg">No logo requests yet.</div></div>
+      </div>
+    </div>
+
+    <!-- SETTINGS -->
+    <div id="page-settings" class="hidden">
+      <h2 style="margin-bottom:16px">Settings</h2>
+      <div style="display:flex;flex-direction:column;gap:16px;max-width:600px">
+        <div class="card">
+          <h3 style="margin-bottom:12px">GitHub Connection</h3>
+          <div style="display:flex;flex-direction:column;gap:10px">
+            <div class="form-group">
+              <label>Personal Access Token</label>
+              <input type="password" id="s_token" placeholder="ghp_xxxx" />
+              <div class="hint">Needs <code>repo</code> scope. <a href="https://github.com/settings/tokens" target="_blank">Create one ↗</a></div>
+            </div>
+            <div class="form-group">
+              <label>GitHub Username / Org</label>
+              <input type="text" id="s_owner" placeholder="your-username" />
+            </div>
+            <div class="form-group">
+              <label>Repository Name</label>
+              <input type="text" id="s_repo" placeholder="nigerian-brands-logos-plugin" />
+            </div>
+            <button class="btn btn-primary" style="width:fit-content" onclick="saveSettings()">Save Settings</button>
+          </div>
+        </div>
+        <div class="card">
+          <h3 style="margin-bottom:12px">Change Password</h3>
+          <div style="display:flex;flex-direction:column;gap:10px">
+            <div class="form-group">
+              <label>New Password</label>
+              <input type="password" id="s_newpw" placeholder="New admin password" />
+            </div>
+            <div class="form-group">
+              <label>Confirm Password</label>
+              <input type="password" id="s_confirmpw" placeholder="Repeat password" />
+            </div>
+            <div id="pwChangeErr" style="color:var(--danger);font-size:13px"></div>
+            <button class="btn btn-secondary" style="width:fit-content" onclick="changePassword()">Update Password</button>
+          </div>
+        </div>
+        <div class="card">
+          <h3 style="margin-bottom:12px">Import / Export</h3>
+          <div style="display:flex;gap:10px;flex-wrap:wrap">
+            <button class="btn btn-secondary" onclick="downloadAllJson()">⬇ Export logos.json</button>
+            <label class="btn btn-secondary" style="cursor:pointer">⬆ Import logos.json <input type="file" accept=".json" class="hidden" onchange="importJson(this)" /></label>
+          </div>
+        </div>
+        <div class="card" style="border-color:var(--danger)">
+          <h3 style="margin-bottom:8px;color:var(--danger)">Danger Zone</h3>
+          <button class="btn btn-danger" onclick="logout()">Sign Out</button>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /main -->
+</div><!-- /mainApp -->
+
+<!-- Replace Modal -->
+<div class="modal-bg hidden" id="replaceModal">
+  <div class="modal-box">
+    <div class="modal-hdr">
+      <span class="modal-title">Replace Logo</span>
+      <button class="close-btn" onclick="closeModal('replaceModal')">✕</button>
+    </div>
+    <div class="form-group"><label>Brand Name</label><input type="text" id="r_name" readonly style="opacity:.7" /></div>
+    <div class="form-group"><label>Category</label>
+      <select id="r_cat">
+        <option>Banking</option><option>Telecom</option><option>FMCG</option>
+        <option>Media</option><option>Energy</option><option>Tech</option>
+        <option>Insurance</option><option>Transport</option><option>Retail</option><option>Other</option>
+      </select>
+    </div>
+    <div class="form-group"><label>Tags</label><input type="text" id="r_tags" /></div>
+    <div class="form-group"><label>New SVG Code</label><textarea id="r_svg" rows="4" placeholder="Paste new SVG…" oninput="rUpdatePreview()"></textarea></div>
+    <div class="form-group"><label>OR New PNG</label><input type="file" id="r_png" accept=".png,.jpg,.jpeg,.webp" onchange="rHandlePng(this)" /></div>
+    <div class="live-preview" id="r_preview"><span class="lp-empty">No new asset</span></div>
+    <div id="replaceErr" style="color:var(--danger);font-size:13px"></div>
+    <div style="display:flex;gap:10px">
+      <button class="btn btn-secondary" style="flex:1" onclick="closeModal('replaceModal')">Cancel</button>
+      <button class="btn btn-primary" style="flex:2" onclick="submitReplace()">Save Changes</button>
+    </div>
+  </div>
+</div>
+
+<!-- Preview Modal -->
+<div class="modal-bg hidden" id="previewModal">
+  <div class="modal-box" style="max-width:400px">
+    <div class="modal-hdr">
+      <span class="modal-title" id="previewTitle">Preview</span>
+      <button class="close-btn" onclick="closeModal('previewModal')">✕</button>
+    </div>
+    <div style="background:#f5f5f5;border-radius:8px;padding:20px;display:flex;align-items:center;justify-content:center;min-height:180px">
+      <img id="previewImg" src="" alt="" style="max-width:100%;max-height:200px;object-fit:contain" />
+    </div>
+  </div>
+</div>
+
+<div id="toast"></div>
+
+<script>
+// ============================================================
+// CONFIG — update MANIFEST_URL after pushing to GitHub
+// ============================================================
+const CFG = {
+  MANIFEST_URL: 'https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/logos.json',
+  GITHUB_REPO_OWNER: 'maryam-ay',
+  GITHUB_REPO_NAME: 'nigerian-brands-logos-plugin',
+};
+
+// ============================================================
+// STATE
+// ============================================================
+const ST = {
+  manifest: null, logos: [], filtered: [], sortKey: 'name', sortDir: 1,
+  editingLogo: null, replacePngData: null, inboxIssues: [], inboxTab: 'submissions'
+};
+const A = { pngData: null }; // add form state
+
+// ============================================================
+// UTILITIES
+// ============================================================
+async function sha256(msg) {
+  const buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(msg));
+  return Array.from(new Uint8Array(buf)).map(b => b.toString(16).padStart(2,'0')).join('');
+}
+function slugify(t) { return t.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/(^-|-$)/g,''); }
+function formatDate(iso) { if (!iso) return '?'; return new Date(iso).toLocaleDateString('en-GB',{day:'numeric',month:'short',year:'numeric'}); }
+async function fileToBase64(f) { return new Promise((res,rej)=>{ const r=new FileReader(); r.onload=()=>res(r.result.split(',')[1]); r.onerror=rej; r.readAsDataURL(f); }); }
+async function fileToText(f) { return new Promise((res,rej)=>{ const r=new FileReader(); r.onload=()=>res(r.result); r.onerror=rej; r.readAsText(f); }); }
+function sanitizeSvg(s) { try { const p=new DOMParser(),d=p.parseFromString(s,'image/svg+xml'),el=d.documentElement; if(el.nodeName==='parsererror')return s; el.querySelectorAll('script,foreignObject').forEach(e=>e.remove()); el.querySelectorAll('*').forEach(e=>{ const rem=[]; for(const a of e.attributes){if(a.name.startsWith('on'))rem.push(a.name);if(['href','src','xlink:href'].includes(a.name)&&/^https?:\/\//.test(a.value))rem.push(a.name);} rem.forEach(n=>e.removeAttribute(n)); }); if(!el.getAttribute('xmlns'))el.setAttribute('xmlns','http://www.w3.org/2000/svg'); return new XMLSerializer().serializeToString(el); } catch { return s; } }
+function showToast(msg,d=3000) { const t=document.getElementById('toast'); t.textContent=msg; t.classList.add('show'); setTimeout(()=>t.classList.remove('show'),d); }
+function closeModal(id) { document.getElementById(id).classList.add('hidden'); }
+function getConfig() { return { token: localStorage.getItem('gh-token'), owner: localStorage.getItem('gh-owner') || CFG.GITHUB_REPO_OWNER, repo: localStorage.getItem('gh-repo') || CFG.GITHUB_REPO_NAME }; }
+
+// ============================================================
+// AUTH
+// ============================================================
+async function login() {
+  const pw = document.getElementById('loginPw').value;
+  if (!pw) return;
+  const hash = await sha256(pw);
+  const stored = localStorage.getItem('admin-pw-hash');
+  if (!stored) {
+    localStorage.setItem('admin-pw-hash', hash);
+    showApp();
+  } else if (hash === stored) {
+    showApp();
+  } else {
+    document.getElementById('loginErr').textContent = 'Incorrect password.';
+    document.getElementById('loginPw').value = '';
+  }
+}
+document.getElementById('loginPw').addEventListener('keydown', e => { if (e.key === 'Enter') login(); });
+
+function showApp() {
+  document.getElementById('authScreen').classList.add('hidden');
+  document.getElementById('mainApp').classList.remove('hidden');
+  loadManifest();
+  loadSettings();
+}
+
+function logout() {
+  if (!confirm('Sign out?')) return;
+  location.reload();
+}
+
+// ============================================================
+// MANIFEST
+// ============================================================
+async function loadManifest() {
+  try {
+    const res = await fetch(CFG.MANIFEST_URL + '?t=' + Date.now());
+    if (!res.ok) throw new Error('HTTP ' + res.status);
+    ST.manifest = await res.json();
+    ST.logos = ST.manifest.logos || [];
+    ST.filtered = [...ST.logos];
+    updateDashboard();
+    renderManageTable();
+    renderUpgradeGrid();
+    loadInbox();
+  } catch (e) {
+    showToast('⚠️ Could not load manifest: ' + e.message, 5000);
+  }
+}
+
+function updateDashboard() {
+  document.getElementById('stat-total').textContent = ST.logos.length;
+  document.getElementById('stat-svg').textContent = ST.logos.filter(l=>l.quality==='svg').length;
+  document.getElementById('stat-hq').textContent = ST.logos.filter(l=>l.quality==='png-hq').length;
+  document.getElementById('stat-lq').textContent = ST.logos.filter(l=>l.quality==='png-lq').length;
+}
+
+// ============================================================
+// NAVIGATION
+// ============================================================
+function switchPage(page, btn) {
+  document.querySelectorAll('[id^=page-]').forEach(el => el.classList.add('hidden'));
+  document.getElementById('page-' + page).classList.remove('hidden');
+  document.querySelectorAll('.nav-link').forEach(b => b.classList.remove('active'));
+  if (btn) btn.classList.add('active');
+}
+
+// ============================================================
+// MANAGE TABLE
+// ============================================================
+function filterManageTable() {
+  const q = document.getElementById('manageSearch').value.toLowerCase();
+  const cat = document.getElementById('manageCatFilter').value;
+  const qual = document.getElementById('manageQualityFilter').value;
+  ST.filtered = ST.logos.filter(l => {
+    const mq = !q || l.name.toLowerCase().includes(q) || (l.tags||[]).some(t=>t.includes(q));
+    const mc = !cat || l.category === cat;
+    const mqu = !qual || l.quality === qual;
+    return mq && mc && mqu;
+  });
+  renderManageTable();
+}
+
+function sortManage(key) {
+  if (ST.sortKey === key) ST.sortDir *= -1; else { ST.sortKey = key; ST.sortDir = 1; }
+  ST.filtered.sort((a,b) => (a[key]||'').localeCompare(b[key]||'') * ST.sortDir);
+  renderManageTable();
+}
+
+function renderManageTable() {
+  const tbody = document.getElementById('manageBody');
+  const empty = document.getElementById('manageEmpty');
+  if (ST.filtered.length === 0) { empty.classList.remove('hidden'); tbody.innerHTML = ''; return; }
+  empty.classList.add('hidden');
+  tbody.innerHTML = ST.filtered.map(l => {
+    const src = l.svgUrl || l.pngUrl || '';
+    const badge = l.quality==='svg'?'<span class="q-badge svg">SVG</span>':l.quality==='png-hq'?'<span class="q-badge png-hq">PNG HQ</span>':'<span class="q-badge png-lq">PNG LQ</span>';
+    return `<tr>
+      <td><img class="thumb" src="${src}" alt="${l.name}" onerror="this.style.opacity=.3" /></td>
+      <td><strong>${l.name}</strong><br/><small style="color:var(--muted)">${l.id}</small></td>
+      <td>${l.category}</td>
+      <td>${badge}</td>
+      <td style="font-size:12px;color:var(--muted)">${formatDate(l.updatedAt)}</td>
+      <td>
+        <div style="display:flex;gap:6px">
+          <button class="btn btn-secondary btn-sm" onclick='openReplace(${JSON.stringify(l).replace(/'/g,"&#39;")})'>Replace</button>
+          <button class="btn btn-danger btn-sm" onclick='doDelete(${JSON.stringify(l).replace(/'/g,"&#39;")})'>Delete</button>
+        </div>
+      </td>
+    </tr>`;
+  }).join('');
+}
+
+// ============================================================
+// ADD LOGO
+// ============================================================
+function aAutoSlug() {
+  document.getElementById('a_slug').value = slugify(document.getElementById('a_name').value);
+}
+function aUpdatePreview() {
+  const svg = document.getElementById('a_svg').value.trim();
+  const p = document.getElementById('a_preview');
+  if (!svg) { p.innerHTML = '<span class="lp-empty">No preview yet</span>'; return; }
+  const clean = sanitizeSvg(svg);
+  p.innerHTML = `<img src="data:image/svg+xml;charset=utf-8,${encodeURIComponent(clean)}" />`;
+}
+async function aHandlePng(input) {
+  const f = input.files[0]; if (!f) return;
+  A.pngData = await fileToBase64(f);
+  document.getElementById('a_preview').innerHTML = `<img src="data:image/png;base64,${A.pngData}" />`;
+}
+
+async function submitAddLogo(e) {
+  e.preventDefault();
+  const name = document.getElementById('a_name').value.trim();
+  const id = document.getElementById('a_slug').value.trim();
+  const category = document.getElementById('a_category').value;
+  const tags = document.getElementById('a_tags').value.split(',').map(t=>t.trim()).filter(Boolean);
+  const svgText = document.getElementById('a_svg').value.trim();
+  const nodeId = document.getElementById('a_nodeId').value.trim() || '0:0';
+  if (!name || !id || !category) { document.getElementById('addErr').textContent = 'Name, slug, and category are required.'; return; }
+  if (!svgText && !A.pngData) { document.getElementById('addErr').textContent = 'Provide an SVG or PNG.'; return; }
+  document.getElementById('addBtn').disabled = true;
+  document.getElementById('addErr').textContent = '';
+  showToast('⏳ Uploading to GitHub…');
+  const quality = svgText ? 'svg' : 'png-hq';
+  const { token, owner, repo } = getConfig();
+  const rawBase = `https://raw.githubusercontent.com/${owner}/${repo}/main/public/assets/logos`;
+  const now = new Date().toISOString();
+  const logo = { id, name, brand: name.split(' ')[0], category, tags, quality,
+    svgUrl: svgText ? `${rawBase}/${id}.svg` : null,
+    pngUrl: !svgText && A.pngData ? `${rawBase}/${id}.png` : null,
+    figmaNodeId: nodeId, figmaComponentKey: '', addedAt: now, updatedAt: now,
+    contributedBy: { handle: 'admin', source: 'admin' }
+  };
+  const assetContent = svgText ? sanitizeSvg(svgText) : A.pngData;
+  const r = await githubUpdate('add', logo, assetContent, { token, owner, repo });
+  document.getElementById('addBtn').disabled = false;
+  if (r.success) {
+    showToast('✅ Logo added!');
+    document.getElementById('addForm').reset();
+    document.getElementById('a_preview').innerHTML = '<span class="lp-empty">No preview yet</span>';
+    A.pngData = null;
+    await loadManifest();
+    switchPage('manage', document.querySelector('[data-page=manage]'));
+  } else {
+    document.getElementById('addErr').textContent = r.message || 'Failed to add logo.';
+  }
+}
+
+// ============================================================
+// REPLACE
+// ============================================================
+function openReplace(logo) {
+  ST.editingLogo = logo; ST.replacePngData = null;
+  document.getElementById('r_name').value = logo.name;
+  document.getElementById('r_cat').value = logo.category;
+  document.getElementById('r_tags').value = (logo.tags||[]).join(', ');
+  document.getElementById('r_svg').value = '';
+  document.getElementById('r_png').value = '';
+  document.getElementById('r_preview').innerHTML = '<span class="lp-empty">No new asset</span>';
+  document.getElementById('replaceErr').textContent = '';
+  document.getElementById('replaceModal').classList.remove('hidden');
+}
+function rUpdatePreview() {
+  const svg = document.getElementById('r_svg').value.trim();
+  const p = document.getElementById('r_preview');
+  if (!svg) { p.innerHTML = '<span class="lp-empty">No preview</span>'; return; }
+  p.innerHTML = `<img src="data:image/svg+xml;charset=utf-8,${encodeURIComponent(sanitizeSvg(svg))}" />`;
+}
+async function rHandlePng(input) {
+  const f = input.files[0]; if (!f) return;
+  ST.replacePngData = await fileToBase64(f);
+  document.getElementById('r_preview').innerHTML = `<img src="data:image/png;base64,${ST.replacePngData}" />`;
+}
+async function submitReplace() {
+  if (!ST.editingLogo) return;
+  const svg = document.getElementById('r_svg').value.trim();
+  const category = document.getElementById('r_cat').value;
+  const tags = document.getElementById('r_tags').value.split(',').map(t=>t.trim()).filter(Boolean);
+  let assetContent = null, quality = ST.editingLogo.quality;
+  if (svg) { assetContent = sanitizeSvg(svg); quality = 'svg'; }
+  else if (ST.replacePngData) { assetContent = ST.replacePngData; quality = 'png-hq'; }
+  const updated = { ...ST.editingLogo, category, tags, quality, updatedAt: new Date().toISOString() };
+  showToast('⏳ Saving…');
+  const { token, owner, repo } = getConfig();
+  const r = await githubUpdate('update', updated, assetContent, { token, owner, repo });
+  if (r.success) { showToast('✅ Updated!'); closeModal('replaceModal'); await loadManifest(); }
+  else document.getElementById('replaceErr').textContent = r.message || 'Update failed.';
+}
+
+// ============================================================
+// DELETE
+// ============================================================
+async function doDelete(logo) {
+  if (!confirm(`Delete "${logo.name}"? This cannot be undone.`)) return;
+  showToast('⏳ Deleting…');
+  const { token, owner, repo } = getConfig();
+  const r = await githubUpdate('delete', logo, null, { token, owner, repo });
+  if (r.success) { showToast('🗑️ Deleted.'); await loadManifest(); renderManageTable(); }
+  else showToast('❌ ' + (r.message || 'Failed to delete.'), 5000);
+}
+
+// ============================================================
+// UPGRADE LQ
+// ============================================================
+function renderUpgradeGrid() {
+  const lqLogos = ST.logos.filter(l => l.quality === 'png-lq');
+  const grid = document.getElementById('upgradeGrid');
+  const empty = document.getElementById('upgradeEmpty');
+  if (lqLogos.length === 0) { grid.innerHTML = ''; empty.classList.remove('hidden'); return; }
+  empty.classList.add('hidden');
+  grid.innerHTML = lqLogos.map(l => `<div class="lq-card">
+    <div class="lq-card-img"><img src="${l.pngUrl||''}" alt="${l.name}" onerror="this.style.opacity=.3" /></div>
+    <div class="lq-card-info">
+      <div class="lq-name">${l.name}</div>
+      <span class="q-badge png-lq" style="margin-top:4px;display:inline-block">PNG LQ</span>
+      <div style="margin-top:8px"><button class="btn btn-primary btn-sm" style="width:100%" onclick='openReplace(${JSON.stringify(l).replace(/'/g,"&#39;")})'>Replace with SVG</button></div>
+    </div>
+  </div>`).join('');
+}
+
+// ============================================================
+// GITHUB API
+// ============================================================
+async function githubGetSha(token, owner, repo, path) {
+  const r = await fetch(`https://api.github.com/repos/${owner}/${repo}/contents/${path}`, { headers: { Authorization: `token ${token}`, Accept: 'application/vnd.github.v3+json' } });
+  if (!r.ok) return null;
+  return (await r.json()).sha;
+}
+
+async function githubPut(token, owner, repo, path, content, message, sha) {
+  const body = { message, content: btoa(unescape(encodeURIComponent(content))) };
+  if (sha) body.sha = sha;
+  const r = await fetch(`https://api.github.com/repos/${owner}/${repo}/contents/${path}`, { method: 'PUT', headers: { Authorization: `token ${token}`, 'Content-Type': 'application/json', Accept: 'application/vnd.github.v3+json' }, body: JSON.stringify(body) });
+  return r.ok;
+}
+
+async function githubUpdate(action, logo, assetContent, cfg) {
+  const { token, owner, repo } = cfg;
+  if (!token) return { success: false, message: 'GitHub token not configured. Go to Settings.' };
+  try {
+    if (action === 'delete') {
+      const ext = logo.quality === 'svg' ? 'svg' : 'png';
+      const sha = await githubGetSha(token, owner, repo, `public/assets/logos/${logo.id}.${ext}`);
+      if (sha) {
+        await fetch(`https://api.github.com/repos/${owner}/${repo}/contents/public/assets/logos/${logo.id}.${ext}`, { method: 'DELETE', headers: { Authorization: `token ${token}`, 'Content-Type': 'application/json', Accept: 'application/vnd.github.v3+json' }, body: JSON.stringify({ message: `chore: remove ${logo.name}`, sha }) });
+      }
+    } else if (assetContent) {
+      const ext = logo.quality === 'svg' ? 'svg' : 'png';
+      const p = `public/assets/logos/${logo.id}.${ext}`;
+      const sha = await githubGetSha(token, owner, repo, p);
+      const ok = await githubPut(token, owner, repo, p, assetContent, `${action==='add'?'feat':'fix'}: ${action} ${logo.name} logo`, sha);
+      if (!ok) return { success: false, message: 'Failed to upload asset.' };
+    }
+    // Update manifest
+    const mPath = 'public/logos.json';
+    const mRes = await fetch(`https://api.github.com/repos/${owner}/${repo}/contents/${mPath}`, { headers: { Authorization: `token ${token}`, Accept: 'application/vnd.github.v3+json' } });
+    if (!mRes.ok) return { success: false, message: 'Cannot read manifest from GitHub.' };
+    const mFile = await mRes.json();
+    const manifest = JSON.parse(decodeURIComponent(escape(atob(mFile.content.replace(/\n/g,'')))));
+    if (action === 'add') manifest.logos.push(logo);
+    else if (action === 'update') { const i = manifest.logos.findIndex(l=>l.id===logo.id); if (i!==-1) manifest.logos[i]=logo; }
+    else manifest.logos = manifest.logos.filter(l=>l.id!==logo.id);
+    manifest.totalLogos = manifest.logos.length;
+    manifest.lastUpdated = new Date().toISOString();
+    const ok2 = await githubPut(token, owner, repo, mPath, JSON.stringify(manifest,null,2), `chore: update manifest (${action} ${logo.name})`, mFile.sha);
+    if (!ok2) return { success: false, message: 'Asset saved but manifest update failed.' };
+    return { success: true };
+  } catch (e) { return { success: false, message: String(e) }; }
+}
+
+// ============================================================
+// INBOX
+// ============================================================
+async function loadInbox() {
+  document.getElementById('inbox-loading').style.display = 'block';
+  document.getElementById('inbox-submissions').classList.add('hidden');
+  document.getElementById('inbox-requests').classList.add('hidden');
+  const { owner, repo, token } = getConfig();
+  try {
+    const headers = token ? { Authorization: `token ${token}` } : {};
+    const [sRes, rRes] = await Promise.all([
+      fetch(`https://api.github.com/repos/${owner}/${repo}/issues?labels=logo-suggestion&state=open&per_page=50`, { headers }),
+      fetch(`https://api.github.com/repos/${owner}/${repo}/issues?labels=logo-request&state=open&per_page=50&reactions=true`, { headers })
+    ]);
+    if (!sRes.ok || !rRes.ok) throw new Error('API error');
+    const subs = await sRes.json();
+    const reqs = await rRes.json();
+    ST.inboxIssues = [...subs, ...reqs];
+    renderInboxSubmissions(subs);
+    renderInboxRequests(reqs);
+    document.getElementById('inbox-loading').style.display = 'none';
+    document.getElementById('inbox-submissions').classList.remove('hidden');
+  } catch {
+    document.getElementById('inbox-loading').innerHTML = '<p style="text-align:center;color:var(--muted)">Could not load inbox. Check GitHub settings.</p>';
+  }
+}
+
+function switchInboxTab(tab, btn) {
+  ST.inboxTab = tab;
+  document.querySelectorAll('.tab').forEach(b => b.classList.remove('active'));
+  if (btn) btn.classList.add('active');
+  document.getElementById('inbox-submissions').classList.toggle('hidden', tab !== 'submissions');
+  document.getElementById('inbox-requests').classList.toggle('hidden', tab !== 'requests');
+}
+
+function renderInboxSubmissions(subs) {
+  const list = document.getElementById('sub-list');
+  const empty = document.getElementById('sub-empty');
+  if (!subs.length) { list.innerHTML = ''; empty.classList.remove('hidden'); return; }
+  empty.classList.add('hidden');
+  list.innerHTML = subs.map(issue => {
+    const title = issue.title.replace('[LOGO SUBMISSION] ','');
+    const b64Match = issue.body && issue.body.match(/```base64\n([\s\S]+?)\n```/);
+    const isSvg = issue.body && issue.body.includes('**File type:** svg');
+    const fileType = isSvg ? '<span class="q-badge svg">SVG</span>' : '<span class="q-badge png-lq">PNG</span>';
+    return `<div style="border:1px solid var(--border);border-radius:10px;padding:12px;margin-bottom:8px;display:flex;align-items:center;gap:12px">
+      <div style="flex:1">
+        <strong>${title}</strong> ${fileType}
+        <div style="font-size:12px;color:var(--muted);margin-top:4px">Submitted ${formatDate(issue.created_at)}</div>
+      </div>
+      <div style="display:flex;gap:6px;flex-wrap:wrap">
+        ${b64Match ? `<button class="btn btn-secondary btn-sm" onclick="previewInboxItem(${issue.number},'${title}')">Preview</button>` : ''}
+        <button class="btn btn-secondary btn-sm" style="color:var(--accent);border-color:var(--accent)" onclick='prefillFromInbox(${JSON.stringify(issue).replace(/'/g,"&#39;")})'>Add ✅</button>
+        <button class="btn btn-danger btn-sm" onclick="rejectInboxItem(${issue.number},'${title}')">Reject</button>
+      </div>
+    </div>`;
+  }).join('');
+}
+
+function renderInboxRequests(reqs) {
+  const list = document.getElementById('req-list');
+  const empty = document.getElementById('req-empty');
+  const sorted = [...reqs].sort((a,b)=>((b.reactions&&b.reactions['+1'])||0)-((a.reactions&&a.reactions['+1'])||0));
+  if (!sorted.length) { list.innerHTML = ''; empty.classList.remove('hidden'); return; }
+  empty.classList.add('hidden');
+  list.innerHTML = sorted.map(issue => {
+    const title = issue.title.replace('[LOGO REQUEST] ','');
+    const votes = (issue.reactions && issue.reactions['+1']) || 0;
+    return `<div style="border:1px solid var(--border);border-radius:10px;padding:12px;margin-bottom:8px;display:flex;align-items:center;gap:12px">
+      <div style="flex:1">
+        <strong>${title}</strong>
+        <div style="font-size:12px;color:var(--muted);margin-top:4px">👍 ${votes} votes · Requested ${formatDate(issue.created_at)}</div>
+      </div>
+      <button class="btn btn-secondary btn-sm" style="color:var(--accent);border-color:var(--accent)" onclick='fulfillInboxRequest(${issue.number},"${title}")'>Fulfil Request</button>
+    </div>`;
+  }).join('');
+}
+
+function previewInboxItem(issueNum, title) {
+  const issue = ST.inboxIssues.find(i => i.number === issueNum);
+  if (!issue) return;
+  const b64Match = issue.body && issue.body.match(/```base64\n([\s\S]+?)\n```/);
+  if (!b64Match) { showToast('No image data in this submission.'); return; }
+  const b64 = b64Match[1].trim();
+  const isSvg = issue.body.includes('**File type:** svg');
+  document.getElementById('previewTitle').textContent = title;
+  document.getElementById('previewImg').src = isSvg ? `data:image/svg+xml;base64,${b64}` : `data:image/png;base64,${b64}`;
+  document.getElementById('previewModal').classList.remove('hidden');
+}
+
+function prefillFromInbox(issue) {
+  const title = issue.title.replace('[LOGO SUBMISSION] ','');
+  switchPage('add', document.querySelector('[data-page=add]'));
+  document.getElementById('a_name').value = title;
+  document.getElementById('a_slug').value = slugify(title);
+  const catM = issue.body && issue.body.match(/\*\*Category:\*\* (.+)/);
+  if (catM) document.getElementById('a_category').value = catM[1].trim();
+  const tagsM = issue.body && issue.body.match(/\*\*Tags:\*\* (.+)/);
+  if (tagsM) document.getElementById('a_tags').value = tagsM[1].trim();
+  const b64M = issue.body && issue.body.match(/```base64\n([\s\S]+?)\n```/);
+  if (b64M) {
+    const b64 = b64M[1].trim();
+    const isSvg = issue.body.includes('**File type:** svg');
+    if (isSvg) {
+      const text = atob(b64);
+      document.getElementById('a_svg').value = text; aUpdatePreview();
+    } else {
+      A.pngData = b64;
+      document.getElementById('a_preview').innerHTML = `<img src="data:image/png;base64,${b64}" />`;
+    }
+  }
+  showToast('Form pre-filled from submission!');
+}
+
+async function rejectInboxItem(issueNum, title) {
+  if (!confirm(`Reject "${title}"?`)) return;
+  const { token, owner, repo } = getConfig();
+  if (!token) { showToast('Set up GitHub token in Settings first.'); return; }
+  const r = await fetch(`https://api.github.com/repos/${owner}/${repo}/issues/${issueNum}`, { method: 'PATCH', headers: { Authorization: `token ${token}`, 'Content-Type': 'application/json', Accept: 'application/vnd.github.v3+json' }, body: JSON.stringify({ state: 'closed' }) });
+  if (r.ok) { showToast('Issue rejected.'); loadInbox(); }
+  else showToast('Failed to reject issue.');
+}
+
+function fulfillInboxRequest(issueNum, title) {
+  switchPage('add', document.querySelector('[data-page=add]'));
+  document.getElementById('a_name').value = title;
+  document.getElementById('a_slug').value = slugify(title);
+  showToast('Fill in the logo details, then submit to fulfil this request.');
+}
+
+// ============================================================
+// SETTINGS
+// ============================================================
+function loadSettings() {
+  const tok = localStorage.getItem('gh-token');
+  const own = localStorage.getItem('gh-owner') || CFG.GITHUB_REPO_OWNER;
+  const repo = localStorage.getItem('gh-repo') || CFG.GITHUB_REPO_NAME;
+  if (tok) document.getElementById('s_token').value = tok;
+  document.getElementById('s_owner').value = own;
+  document.getElementById('s_repo').value = repo;
+}
+
+function saveSettings() {
+  const t = document.getElementById('s_token').value.trim();
+  const o = document.getElementById('s_owner').value.trim();
+  const r = document.getElementById('s_repo').value.trim();
+  if (t) localStorage.setItem('gh-token', t);
+  if (o) localStorage.setItem('gh-owner', o);
+  if (r) localStorage.setItem('gh-repo', r);
+  showToast('✅ Settings saved!');
+}
+
+async function changePassword() {
+  const pw = document.getElementById('s_newpw').value;
+  const c = document.getElementById('s_confirmpw').value;
+  if (!pw || !c) { document.getElementById('pwChangeErr').textContent = 'Fill both fields.'; return; }
+  if (pw !== c) { document.getElementById('pwChangeErr').textContent = 'Passwords do not match.'; return; }
+  const hash = await sha256(pw);
+  localStorage.setItem('admin-pw-hash', hash);
+  document.getElementById('s_newpw').value = '';
+  document.getElementById('s_confirmpw').value = '';
+  document.getElementById('pwChangeErr').textContent = '';
+  showToast('✅ Password updated!');
+}
+
+// ============================================================
+// EXPORT / IMPORT
+// ============================================================
+function downloadAllJson() {
+  if (!ST.manifest) { showToast('Load the manifest first.'); return; }
+  const blob = new Blob([JSON.stringify(ST.manifest, null, 2)], { type: 'application/json' });
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = 'logos.json';
+  a.click();
+}
+
+async function importJson(input) {
+  const f = input.files[0]; if (!f) return;
+  try {
+    const text = await fileToText(f);
+    ST.manifest = JSON.parse(text);
+    ST.logos = ST.manifest.logos || [];
+    ST.filtered = [...ST.logos];
+    updateDashboard(); renderManageTable(); renderUpgradeGrid();
+    showToast('✅ Imported ' + ST.logos.length + ' logos.');
+  } catch { showToast('❌ Invalid JSON file.'); }
+}
+
+// Check if already "logged in" in this session
+if (localStorage.getItem('session-active') === 'true' && localStorage.getItem('admin-pw-hash')) {
+  // Don't auto-login on page load for security — always require password
+}
+</script>
+</body>
+</html>

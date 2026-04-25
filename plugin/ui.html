@@ -1,0 +1,1538 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Nigerian Brands Logos</title>
+<style>
+:root {
+  --bg:#ffffff;--surface:#f5f5f5;--surface-hover:#ebebeb;--border:#e0e0e0;
+  --text:#1a1a1a;--text-muted:#666;--accent:#008751;--accent-h:#006a3f;
+  --accent-bg:rgba(0,135,81,.1);--badge-svg-bg:rgba(0,135,81,.15);--badge-svg:#008751;
+  --badge-hq-bg:rgba(0,102,204,.15);--badge-hq:#0066cc;
+  --badge-lq-bg:rgba(204,85,0,.15);--badge-lq:#cc5500;
+  --sk:#e8e8e8;--err-bg:#fff0f0;--err:#cc0000;
+  --toast-bg:#1a1a1a;--toast-fg:#fff;--modal-bg:#fff;--in:#fff;
+  --shadow:0 2px 8px rgba(0,0,0,.1);
+}
+@media(prefers-color-scheme:dark){
+  :root{
+    --bg:#1e1e1e;--surface:#2a2a2a;--surface-hover:#333;--border:#3a3a3a;
+    --text:#f0f0f0;--text-muted:#9a9a9a;--accent:#00c47a;--accent-h:#00a86b;
+    --accent-bg:rgba(0,196,122,.1);--badge-svg-bg:rgba(0,196,122,.2);--badge-svg:#00c47a;
+    --badge-hq-bg:rgba(66,153,255,.2);--badge-hq:#4299ff;
+    --badge-lq-bg:rgba(255,153,50,.2);--badge-lq:#ff9932;
+    --sk:#333;--err-bg:#330000;--err:#ff6666;
+    --toast-bg:#f0f0f0;--toast-fg:#1a1a1a;--modal-bg:#2a2a2a;--in:#333;
+    --shadow:0 2px 8px rgba(0,0,0,.4);
+  }
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:var(--bg);color:var(--text);font-size:13px;overflow:hidden;width:400px;height:600px;display:flex;flex-direction:column}
+.hidden{display:none!important}
+/* Header */
+header{display:flex;align-items:center;justify-content:space-between;padding:0 12px;height:48px;border-bottom:1px solid var(--border);flex-shrink:0}
+.h-title{font-size:14px;font-weight:600}
+.gear-btn{background:none;border:none;cursor:pointer;font-size:16px;padding:6px;border-radius:6px;color:var(--text-muted);transition:background .15s}
+.gear-btn:hover{background:var(--surface)}
+/* Main tabs */
+.main-tabs{display:flex;border-bottom:1px solid var(--border);flex-shrink:0}
+.main-tab{flex:1;padding:10px 0;background:none;border:none;border-bottom:2px solid transparent;cursor:pointer;font-size:12px;font-weight:500;color:var(--text-muted);transition:color .15s;display:flex;align-items:center;justify-content:center;gap:4px}
+.main-tab.active{color:var(--accent);border-bottom-color:var(--accent)}
+.notif-dot{background:#e53935;width:7px;height:7px;border-radius:50%;flex-shrink:0}
+/* Tab content */
+.tab-content{flex:1;overflow:hidden;display:flex;flex-direction:column}
+/* Search */
+.search-wrap{padding:10px 12px 6px;position:relative;flex-shrink:0}
+.search-icon{position:absolute;left:22px;top:50%;transform:translateY(-50%);color:var(--text-muted);pointer-events:none;font-style:normal}
+.search-input{width:100%;padding:7px 10px 7px 32px;border:1px solid var(--border);border-radius:8px;background:var(--in);color:var(--text);font-size:12px;outline:none;transition:border-color .15s}
+.search-input:focus{border-color:var(--accent)}
+/* Category chips */
+.cat-wrap{display:flex;gap:6px;padding:0 12px 8px;overflow-x:auto;flex-shrink:0;scrollbar-width:none}
+.cat-wrap::-webkit-scrollbar{display:none}
+.cat-chip{padding:3px 10px;border-radius:12px;border:1px solid var(--border);background:none;font-size:11px;font-weight:500;cursor:pointer;color:var(--text-muted);white-space:nowrap;transition:all .15s;flex-shrink:0}
+.cat-chip:hover{background:var(--surface)}
+.cat-chip.active{background:var(--accent);border-color:var(--accent);color:#fff}
+/* Grid */
+.grid-wrap{flex:1;overflow-y:auto;padding:6px 12px}
+.logo-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.logo-card{border:1px solid var(--border);border-radius:8px;overflow:hidden;cursor:pointer;transition:border-color .15s,box-shadow .15s;position:relative;background:var(--surface)}
+.logo-card:hover{border-color:var(--accent);box-shadow:var(--shadow)}
+.card-img-wrap{width:100%;aspect-ratio:1;display:flex;align-items:center;justify-content:center;padding:12px;background:#fff;overflow:hidden}
+.card-img-wrap img{max-width:100%;max-height:100%;object-fit:contain}
+.card-info{padding:5px 7px 7px}
+.card-name{font-size:11px;font-weight:500;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.q-badge{display:inline-block;font-size:9px;font-weight:700;padding:1px 5px;border-radius:4px;margin-top:3px;text-transform:uppercase;letter-spacing:.3px}
+.q-badge.svg{background:var(--badge-svg-bg);color:var(--badge-svg)}
+.q-badge.png-hq{background:var(--badge-hq-bg);color:var(--badge-hq)}
+.q-badge.png-lq{background:var(--badge-lq-bg);color:var(--badge-lq)}
+.ins-overlay{position:absolute;inset:0;background:rgba(0,0,0,.5);display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity .15s}
+.logo-card:hover .ins-overlay{opacity:1}
+.ins-btn{background:var(--accent);color:#fff;border:none;padding:6px 14px;border-radius:6px;font-size:12px;font-weight:600;cursor:pointer}
+.contrib-tip{position:absolute;top:5px;right:5px;background:rgba(0,0,0,.65);color:#fff;font-size:9px;padding:2px 6px;border-radius:4px;white-space:nowrap;opacity:0;pointer-events:none;transition:opacity .15s;max-width:90px;overflow:hidden;text-overflow:ellipsis}
+.logo-card:hover .contrib-tip{opacity:1}
+/* Skeleton */
+.sk-card{border:1px solid var(--border);border-radius:8px;overflow:hidden;background:var(--surface)}
+.sk-img{width:100%;aspect-ratio:1;background:var(--sk);animation:pulse 1.4s ease infinite}
+.sk-line{height:10px;background:var(--sk);border-radius:4px;margin:8px 8px 4px;animation:pulse 1.4s ease infinite}
+.sk-line2{height:8px;background:var(--sk);border-radius:4px;margin:0 8px 8px;width:60%;animation:pulse 1.4s ease infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+/* States */
+.state-box{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;padding:20px;text-align:center}
+.state-icon{font-size:42px}
+.state-title{font-size:14px;font-weight:600}
+.state-msg{font-size:12px;color:var(--text-muted);max-width:260px;line-height:1.5}
+/* Footer */
+footer{padding:7px 12px;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;font-size:11px;color:var(--text-muted);flex-shrink:0}
+footer a{color:var(--accent);text-decoration:none}
+footer a:hover{text-decoration:underline}
+/* Buttons */
+.btn{border:none;border-radius:8px;font-size:12px;font-weight:600;cursor:pointer;padding:8px 14px;transition:background .15s;font-family:inherit}
+.btn-primary{background:var(--accent);color:#fff;width:100%}
+.btn-primary:hover{background:var(--accent-h)}
+.btn-primary:disabled{opacity:.5;cursor:not-allowed}
+.btn-secondary{background:none;border:1px solid var(--border);color:var(--text);padding:7px 14px}
+.btn-secondary:hover{background:var(--surface)}
+.btn-danger{background:none;border:1px solid #cc0000;color:#cc0000;padding:5px 10px;font-size:11px}
+.btn-danger:hover{background:rgba(204,0,0,.1)}
+.btn-sm{padding:5px 10px;font-size:11px;border-radius:6px}
+/* Overlay */
+.overlay{position:fixed;inset:0;background:var(--bg);z-index:100;display:flex;flex-direction:column}
+.ov-header{display:flex;align-items:center;justify-content:space-between;padding:0 12px;height:48px;border-bottom:1px solid var(--border);flex-shrink:0}
+.ov-title{font-size:14px;font-weight:600}
+.close-btn{background:none;border:none;cursor:pointer;font-size:20px;line-height:1;color:var(--text-muted);padding:4px 8px;border-radius:6px}
+.close-btn:hover{background:var(--surface)}
+.ov-body{flex:1;overflow-y:auto;padding:16px 12px;display:flex;flex-direction:column;gap:12px}
+/* Auth screen */
+.auth-screen{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;max-width:280px;margin:0 auto;width:100%;padding:0 0 40px}
+.auth-screen h2{font-size:16px}
+.auth-screen p{font-size:12px;color:var(--text-muted);text-align:center;line-height:1.5}
+.auth-err{color:var(--err);font-size:12px;text-align:center;min-height:16px}
+.auth-err.shake{animation:shake .3s ease}
+@keyframes shake{0%{transform:translateX(0)}25%{transform:translateX(-6px)}75%{transform:translateX(6px)}100%{transform:translateX(0)}}
+/* Forms */
+.form-group{display:flex;flex-direction:column;gap:4px}
+label{font-size:12px;font-weight:500}
+.req{color:var(--accent)}
+input[type=text],input[type=password],textarea,select{padding:8px 10px;border:1px solid var(--border);border-radius:8px;background:var(--in);color:var(--text);font-size:12px;font-family:inherit;outline:none;width:100%;transition:border-color .15s}
+input:focus,textarea:focus,select:focus{border-color:var(--accent)}
+textarea{resize:vertical;min-height:80px}
+.hint{font-size:10px;color:var(--text-muted);margin-top:2px}
+.char-count{font-size:10px;color:var(--text-muted);text-align:right}
+/* Admin tabs */
+.admin-tabs{display:flex;border-bottom:1px solid var(--border);margin-bottom:12px;flex-shrink:0}
+.admin-tab{flex:1;padding:8px 4px;background:none;border:none;border-bottom:2px solid transparent;cursor:pointer;font-size:11px;font-weight:500;color:var(--text-muted);white-space:nowrap;transition:color .15s}
+.admin-tab.active{color:var(--accent);border-bottom-color:var(--accent)}
+.admin-tab-content{display:flex;flex-direction:column;gap:10px;flex:1;overflow-y:auto}
+/* Table */
+.logo-table{width:100%;border-collapse:collapse;font-size:11px}
+.logo-table th{font-size:10px;font-weight:600;text-transform:uppercase;color:var(--text-muted);padding:6px 6px;text-align:left;border-bottom:1px solid var(--border)}
+.logo-table td{padding:7px 6px;border-bottom:1px solid var(--border);vertical-align:middle}
+.logo-table tr:last-child td{border-bottom:none}
+.t-thumb{width:30px;height:30px;object-fit:contain;border:1px solid var(--border);border-radius:4px;background:#f5f5f5;padding:2px}
+.act-btns{display:flex;gap:4px}
+/* Live preview */
+.live-preview{width:100%;height:100px;border:1px solid var(--border);border-radius:8px;display:flex;align-items:center;justify-content:center;padding:10px;background:#f5f5f5;overflow:hidden}
+.live-preview img{max-width:100%;max-height:80px;object-fit:contain}
+.live-preview-empty{font-size:11px;color:var(--text-muted)}
+/* Seg control */
+.seg{display:flex;background:var(--surface);border-radius:8px;padding:2px;gap:2px;margin-bottom:12px}
+.seg-btn{flex:1;padding:6px;border:none;border-radius:6px;background:none;font-size:12px;font-weight:500;cursor:pointer;color:var(--text-muted);transition:all .15s;font-family:inherit}
+.seg-btn.active{background:var(--bg);color:var(--text);box-shadow:0 1px 3px rgba(0,0,0,.15)}
+/* Suggest tab body */
+.suggest-body{flex:1;overflow-y:auto;padding:12px}
+/* File badge */
+.file-badge{display:inline-flex;align-items:center;gap:4px;font-size:11px;font-weight:600;padding:3px 8px;border-radius:4px;margin-top:4px}
+.file-badge.svg{background:var(--badge-svg-bg);color:var(--badge-svg)}
+.file-badge.png{background:var(--badge-lq-bg);color:var(--badge-lq)}
+/* Request search result */
+.req-result{border:1px solid var(--border);border-radius:8px;padding:10px;margin-bottom:10px;display:flex;align-items:center;justify-content:space-between;gap:8px}
+.req-result-info{flex:1}
+.req-result-title{font-size:12px;font-weight:600}
+.req-result-meta{font-size:11px;color:var(--text-muted);margin-top:2px}
+.upvote{display:inline-flex;align-items:center;gap:4px;font-size:12px;font-weight:600;color:var(--text-muted)}
+/* Toast */
+#toast{position:fixed;bottom:16px;left:50%;transform:translateX(-50%) translateY(20px);background:var(--toast-bg);color:var(--toast-fg);padding:8px 16px;border-radius:8px;font-size:12px;font-weight:500;z-index:200;opacity:0;transition:opacity .2s,transform .2s;white-space:nowrap;pointer-events:none}
+#toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+/* Modal */
+.modal-bg{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:150;display:flex;align-items:center;justify-content:center;padding:16px}
+.modal-box{background:var(--modal-bg);border-radius:12px;width:100%;max-height:85vh;overflow-y:auto;padding:16px;display:flex;flex-direction:column;gap:12px}
+.modal-hdr{display:flex;align-items:center;justify-content:space-between}
+.modal-title{font-size:14px;font-weight:600}
+/* Spinner */
+.spin-wrap{display:flex;align-items:center;justify-content:center;padding:20px}
+.spinner{width:24px;height:24px;border:2px solid var(--border);border-top-color:var(--accent);border-radius:50%;animation:spin .6s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+/* Info note */
+.info-note{background:var(--accent-bg);border-left:3px solid var(--accent);padding:8px 10px;border-radius:0 6px 6px 0;font-size:11px;line-height:1.5}
+/* Inbox */
+.inbox-section{margin-bottom:14px}
+.inbox-section h3{font-size:11px;font-weight:600;text-transform:uppercase;color:var(--text-muted);margin-bottom:8px;letter-spacing:.5px}
+.inbox-row{border:1px solid var(--border);border-radius:8px;padding:9px;margin-bottom:6px;display:flex;align-items:flex-start;gap:8px}
+.inbox-info{flex:1;font-size:11px}
+.inbox-title{font-weight:600;font-size:12px}
+.inbox-meta{color:var(--text-muted);margin-top:2px;line-height:1.4}
+.inbox-acts{display:flex;gap:4px;flex-shrink:0;align-items:center;flex-wrap:wrap;justify-content:flex-end}
+</style>
+</head>
+<body>
+
+<!-- ===== MAIN APP ===== -->
+<div id="app" style="display:flex;flex-direction:column;height:100%">
+  <header>
+    <span class="h-title">🇳🇬 Nigerian Brands Logos</span>
+    <button class="gear-btn" id="gearBtn" title="Settings">⚙️</button>
+  </header>
+
+  <nav class="main-tabs">
+    <button class="main-tab active" data-tab="browse" id="tabBrowseBtn">🔍 Browse</button>
+    <button class="main-tab" data-tab="suggest" id="tabSuggestBtn">
+      ➕ Suggest / Request <span class="notif-dot hidden" id="suggestDot"></span>
+    </button>
+  </nav>
+
+  <!-- BROWSE TAB -->
+  <div class="tab-content" id="tab-browse">
+    <div class="search-wrap">
+      <i class="search-icon">🔍</i>
+      <input class="search-input" id="searchInput" type="text" placeholder="Search logos… (e.g. MTN, UBA, Zenith)" autocomplete="off" />
+    </div>
+    <div class="cat-wrap" id="catWrap"></div>
+    <div class="grid-wrap" id="gridWrap">
+      <div id="skeletonGrid" class="logo-grid"></div>
+      <div id="logoGrid" class="logo-grid hidden"></div>
+      <div id="emptyState" class="state-box hidden">
+        <div class="state-icon">🇳🇬</div>
+        <div class="state-title">No logos found</div>
+        <div class="state-msg">Try a different search or category. You can also suggest a logo using the Suggest tab.</div>
+      </div>
+      <div id="errorState" class="state-box hidden">
+        <div class="state-icon">📡</div>
+        <div class="state-title">Couldn't load logos</div>
+        <div class="state-msg">Check your internet connection and try again.</div>
+        <button class="btn btn-primary" style="width:auto;padding:8px 20px" onclick="loadManifest(true)">Retry</button>
+      </div>
+    </div>
+    <footer>
+      <span id="footerCount">Loading…</span>
+      <a id="communityLink" href="#" onclick="openCommunityFile(event)">View source file ↗</a>
+    </footer>
+  </div>
+
+  <!-- SUGGEST / REQUEST TAB -->
+  <div class="tab-content hidden" id="tab-suggest">
+    <div class="suggest-body">
+      <div class="seg" id="suggestSeg">
+        <button class="seg-btn active" data-sub="submit">Submit a Logo</button>
+        <button class="seg-btn" data-sub="request">Request a Logo</button>
+      </div>
+
+      <!-- Submit form -->
+      <div id="sub-submit">
+        <div id="submitSuccess" class="state-box hidden">
+          <div class="state-icon">🎉</div>
+          <div class="state-title">Submitted!</div>
+          <div class="state-msg">Thanks for contributing! The owner usually reviews within a few days.</div>
+          <button class="btn btn-secondary" style="width:auto" onclick="resetSubmitForm()">Submit Another</button>
+        </div>
+        <form id="submitForm" onsubmit="handleSubmitLogo(event)" style="display:flex;flex-direction:column;gap:10px">
+          <div class="form-group">
+            <label>Brand Name <span class="req">*</span></label>
+            <input type="text" id="sub_brand" required placeholder="e.g. Cowry City" />
+          </div>
+          <div class="form-group">
+            <label>Category <span class="req">*</span></label>
+            <select id="sub_category" required>
+              <option value="">Select category…</option>
+              <option>Banking</option><option>Telecom</option><option>FMCG</option>
+              <option>Media</option><option>Energy</option><option>Tech</option>
+              <option>Insurance</option><option>Transport</option><option>Retail</option><option>Other</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Logo File <span class="req">*</span> <span class="hint">(SVG or PNG, max 500KB)</span></label>
+            <input type="file" id="sub_file" accept=".svg,.png" required onchange="handleSubmitFileChange(this)" />
+            <div id="sub_file_badge"></div>
+            <div class="live-preview" id="sub_preview"><span class="live-preview-empty">Preview will appear here</span></div>
+          </div>
+          <div class="form-group">
+            <label>Tags <span class="hint">(optional, comma-separated)</span></label>
+            <input type="text" id="sub_tags" placeholder="e.g. fintech, payments, purple" />
+          </div>
+          <div class="form-group">
+            <label>Your name / handle <span class="hint">(optional)</span></label>
+            <input type="text" id="sub_contributor" placeholder="@username or leave blank" />
+          </div>
+          <div class="form-group">
+            <label>Notes <span class="hint">(optional, max 200 chars)</span></label>
+            <textarea id="sub_notes" maxlength="200" rows="2" placeholder="e.g. This is the 2024 rebrand version" oninput="updateCharCount(this,'sub_notes_count')"></textarea>
+            <div class="char-count"><span id="sub_notes_count">0</span>/200</div>
+          </div>
+          <div id="submitErr" class="auth-err"></div>
+          <button type="submit" class="btn btn-primary" id="submitBtn">Submit Logo</button>
+        </form>
+      </div>
+
+      <!-- Request form -->
+      <div id="sub-request" class="hidden" style="display:flex;flex-direction:column;gap:10px">
+        <div class="form-group">
+          <label>Brand Name <span class="req">*</span></label>
+          <input type="text" id="req_brand" placeholder="e.g. Opay" oninput="debouncedRequestSearch()" />
+        </div>
+
+        <!-- Existing request results -->
+        <div id="req_existing_wrap" class="hidden">
+          <div class="info-note">👋 This brand has already been requested. You can upvote it instead!</div>
+          <div id="req_existing_list" style="margin-top:8px"></div>
+        </div>
+
+        <div id="req_form_wrap" style="display:flex;flex-direction:column;gap:10px">
+          <div class="form-group">
+            <label>Category <span class="req">*</span></label>
+            <select id="req_category" required>
+              <option value="">Select category…</option>
+              <option>Banking</option><option>Telecom</option><option>FMCG</option>
+              <option>Media</option><option>Energy</option><option>Tech</option>
+              <option>Insurance</option><option>Transport</option><option>Retail</option><option>Other</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Why do you need it? <span class="hint">(optional)</span></label>
+            <select id="req_use">
+              <option value="">Select…</option>
+              <option>Client project</option><option>Personal project</option>
+              <option>Design system</option><option>Presentation</option><option>Other</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Your name / handle <span class="hint">(optional)</span></label>
+            <input type="text" id="req_contributor" placeholder="@username or leave blank" />
+          </div>
+          <div id="requestErr" class="auth-err"></div>
+          <button class="btn btn-primary" onclick="handleRequestLogo()">Submit Request</button>
+        </div>
+
+        <div id="requestSuccess" class="state-box hidden">
+          <div class="state-icon">📌</div>
+          <div class="state-title">Request Logged!</div>
+          <div class="state-msg">We'll add this logo soon. Check back later!</div>
+          <button class="btn btn-secondary" style="width:auto" onclick="resetRequestForm()">New Request</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== ADMIN OVERLAY ===== -->
+<div class="overlay hidden" id="adminOverlay">
+  <div class="ov-header">
+    <span class="ov-title" id="adminOverlayTitle">🔒 Admin Mode</span>
+    <button class="close-btn" onclick="closeAdmin()">✕</button>
+  </div>
+
+  <!-- Password screen -->
+  <div class="ov-body" id="adminAuthScreen">
+    <div class="auth-screen">
+      <span style="font-size:36px">🔐</span>
+      <h2 id="authScreenTitle">Admin Login</h2>
+      <p id="authScreenDesc">Enter the admin password to access the logo management panel.</p>
+      <div class="form-group" style="width:100%">
+        <input type="password" id="adminPwInput" placeholder="Admin password" onkeydown="if(event.key==='Enter')verifyAdminPassword()" />
+      </div>
+      <div class="auth-err" id="authErr"></div>
+      <button class="btn btn-primary" onclick="verifyAdminPassword()">Unlock</button>
+      <div id="firstRunNote" class="info-note hidden" style="width:100%;margin-top:4px">
+        🆕 First time setup: enter a new password to create your admin account.
+      </div>
+    </div>
+  </div>
+
+  <!-- GitHub config screen -->
+  <div class="ov-body hidden" id="adminGithubScreen">
+    <div style="display:flex;flex-direction:column;gap:12px">
+      <div class="info-note">⚙️ Connect your GitHub repo so the admin panel can save logos directly to your repository.</div>
+      <div class="form-group">
+        <label>GitHub Personal Access Token <span class="req">*</span></label>
+        <input type="password" id="gh_token" placeholder="ghp_xxxxxxxxxxxx" />
+        <div class="hint">Needs <code>repo</code> scope. <a href="#" onclick="openGithubTokenHelp(event)" style="color:var(--accent)">How to create one ↗</a></div>
+      </div>
+      <div class="form-group">
+        <label>GitHub Username / Org <span class="req">*</span></label>
+        <input type="text" id="gh_owner" placeholder="your-github-username" />
+      </div>
+      <div class="form-group">
+        <label>Repository Name <span class="req">*</span></label>
+        <input type="text" id="gh_repo" placeholder="nigerian-brands-logos-plugin" />
+      </div>
+      <div id="ghConfigErr" class="auth-err"></div>
+      <button class="btn btn-primary" onclick="saveGithubConfig()">Save & Continue</button>
+      <button class="btn btn-secondary" onclick="skipGithubConfig()">Skip for now</button>
+    </div>
+  </div>
+
+  <!-- Admin panel -->
+  <div class="hidden" id="adminPanel" style="flex:1;overflow:hidden;display:flex;flex-direction:column">
+    <div class="admin-tabs" style="padding:0 12px">
+      <button class="admin-tab active" data-atab="manage">Manage Logos</button>
+      <button class="admin-tab" data-atab="add">Add Logo</button>
+      <button class="admin-tab" data-atab="inbox">📥 Inbox</button>
+    </div>
+
+    <!-- Manage Logos -->
+    <div class="admin-tab-content" id="atab-manage" style="padding:0 12px 12px">
+      <div id="manageLoading" class="spin-wrap"><div class="spinner"></div></div>
+      <div id="manageEmpty" class="state-box hidden">
+        <div class="state-icon">📭</div>
+        <div class="state-title">No logos yet</div>
+        <div class="state-msg">Add your first logo in the "Add Logo" tab.</div>
+      </div>
+      <div style="overflow-x:auto">
+        <table class="logo-table" id="manageTable">
+          <thead>
+            <tr>
+              <th></th><th>Name</th><th>Cat.</th><th>Quality</th><th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="manageTableBody"></tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Add Logo -->
+    <div class="admin-tab-content hidden" id="atab-add" style="padding:0 12px 12px">
+      <form id="addLogoForm" onsubmit="handleAddLogo(event)" style="display:flex;flex-direction:column;gap:10px">
+        <div class="form-group">
+          <label>Brand Name <span class="req">*</span></label>
+          <input type="text" id="add_name" required placeholder="e.g. Dangote Group" oninput="autoSlug()" />
+        </div>
+        <div class="form-group">
+          <label>Slug / ID <span class="req">*</span></label>
+          <input type="text" id="add_slug" required placeholder="dangote-group" />
+          <div class="hint">Auto-generated from name. Only lowercase letters, numbers, and hyphens.</div>
+        </div>
+        <div class="form-group">
+          <label>Category <span class="req">*</span></label>
+          <select id="add_category" required>
+            <option value="">Select category…</option>
+            <option>Banking</option><option>Telecom</option><option>FMCG</option>
+            <option>Media</option><option>Energy</option><option>Tech</option>
+            <option>Insurance</option><option>Transport</option><option>Retail</option><option>Other</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Tags <span class="hint">(comma-separated)</span></label>
+          <input type="text" id="add_tags" placeholder="e.g. cement, conglomerate, lagos" />
+        </div>
+        <div class="form-group">
+          <label>SVG Code</label>
+          <textarea id="add_svg" rows="4" placeholder="Paste raw SVG here…" oninput="updateAddPreview()"></textarea>
+        </div>
+        <div class="form-group">
+          <label>OR PNG Upload <span class="hint">(only if SVG not available)</span></label>
+          <input type="file" id="add_png" accept=".png,.jpg,.jpeg,.webp" onchange="handleAddPng(this)" />
+        </div>
+        <div class="form-group">
+          <label>Preview</label>
+          <div class="live-preview" id="add_preview"><span class="live-preview-empty">No preview yet</span></div>
+        </div>
+        <div class="form-group">
+          <label>Figma Node ID <span class="hint">(optional)</span></label>
+          <input type="text" id="add_nodeId" placeholder="0:0" />
+        </div>
+        <div class="form-group">
+          <label>Figma Component Key <span class="hint">(optional)</span></label>
+          <input type="text" id="add_componentKey" placeholder="abc123" />
+        </div>
+        <div id="addLogoErr" class="auth-err"></div>
+        <button type="submit" class="btn btn-primary" id="addLogoBtn">Add Logo to Library</button>
+      </form>
+    </div>
+
+    <!-- Inbox -->
+    <div class="admin-tab-content hidden" id="atab-inbox" style="padding:0 12px 12px">
+      <div id="inboxLoading" class="spin-wrap"><div class="spinner"></div></div>
+      <div id="inboxContent" class="hidden">
+        <div class="inbox-section">
+          <h3>Logo Submissions</h3>
+          <div id="submissionsEmpty" class="hidden" style="font-size:12px;color:var(--text-muted);padding:8px 0">No pending submissions.</div>
+          <div id="submissionsList"></div>
+        </div>
+        <div class="inbox-section">
+          <h3>Logo Requests (by votes)</h3>
+          <div id="requestsEmpty" class="hidden" style="font-size:12px;color:var(--text-muted);padding:8px 0">No pending requests.</div>
+          <div id="requestsList"></div>
+        </div>
+      </div>
+      <div id="inboxErr" class="state-box hidden">
+        <div class="state-icon">📡</div>
+        <div class="state-title">Couldn't load inbox</div>
+        <div class="state-msg">GitHub not configured, or check your connection.</div>
+        <button class="btn btn-secondary" style="width:auto" onclick="loadInbox()">Retry</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Replace Modal -->
+<div class="modal-bg hidden" id="replaceModal">
+  <div class="modal-box">
+    <div class="modal-hdr">
+      <span class="modal-title">Replace Logo</span>
+      <button class="close-btn" onclick="closeModal('replaceModal')">✕</button>
+    </div>
+    <div id="replaceFormWrap" style="display:flex;flex-direction:column;gap:10px">
+      <div class="form-group">
+        <label>Brand Name</label>
+        <input type="text" id="rep_name" readonly style="opacity:.7" />
+      </div>
+      <div class="form-group">
+        <label>Category</label>
+        <select id="rep_category">
+          <option>Banking</option><option>Telecom</option><option>FMCG</option>
+          <option>Media</option><option>Energy</option><option>Tech</option>
+          <option>Insurance</option><option>Transport</option><option>Retail</option><option>Other</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Tags <span class="hint">(comma-separated)</span></label>
+        <input type="text" id="rep_tags" />
+      </div>
+      <div class="form-group">
+        <label>New SVG Code</label>
+        <textarea id="rep_svg" rows="4" placeholder="Paste new SVG…" oninput="updateReplacePreview()"></textarea>
+      </div>
+      <div class="form-group">
+        <label>OR New PNG</label>
+        <input type="file" id="rep_png" accept=".png,.jpg,.jpeg,.webp" onchange="handleReplacePng(this)" />
+      </div>
+      <div class="live-preview" id="rep_preview"><span class="live-preview-empty">No preview</span></div>
+      <div id="replaceErr" class="auth-err"></div>
+      <div style="display:flex;gap:8px">
+        <button class="btn btn-secondary" style="flex:1" onclick="closeModal('replaceModal')">Cancel</button>
+        <button class="btn btn-primary" style="flex:2" onclick="handleReplaceLogoSubmit()">Save Changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Preview Modal (admin inbox) -->
+<div class="modal-bg hidden" id="previewModal">
+  <div class="modal-box">
+    <div class="modal-hdr">
+      <span class="modal-title" id="previewModalTitle">Logo Preview</span>
+      <button class="close-btn" onclick="closeModal('previewModal')">✕</button>
+    </div>
+    <div style="display:flex;align-items:center;justify-content:center;min-height:160px;background:#f5f5f5;border-radius:8px">
+      <img id="previewModalImg" src="" alt="" style="max-width:100%;max-height:200px;object-fit:contain" />
+    </div>
+  </div>
+</div>
+
+<div id="toast"></div>
+
+<script>
+// ============================================================
+// CONFIG — Update MANIFEST_URL after pushing to GitHub
+// ============================================================
+const CONFIG = {
+  MANIFEST_URL: 'https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/logos.json',
+  GITHUB_REPO_OWNER: 'maryam-ay',
+  GITHUB_REPO_NAME: 'nigerian-brands-logos-plugin',
+  SUGGESTIONS_TOKEN: '', // Fine-grained PAT with issues:write on this repo only
+  MANIFEST_CACHE_TTL: 60 * 60 * 1000,
+  FIGMA_COMMUNITY_FILE_URL: 'https://www.figma.com/community/file/1423382612609415986',
+};
+
+const CATEGORIES = ['All','Banking','Telecom','FMCG','Media','Energy','Tech','Insurance','Transport','Retail','Other'];
+
+// ============================================================
+// STATE
+// ============================================================
+const S = {
+  logos: [], filtered: [], manifest: null,
+  loading: false, adminUnlocked: false,
+  gearClicks: 0, gearTimer: null, gearHold: null,
+  tab: 'browse', adminTab: 'manage', suggestSub: 'submit',
+  category: 'All', query: '',
+  pending: {}, msgId: 0,
+  editingLogo: null, replacePngData: null, addPngData: null,
+  addLogoFromInbox: null, inboxIssues: [],
+};
+
+// ============================================================
+// UTILITIES
+// ============================================================
+function debounce(fn, ms) {
+  let t; return (...a) => { clearTimeout(t); t = setTimeout(() => fn(...a), ms); };
+}
+
+async function sha256(msg) {
+  const buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(msg));
+  return Array.from(new Uint8Array(buf)).map(b => b.toString(16).padStart(2,'0')).join('');
+}
+
+function slugify(t) {
+  return t.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/(^-|-$)/g,'');
+}
+
+function formatDate(iso) {
+  if (!iso) return '?';
+  return new Date(iso).toLocaleDateString('en-GB',{day:'numeric',month:'short',year:'numeric'});
+}
+
+async function fileToBase64(file) {
+  return new Promise((res, rej) => {
+    const r = new FileReader();
+    r.onload = () => res(r.result.split(',')[1]);
+    r.onerror = rej;
+    r.readAsDataURL(file);
+  });
+}
+
+async function fileToText(file) {
+  return new Promise((res, rej) => {
+    const r = new FileReader();
+    r.onload = () => res(r.result);
+    r.onerror = rej;
+    r.readAsText(file);
+  });
+}
+
+function sanitizeSvg(svgStr) {
+  try {
+    const parser = new DOMParser();
+    const doc = parser.parseFromString(svgStr, 'image/svg+xml');
+    const svg = doc.documentElement;
+    if (svg.nodeName === 'parsererror') return svgStr;
+    svg.querySelectorAll('script,foreignObject').forEach(el => el.remove());
+    svg.querySelectorAll('*').forEach(el => {
+      const rem = [];
+      for (const a of el.attributes) {
+        if (a.name.startsWith('on')) rem.push(a.name);
+        if (['href','src','xlink:href'].includes(a.name) && /^https?:\/\//.test(a.value)) rem.push(a.name);
+      }
+      rem.forEach(n => el.removeAttribute(n));
+    });
+    if (!svg.getAttribute('xmlns')) svg.setAttribute('xmlns','http://www.w3.org/2000/svg');
+    return new XMLSerializer().serializeToString(svg);
+  } catch { return svgStr; }
+}
+
+function updateCharCount(el, countId) {
+  document.getElementById(countId).textContent = el.value.length;
+}
+
+function showToast(msg, duration = 3000) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), duration);
+}
+
+function openCommunityFile(e) {
+  e.preventDefault();
+  postMsg({ type: 'notify', message: 'Opening Figma community file…' });
+}
+
+// ============================================================
+// FIGMA COMMUNICATION
+// ============================================================
+function postMsg(msg) {
+  parent.postMessage({ pluginMessage: msg }, '*');
+}
+
+function postAndWait(msg) {
+  return new Promise(res => {
+    const id = ++S.msgId;
+    msg._id = id;
+    S.pending[id] = res;
+    postMsg(msg);
+  });
+}
+
+window.onmessage = (e) => {
+  const msg = e.data && e.data.pluginMessage;
+  if (!msg) return;
+  if (msg._id && S.pending[msg._id]) {
+    S.pending[msg._id](msg);
+    delete S.pending[msg._id];
+    return;
+  }
+  if (msg.type === 'insert-success') showToast('✅ ' + msg.name + ' inserted!');
+  if (msg.type === 'cache-result' && msg._id && S.pending[msg._id]) {
+    S.pending[msg._id](msg.value);
+    delete S.pending[msg._id];
+  }
+};
+
+async function cacheGet(key) {
+  const r = await postAndWait({ type: 'cache-get', key });
+  return r.value;
+}
+function cacheSet(key, value) { postMsg({ type: 'cache-set', key, value }); }
+
+// ============================================================
+// MANIFEST LOADING & FILTERING
+// ============================================================
+async function loadManifest(force = false) {
+  document.getElementById('errorState').classList.add('hidden');
+  document.getElementById('logoGrid').classList.add('hidden');
+  document.getElementById('emptyState').classList.add('hidden');
+  showSkeletons();
+  S.loading = true;
+
+  try {
+    if (!force) {
+      const cached = await cacheGet('manifest-data');
+      const cachedAt = await cacheGet('manifest-at');
+      if (cached && cachedAt && (Date.now() - cachedAt) < CONFIG.MANIFEST_CACHE_TTL) {
+        S.manifest = JSON.parse(cached);
+        S.logos = S.manifest.logos;
+        onManifestLoaded();
+        return;
+      }
+    }
+    const res = await fetch(CONFIG.MANIFEST_URL);
+    if (!res.ok) throw new Error('HTTP ' + res.status);
+    const data = await res.json();
+    S.manifest = data;
+    S.logos = data.logos || [];
+    cacheSet('manifest-data', JSON.stringify(data));
+    cacheSet('manifest-at', Date.now());
+    onManifestLoaded();
+  } catch (err) {
+    S.loading = false;
+    hideSkeletons();
+    document.getElementById('errorState').classList.remove('hidden');
+    console.error('Manifest load failed:', err);
+  }
+}
+
+function onManifestLoaded() {
+  S.loading = false;
+  hideSkeletons();
+  buildCategoryChips();
+  applyFilters();
+  updateFooter();
+}
+
+function applyFilters() {
+  const q = S.query.toLowerCase().trim();
+  S.filtered = S.logos.filter(logo => {
+    const matchCat = S.category === 'All' || logo.category === S.category;
+    if (!matchCat) return false;
+    if (!q) return true;
+    return logo.name.toLowerCase().includes(q) ||
+      logo.brand.toLowerCase().includes(q) ||
+      (logo.tags || []).some(t => t.toLowerCase().includes(q));
+  });
+  renderGrid();
+}
+
+function buildCategoryChips() {
+  const wrap = document.getElementById('catWrap');
+  wrap.innerHTML = CATEGORIES.map(c =>
+    `<button class="cat-chip${c === S.category ? ' active' : ''}" onclick="selectCategory('${c}')">${c}</button>`
+  ).join('');
+}
+
+function selectCategory(cat) {
+  S.category = cat;
+  document.querySelectorAll('.cat-chip').forEach(el => {
+    el.classList.toggle('active', el.textContent === cat);
+  });
+  applyFilters();
+}
+
+function updateFooter() {
+  if (!S.manifest) return;
+  document.getElementById('footerCount').textContent =
+    `${S.manifest.totalLogos} logos · Updated ${formatDate(S.manifest.lastUpdated)}`;
+}
+
+// ============================================================
+// RENDERING
+// ============================================================
+function showSkeletons() {
+  const g = document.getElementById('skeletonGrid');
+  g.innerHTML = Array(9).fill(0).map(() =>
+    `<div class="sk-card"><div class="sk-img"></div><div class="sk-line"></div><div class="sk-line2"></div></div>`
+  ).join('');
+  g.classList.remove('hidden');
+}
+function hideSkeletons() {
+  document.getElementById('skeletonGrid').classList.add('hidden');
+  document.getElementById('skeletonGrid').innerHTML = '';
+}
+
+function renderGrid() {
+  const grid = document.getElementById('logoGrid');
+  const empty = document.getElementById('emptyState');
+  if (S.filtered.length === 0) {
+    grid.classList.add('hidden');
+    empty.classList.remove('hidden');
+    return;
+  }
+  empty.classList.add('hidden');
+  grid.classList.remove('hidden');
+  grid.innerHTML = S.filtered.map(logo => renderCard(logo)).join('');
+  // IntersectionObserver for lazy loading
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const img = entry.target;
+        if (img.dataset.src) {
+          img.src = img.dataset.src;
+          img.removeAttribute('data-src');
+          observer.unobserve(img);
+        }
+      }
+    });
+  }, { rootMargin: '100px' });
+  grid.querySelectorAll('img[data-src]').forEach(img => observer.observe(img));
+}
+
+function renderCard(logo) {
+  const imgSrc = logo.svgUrl || logo.pngUrl || '';
+  const badge = logo.quality === 'svg' ? '<span class="q-badge svg">SVG</span>'
+    : logo.quality === 'png-hq' ? '<span class="q-badge png-hq">PNG HQ</span>'
+    : '<span class="q-badge png-lq">PNG LQ</span>';
+  const contrib = logo.contributedBy && logo.contributedBy.source === 'community'
+    ? `<div class="contrib-tip">by ${logo.contributedBy.handle}</div>` : '';
+  return `<div class="logo-card" onclick="insertLogo(${JSON.stringify(logo).replace(/"/g,'&quot;')})">
+    <div class="card-img-wrap">
+      <img data-src="${imgSrc}" src="" alt="${logo.name}" loading="lazy" onerror="this.style.opacity='.3'" />
+    </div>
+    <div class="card-info">
+      <div class="card-name" title="${logo.name}">${logo.name}</div>
+      ${badge}
+    </div>
+    <div class="ins-overlay"><button class="ins-btn" onclick="event.stopPropagation();insertLogoByData(this)" data-logo='${JSON.stringify(logo).replace(/'/g,"&#39;")}'>Insert</button></div>
+    ${contrib}
+  </div>`;
+}
+
+// ============================================================
+// LOGO INSERT
+// ============================================================
+async function insertLogo(logo) {
+  try {
+    if (logo.svgUrl) {
+      showToast('⏳ Loading…');
+      const res = await fetch(logo.svgUrl);
+      if (!res.ok) throw new Error('Fetch failed');
+      const svgText = await res.text();
+      const clean = sanitizeSvg(svgText);
+      postMsg({ type: 'insert-svg', svgString: clean, logoName: logo.name });
+    } else if (logo.pngUrl) {
+      showToast('⏳ Loading…');
+      const res = await fetch(logo.pngUrl);
+      if (!res.ok) throw new Error('Fetch failed');
+      const buf = await res.arrayBuffer();
+      const bytes = Array.from(new Uint8Array(buf));
+      const img = new Image();
+      const blob = new Blob([new Uint8Array(buf)]);
+      const url = URL.createObjectURL(blob);
+      img.src = url;
+      await new Promise(r => { img.onload = r; img.onerror = r; });
+      postMsg({ type: 'insert-png', pngBytes: bytes, logoName: logo.name, width: img.naturalWidth || 200, height: img.naturalHeight || 200 });
+      URL.revokeObjectURL(url);
+    }
+  } catch {
+    postMsg({ type: 'notify', message: "Couldn't insert logo. Check your connection.", options: { error: true } });
+  }
+}
+
+function insertLogoByData(btn) {
+  try {
+    const logo = JSON.parse(btn.dataset.logo);
+    insertLogo(logo);
+  } catch { showToast('Error reading logo data'); }
+}
+
+// ============================================================
+// SEARCH & FILTERS
+// ============================================================
+const debouncedSearch = debounce(() => { S.query = document.getElementById('searchInput').value; applyFilters(); }, 200);
+document.getElementById('searchInput').addEventListener('input', debouncedSearch);
+
+// ============================================================
+// TABS
+// ============================================================
+function switchTab(tab) {
+  S.tab = tab;
+  document.querySelectorAll('.main-tab').forEach(b => b.classList.toggle('active', b.dataset.tab === tab));
+  document.getElementById('tab-browse').classList.toggle('hidden', tab !== 'browse');
+  document.getElementById('tab-suggest').classList.toggle('hidden', tab !== 'suggest');
+}
+document.querySelectorAll('.main-tab').forEach(b => b.addEventListener('click', () => switchTab(b.dataset.tab)));
+
+function switchSuggestSub(sub) {
+  S.suggestSub = sub;
+  document.querySelectorAll('.seg-btn').forEach(b => b.classList.toggle('active', b.dataset.sub === sub));
+  document.getElementById('sub-submit').classList.toggle('hidden', sub !== 'submit');
+  document.getElementById('sub-request').classList.toggle('hidden', sub !== 'request');
+}
+document.querySelectorAll('.seg-btn').forEach(b => b.addEventListener('click', () => switchSuggestSub(b.dataset.sub)));
+
+// ============================================================
+// GEAR / ADMIN UNLOCK
+// ============================================================
+const gearBtn = document.getElementById('gearBtn');
+gearBtn.addEventListener('click', () => {
+  S.gearClicks++;
+  clearTimeout(S.gearTimer);
+  S.gearTimer = setTimeout(() => { S.gearClicks = 0; }, 1500);
+  if (S.gearClicks >= 5) { S.gearClicks = 0; openAdminOverlay(); }
+});
+gearBtn.addEventListener('mousedown', () => {
+  S.gearHold = setTimeout(() => openAdminOverlay(), 3000);
+});
+gearBtn.addEventListener('mouseup', () => clearTimeout(S.gearHold));
+gearBtn.addEventListener('mouseleave', () => clearTimeout(S.gearHold));
+
+// ============================================================
+// ADMIN — OPEN / CLOSE
+// ============================================================
+async function openAdminOverlay() {
+  document.getElementById('adminOverlay').classList.remove('hidden');
+  document.getElementById('adminAuthScreen').classList.remove('hidden');
+  document.getElementById('adminGithubScreen').classList.add('hidden');
+  document.getElementById('adminPanel').classList.add('hidden');
+  document.getElementById('adminOverlay').style.display = 'flex';
+  // Check if password is already set
+  const r = await postAndWait({ type: 'admin-get-config' });
+  if (!r.hasPassword) {
+    document.getElementById('authScreenTitle').textContent = 'Create Admin Password';
+    document.getElementById('authScreenDesc').textContent = 'Choose a password to protect the admin panel.';
+    document.getElementById('firstRunNote').classList.remove('hidden');
+  } else {
+    document.getElementById('authScreenTitle').textContent = 'Admin Login';
+    document.getElementById('authScreenDesc').textContent = 'Enter the admin password to manage logos.';
+    document.getElementById('firstRunNote').classList.add('hidden');
+  }
+}
+
+function closeAdmin() {
+  document.getElementById('adminOverlay').classList.add('hidden');
+  S.adminUnlocked = false;
+  document.getElementById('adminPwInput').value = '';
+  document.getElementById('authErr').textContent = '';
+}
+
+async function verifyAdminPassword() {
+  const pw = document.getElementById('adminPwInput').value;
+  if (!pw) return;
+  const inputHash = await sha256(pw);
+  const r = await postAndWait({ type: 'admin-get-config' });
+  if (!r.hasPassword) {
+    // First-time setup: save this as the password
+    await postAndWait({ type: 'admin-set-pw-hash', hash: inputHash });
+    proceedToAdmin(r);
+  } else {
+    const storedHash = await (async () => {
+      const h = await postAndWait({ type: 'admin-get-pw-hash' });
+      return h.hash;
+    })();
+    if (inputHash === storedHash) {
+      proceedToAdmin(r);
+    } else {
+      const errEl = document.getElementById('authErr');
+      errEl.textContent = 'Incorrect password.';
+      errEl.classList.remove('shake');
+      void errEl.offsetWidth;
+      errEl.classList.add('shake');
+    }
+  }
+}
+
+async function proceedToAdmin(configResult) {
+  S.adminUnlocked = true;
+  document.getElementById('authErr').textContent = '';
+  document.getElementById('adminOverlayTitle').textContent = '⚙️ Admin Mode';
+  if (!configResult.hasConfig) {
+    document.getElementById('adminAuthScreen').classList.add('hidden');
+    document.getElementById('adminGithubScreen').classList.remove('hidden');
+  } else {
+    showAdminPanel();
+  }
+}
+
+async function saveGithubConfig() {
+  const token = document.getElementById('gh_token').value.trim();
+  const owner = document.getElementById('gh_owner').value.trim();
+  const repo = document.getElementById('gh_repo').value.trim();
+  if (!token || !owner || !repo) {
+    document.getElementById('ghConfigErr').textContent = 'All fields are required.'; return;
+  }
+  await postAndWait({ type: 'admin-save-config', token, owner, repo });
+  showToast('✅ GitHub settings saved!');
+  showAdminPanel();
+}
+
+function skipGithubConfig() { showAdminPanel(); }
+
+function showAdminPanel() {
+  document.getElementById('adminAuthScreen').classList.add('hidden');
+  document.getElementById('adminGithubScreen').classList.add('hidden');
+  document.getElementById('adminPanel').classList.remove('hidden');
+  document.getElementById('adminPanel').style.display = 'flex';
+  switchAdminTab('manage');
+}
+
+// ============================================================
+// ADMIN TABS
+// ============================================================
+function switchAdminTab(tab) {
+  S.adminTab = tab;
+  document.querySelectorAll('.admin-tab').forEach(b => b.classList.toggle('active', b.dataset.atab === tab));
+  ['manage','add','inbox'].forEach(t => {
+    document.getElementById('atab-' + t).classList.toggle('hidden', t !== tab);
+  });
+  if (tab === 'manage') loadManageTable();
+  if (tab === 'inbox') loadInbox();
+}
+document.querySelectorAll('.admin-tab').forEach(b => b.addEventListener('click', () => switchAdminTab(b.dataset.atab)));
+
+// ============================================================
+// MANAGE LOGOS TAB
+// ============================================================
+function loadManageTable() {
+  document.getElementById('manageLoading').style.display = 'flex';
+  document.getElementById('manageTable').classList.add('hidden');
+  document.getElementById('manageEmpty').classList.add('hidden');
+  // Use already-loaded logos
+  setTimeout(() => {
+    document.getElementById('manageLoading').style.display = 'none';
+    if (S.logos.length === 0) {
+      document.getElementById('manageEmpty').classList.remove('hidden'); return;
+    }
+    document.getElementById('manageTable').classList.remove('hidden');
+    renderManageTable();
+  }, 100);
+}
+
+function renderManageTable() {
+  const tbody = document.getElementById('manageTableBody');
+  tbody.innerHTML = S.logos.map(logo => {
+    const imgSrc = logo.svgUrl || logo.pngUrl || '';
+    const badge = logo.quality === 'svg' ? '<span class="q-badge svg">SVG</span>'
+      : logo.quality === 'png-hq' ? '<span class="q-badge png-hq">PNG HQ</span>'
+      : '<span class="q-badge png-lq">PNG LQ</span>';
+    return `<tr>
+      <td><img class="t-thumb" src="${imgSrc}" alt="${logo.name}" onerror="this.style.opacity='.3'" /></td>
+      <td>${logo.name}</td>
+      <td>${logo.category}</td>
+      <td>${badge}</td>
+      <td><div class="act-btns">
+        <button class="btn btn-secondary btn-sm" onclick='openReplaceModal(${JSON.stringify(logo).replace(/'/g,"&#39;")})'>Replace</button>
+        <button class="btn btn-danger btn-sm" onclick='confirmDelete(${JSON.stringify(logo).replace(/'/g,"&#39;")})'>Delete</button>
+      </div></td>
+    </tr>`;
+  }).join('');
+}
+
+function openReplaceModal(logo) {
+  S.editingLogo = logo;
+  S.replacePngData = null;
+  document.getElementById('rep_name').value = logo.name;
+  document.getElementById('rep_category').value = logo.category;
+  document.getElementById('rep_tags').value = (logo.tags || []).join(', ');
+  document.getElementById('rep_svg').value = '';
+  document.getElementById('rep_png').value = '';
+  document.getElementById('rep_preview').innerHTML = '<span class="live-preview-empty">No new asset selected</span>';
+  document.getElementById('replaceErr').textContent = '';
+  document.getElementById('replaceModal').classList.remove('hidden');
+}
+
+function updateReplacePreview() {
+  const svg = document.getElementById('rep_svg').value.trim();
+  const preview = document.getElementById('rep_preview');
+  if (!svg) { preview.innerHTML = '<span class="live-preview-empty">No preview</span>'; return; }
+  const clean = sanitizeSvg(svg);
+  const encoded = 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(clean);
+  preview.innerHTML = `<img src="${encoded}" />`;
+}
+
+async function handleReplacePng(input) {
+  const file = input.files[0];
+  if (!file) return;
+  const b64 = await fileToBase64(file);
+  S.replacePngData = b64;
+  const preview = document.getElementById('rep_preview');
+  preview.innerHTML = `<img src="data:image/png;base64,${b64}" />`;
+}
+
+async function handleReplaceLogoSubmit() {
+  if (!S.editingLogo) return;
+  const svgText = document.getElementById('rep_svg').value.trim();
+  const category = document.getElementById('rep_category').value;
+  const tags = document.getElementById('rep_tags').value.split(',').map(t => t.trim()).filter(Boolean);
+
+  let assetContent = null;
+  let quality = S.editingLogo.quality;
+  if (svgText) {
+    assetContent = sanitizeSvg(svgText);
+    quality = 'svg';
+  } else if (S.replacePngData) {
+    assetContent = S.replacePngData;
+    quality = 'png-hq';
+  }
+
+  const updated = { ...S.editingLogo, category, tags, quality, updatedAt: new Date().toISOString() };
+  document.getElementById('replaceErr').textContent = '';
+  showToast('⏳ Saving…');
+
+  const r = await postAndWait({ type: 'admin-update-logo', logoData: updated, assetContent });
+  if (r.success) {
+    showToast('✅ Logo updated!');
+    closeModal('replaceModal');
+    await loadManifest(true);
+    loadManageTable();
+  } else {
+    document.getElementById('replaceErr').textContent = r.message || 'Update failed.';
+  }
+}
+
+async function confirmDelete(logo) {
+  if (!confirm(`Delete "${logo.name}"? This cannot be undone.`)) return;
+  showToast('⏳ Deleting…');
+  const r = await postAndWait({ type: 'admin-delete-logo', logoData: logo });
+  if (r.success) {
+    showToast('🗑️ Logo deleted.');
+    await loadManifest(true);
+    loadManageTable();
+  } else {
+    showToast('❌ ' + (r.message || 'Delete failed.'));
+  }
+}
+
+// ============================================================
+// ADD LOGO TAB
+// ============================================================
+function autoSlug() {
+  const name = document.getElementById('add_name').value;
+  document.getElementById('add_slug').value = slugify(name);
+}
+
+function updateAddPreview() {
+  const svg = document.getElementById('add_svg').value.trim();
+  const preview = document.getElementById('add_preview');
+  if (!svg) { preview.innerHTML = '<span class="live-preview-empty">No preview yet</span>'; return; }
+  const clean = sanitizeSvg(svg);
+  preview.innerHTML = `<img src="data:image/svg+xml;charset=utf-8,${encodeURIComponent(clean)}" />`;
+}
+
+async function handleAddPng(input) {
+  const file = input.files[0];
+  if (!file) return;
+  const b64 = await fileToBase64(file);
+  S.addPngData = b64;
+  document.getElementById('add_preview').innerHTML = `<img src="data:image/png;base64,${b64}" />`;
+}
+
+async function handleAddLogo(e) {
+  e.preventDefault();
+  const name = document.getElementById('add_name').value.trim();
+  const id = document.getElementById('add_slug').value.trim();
+  const category = document.getElementById('add_category').value;
+  const tags = document.getElementById('add_tags').value.split(',').map(t => t.trim()).filter(Boolean);
+  const svgText = document.getElementById('add_svg').value.trim();
+  const nodeId = document.getElementById('add_nodeId').value.trim() || '0:0';
+  const componentKey = document.getElementById('add_componentKey').value.trim() || '';
+
+  if (!name || !id || !category) {
+    document.getElementById('addLogoErr').textContent = 'Name, slug, and category are required.'; return;
+  }
+  if (!svgText && !S.addPngData) {
+    document.getElementById('addLogoErr').textContent = 'Provide either an SVG or a PNG.'; return;
+  }
+
+  const now = new Date().toISOString();
+  const quality = svgText ? 'svg' : 'png-hq';
+  const ext = svgText ? 'svg' : 'png';
+  const rawBase = `https://raw.githubusercontent.com/${CONFIG.GITHUB_REPO_OWNER}/${CONFIG.GITHUB_REPO_NAME}/main/public/assets/logos`;
+
+  const logo = {
+    id, name, brand: name, category, tags, quality,
+    svgUrl: svgText ? `${rawBase}/${id}.svg` : null,
+    pngUrl: !svgText && S.addPngData ? `${rawBase}/${id}.png` : null,
+    figmaNodeId: nodeId, figmaComponentKey: componentKey,
+    addedAt: now, updatedAt: now,
+  };
+
+  const assetContent = svgText ? sanitizeSvg(svgText) : S.addPngData;
+  document.getElementById('addLogoErr').textContent = '';
+  document.getElementById('addLogoBtn').disabled = true;
+  showToast('⏳ Uploading…');
+
+  const r = await postAndWait({ type: 'admin-add-logo', logoData: logo, assetContent });
+  document.getElementById('addLogoBtn').disabled = false;
+  if (r.success) {
+    showToast('✅ Logo added!');
+    document.getElementById('addLogoForm').reset();
+    document.getElementById('add_preview').innerHTML = '<span class="live-preview-empty">No preview yet</span>';
+    S.addPngData = null;
+    await loadManifest(true);
+    switchAdminTab('manage');
+  } else {
+    document.getElementById('addLogoErr').textContent = r.message || 'Add failed.';
+  }
+}
+
+// ============================================================
+// INBOX TAB
+// ============================================================
+async function loadInbox() {
+  document.getElementById('inboxLoading').style.display = 'flex';
+  document.getElementById('inboxContent').classList.add('hidden');
+  document.getElementById('inboxErr').classList.add('hidden');
+
+  const configR = await postAndWait({ type: 'admin-get-config' });
+  if (!configR.hasConfig) {
+    document.getElementById('inboxLoading').style.display = 'none';
+    document.getElementById('inboxErr').classList.remove('hidden'); return;
+  }
+
+  const { owner, repo } = configR;
+  const token = await (async () => {
+    const h = await postAndWait({ type: 'admin-get-config' });
+    return null; // Token stays server-side in code.ts; we fetch issues publicly
+  })();
+
+  try {
+    const [subRes, reqRes] = await Promise.all([
+      fetch(`https://api.github.com/repos/${owner}/${repo}/issues?labels=logo-suggestion&state=open&per_page=50`),
+      fetch(`https://api.github.com/repos/${owner}/${repo}/issues?labels=logo-request&state=open&per_page=50`)
+    ]);
+    if (!subRes.ok || !reqRes.ok) throw new Error('GitHub API error');
+    const submissions = await subRes.json();
+    const requests = await reqRes.json();
+    S.inboxIssues = [...submissions, ...requests];
+    renderInbox(submissions, requests);
+    document.getElementById('inboxLoading').style.display = 'none';
+    document.getElementById('inboxContent').classList.remove('hidden');
+    if (S.adminUnlocked && submissions.length > 0) {
+      document.getElementById('suggestDot').classList.remove('hidden');
+    }
+  } catch {
+    document.getElementById('inboxLoading').style.display = 'none';
+    document.getElementById('inboxErr').classList.remove('hidden');
+  }
+}
+
+function renderInbox(submissions, requests) {
+  const subList = document.getElementById('submissionsList');
+  const reqList = document.getElementById('requestsList');
+
+  if (submissions.length === 0) {
+    document.getElementById('submissionsEmpty').classList.remove('hidden');
+    subList.innerHTML = '';
+  } else {
+    document.getElementById('submissionsEmpty').classList.add('hidden');
+    subList.innerHTML = submissions.map(issue => {
+      const title = issue.title.replace('[LOGO SUBMISSION] ','');
+      const date = formatDate(issue.created_at);
+      const fileType = issue.body && issue.body.includes('**File type:** svg') ? 'SVG' : 'PNG';
+      const b64Match = issue.body && issue.body.match(/```base64\n([\s\S]+?)\n```/);
+      const hasPreview = !!b64Match;
+      return `<div class="inbox-row">
+        <div class="inbox-info">
+          <div class="inbox-title">${title}</div>
+          <div class="inbox-meta">Type: ${fileType} · Submitted ${date}</div>
+        </div>
+        <div class="inbox-acts">
+          ${hasPreview ? `<button class="btn btn-secondary btn-sm" onclick="previewSubmission('${issue.number}','${title}')">Preview</button>` : ''}
+          <button class="btn btn-secondary btn-sm" style="color:var(--accent);border-color:var(--accent)" onclick='prefillAddFromInbox(${JSON.stringify(issue).replace(/'/g,"&#39;")})'>Add ✅</button>
+          <button class="btn btn-danger btn-sm" onclick="rejectIssue(${issue.number},'${title}')">Reject</button>
+        </div>
+      </div>`;
+    }).join('');
+  }
+
+  const sorted = [...requests].sort((a, b) => (b.reactions && b.reactions['+1'] || 0) - (a.reactions && a.reactions['+1'] || 0));
+  if (sorted.length === 0) {
+    document.getElementById('requestsEmpty').classList.remove('hidden');
+    reqList.innerHTML = '';
+  } else {
+    document.getElementById('requestsEmpty').classList.add('hidden');
+    reqList.innerHTML = sorted.map(issue => {
+      const title = issue.title.replace('[LOGO REQUEST] ','');
+      const votes = (issue.reactions && issue.reactions['+1']) || 0;
+      const date = formatDate(issue.created_at);
+      return `<div class="inbox-row">
+        <div class="inbox-info">
+          <div class="inbox-title">${title}</div>
+          <div class="inbox-meta">👍 ${votes} votes · Requested ${date}</div>
+        </div>
+        <div class="inbox-acts">
+          <button class="btn btn-secondary btn-sm" style="color:var(--accent);border-color:var(--accent)" onclick='fulfillRequest(${issue.number},"${title}")'>Fulfil</button>
+        </div>
+      </div>`;
+    }).join('');
+  }
+}
+
+function previewSubmission(issueNum, title) {
+  const issue = S.inboxIssues.find(i => i.number == issueNum);
+  if (!issue) return;
+  const b64Match = issue.body && issue.body.match(/```base64\n([\s\S]+?)\n```/);
+  if (!b64Match) { showToast('No image data in this submission.'); return; }
+  const b64 = b64Match[1].trim();
+  const isSvg = issue.body.includes('**File type:** svg');
+  const src = isSvg ? `data:image/svg+xml;base64,${b64}` : `data:image/png;base64,${b64}`;
+  document.getElementById('previewModalTitle').textContent = title + ' Preview';
+  document.getElementById('previewModalImg').src = src;
+  document.getElementById('previewModal').classList.remove('hidden');
+}
+
+function prefillAddFromInbox(issue) {
+  switchAdminTab('add');
+  const title = issue.title.replace('[LOGO SUBMISSION] ','');
+  document.getElementById('add_name').value = title;
+  document.getElementById('add_slug').value = slugify(title);
+  const catMatch = issue.body && issue.body.match(/\*\*Category:\*\* (.+)/);
+  if (catMatch) document.getElementById('add_category').value = catMatch[1].trim();
+  const tagsMatch = issue.body && issue.body.match(/\*\*Tags:\*\* (.+)/);
+  if (tagsMatch) document.getElementById('add_tags').value = tagsMatch[1].trim();
+  const b64Match = issue.body && issue.body.match(/```base64\n([\s\S]+?)\n```/);
+  if (b64Match) {
+    const b64 = b64Match[1].trim();
+    const isSvg = issue.body.includes('**File type:** svg');
+    if (isSvg) {
+      const svgText = atob(b64);
+      document.getElementById('add_svg').value = svgText;
+      updateAddPreview();
+    } else {
+      S.addPngData = b64;
+      document.getElementById('add_preview').innerHTML = `<img src="data:image/png;base64,${b64}" />`;
+    }
+  }
+  showToast('Form pre-filled from submission!');
+}
+
+async function rejectIssue(issueNum, title) {
+  if (!confirm(`Reject "${title}"?`)) return;
+  const configR = await postAndWait({ type: 'admin-get-config' });
+  showToast('⏳ Rejecting…');
+  const { owner, repo } = configR;
+  // Note: closing requires admin token; we send via code.ts
+  const r = await postAndWait({
+    type: 'admin-close-issue',
+    issueNumber: issueNum,
+    comment: "Thank you for your submission. We've decided not to include this logo at this time.",
+    owner, repo
+  });
+  if (r && r.success !== false) {
+    showToast('Issue rejected.');
+    loadInbox();
+  }
+}
+
+async function fulfillRequest(issueNum, title) {
+  switchAdminTab('add');
+  document.getElementById('add_name').value = title;
+  document.getElementById('add_slug').value = slugify(title);
+  showToast('Fill in the logo details, then submit to fulfil this request.');
+  S.fulfillIssueNum = issueNum;
+}
+
+// ============================================================
+// SUGGEST — SUBMIT LOGO
+// ============================================================
+async function handleSubmitFileChange(input) {
+  const file = input.files[0];
+  if (!file) return;
+  if (file.size > 500 * 1024) {
+    document.getElementById('submitErr').textContent = 'File too large. Max 500KB.';
+    input.value = ''; return;
+  }
+  document.getElementById('submitErr').textContent = '';
+  const isSvg = file.name.endsWith('.svg');
+  const badgeEl = document.getElementById('sub_file_badge');
+  const preview = document.getElementById('sub_preview');
+  if (isSvg) {
+    badgeEl.innerHTML = '<span class="file-badge svg">✅ SVG — great quality!</span>';
+    const text = await fileToText(file);
+    const clean = sanitizeSvg(text);
+    preview.innerHTML = `<img src="data:image/svg+xml;charset=utf-8,${encodeURIComponent(clean)}" />`;
+  } else {
+    badgeEl.innerHTML = '<span class="file-badge png">⚠️ PNG — SVG preferred if available</span>';
+    const b64 = await fileToBase64(file);
+    preview.innerHTML = `<img src="data:image/png;base64,${b64}" />`;
+  }
+}
+
+async function handleSubmitLogo(e) {
+  e.preventDefault();
+  const brand = document.getElementById('sub_brand').value.trim();
+  const category = document.getElementById('sub_category').value;
+  const file = document.getElementById('sub_file').files[0];
+  const tags = document.getElementById('sub_tags').value.trim();
+  const contributor = document.getElementById('sub_contributor').value.trim() || 'Anonymous';
+  const notes = document.getElementById('sub_notes').value.trim();
+
+  if (!brand || !category || !file) {
+    document.getElementById('submitErr').textContent = 'Please fill all required fields.'; return;
+  }
+
+  const isSvg = file.name.endsWith('.svg');
+  let content;
+  if (isSvg) {
+    const text = await fileToText(file);
+    content = btoa(unescape(encodeURIComponent(sanitizeSvg(text))));
+  } else {
+    content = await fileToBase64(file);
+  }
+
+  document.getElementById('submitBtn').disabled = true;
+  document.getElementById('submitErr').textContent = '';
+
+  try {
+    if (!CONFIG.SUGGESTIONS_TOKEN) throw new Error('Suggestions not configured yet.');
+    const body = `## Logo Submission\n**Brand:** ${brand}\n**Category:** ${category}\n**Tags:** ${tags || 'none'}\n**File type:** ${isSvg ? 'svg' : 'png'}\n**Contributor:** ${contributor}\n**Notes:** ${notes || 'none'}\n\n### Logo File\n\`\`\`base64\n${content}\n\`\`\``;
+    const res = await fetch(`https://api.github.com/repos/${CONFIG.GITHUB_REPO_OWNER}/${CONFIG.GITHUB_REPO_NAME}/issues`, {
+      method: 'POST',
+      headers: { Authorization: `token ${CONFIG.SUGGESTIONS_TOKEN}`, 'Content-Type': 'application/json' },
+      body: JSON.stringify({ title: `[LOGO SUBMISSION] ${brand}`, labels: ['logo-suggestion'], body })
+    });
+    if (!res.ok) throw new Error('GitHub API error ' + res.status);
+    document.getElementById('submitForm').classList.add('hidden');
+    document.getElementById('submitSuccess').classList.remove('hidden');
+  } catch (err) {
+    document.getElementById('submitErr').textContent = err.message.includes('not configured')
+      ? 'Submissions are not yet enabled for this plugin.'
+      : "Couldn't submit right now. Check your connection and try again.";
+  }
+  document.getElementById('submitBtn').disabled = false;
+}
+
+function resetSubmitForm() {
+  document.getElementById('submitForm').reset();
+  document.getElementById('submitForm').classList.remove('hidden');
+  document.getElementById('submitSuccess').classList.add('hidden');
+  document.getElementById('sub_file_badge').innerHTML = '';
+  document.getElementById('sub_preview').innerHTML = '<span class="live-preview-empty">Preview will appear here</span>';
+  document.getElementById('submitErr').textContent = '';
+  document.getElementById('sub_notes_count').textContent = '0';
+}
+
+// ============================================================
+// SUGGEST — REQUEST LOGO
+// ============================================================
+const debouncedRequestSearch = debounce(searchExistingRequests, 400);
+
+async function searchExistingRequests() {
+  const brand = document.getElementById('req_brand').value.trim();
+  if (brand.length < 2) {
+    document.getElementById('req_existing_wrap').classList.add('hidden'); return;
+  }
+  if (!CONFIG.SUGGESTIONS_TOKEN && !CONFIG.GITHUB_REPO_OWNER) return;
+  try {
+    const res = await fetch(
+      `https://api.github.com/repos/${CONFIG.GITHUB_REPO_OWNER}/${CONFIG.GITHUB_REPO_NAME}/issues?labels=logo-request&state=open&per_page=50`,
+      CONFIG.SUGGESTIONS_TOKEN ? { headers: { Authorization: `token ${CONFIG.SUGGESTIONS_TOKEN}` } } : {}
+    );
+    if (!res.ok) return;
+    const issues = await res.json();
+    const matches = issues.filter(i => i.title.toLowerCase().includes(brand.toLowerCase()));
+    if (matches.length > 0) {
+      document.getElementById('req_existing_wrap').classList.remove('hidden');
+      document.getElementById('req_existing_list').innerHTML = matches.map(issue => {
+        const title = issue.title.replace('[LOGO REQUEST] ','');
+        const votes = (issue.reactions && issue.reactions['+1']) || 0;
+        return `<div class="req-result">
+          <div class="req-result-info">
+            <div class="req-result-title">${title}</div>
+            <div class="req-result-meta">👍 ${votes} people requested this</div>
+          </div>
+          <button class="btn btn-secondary btn-sm" onclick="upvoteRequest(${issue.number}, this)">👍 +1</button>
+        </div>`;
+      }).join('');
+    } else {
+      document.getElementById('req_existing_wrap').classList.add('hidden');
+    }
+  } catch {}
+}
+
+async function upvoteRequest(issueNum, btn) {
+  btn.disabled = true;
+  try {
+    const res = await fetch(
+      `https://api.github.com/repos/${CONFIG.GITHUB_REPO_OWNER}/${CONFIG.GITHUB_REPO_NAME}/issues/${issueNum}/reactions`,
+      {
+        method: 'POST',
+        headers: {
+          Authorization: `token ${CONFIG.SUGGESTIONS_TOKEN}`,
+          'Content-Type': 'application/json',
+          Accept: 'application/vnd.github.squirrel-girl-preview+json'
+        },
+        body: JSON.stringify({ content: '+1' })
+      }
+    );
+    if (res.ok) { showToast('👍 Upvoted!'); btn.textContent = '✅ Voted'; }
+    else { btn.disabled = false; showToast('Could not upvote right now.'); }
+  } catch { btn.disabled = false; }
+}
+
+async function handleRequestLogo() {
+  const brand = document.getElementById('req_brand').value.trim();
+  const category = document.getElementById('req_category').value;
+  const useCase = document.getElementById('req_use').value;
+  const contributor = document.getElementById('req_contributor').value.trim() || 'Anonymous';
+  if (!brand || !category) {
+    document.getElementById('requestErr').textContent = 'Brand name and category are required.'; return;
+  }
+  document.getElementById('requestErr').textContent = '';
+  try {
+    if (!CONFIG.SUGGESTIONS_TOKEN) throw new Error('not configured');
+    const body = `## Logo Request\n**Brand:** ${brand}\n**Category:** ${category}\n**Use case:** ${useCase || 'Not specified'}\n**Requested by:** ${contributor}`;
+    const res = await fetch(`https://api.github.com/repos/${CONFIG.GITHUB_REPO_OWNER}/${CONFIG.GITHUB_REPO_NAME}/issues`, {
+      method: 'POST',
+      headers: { Authorization: `token ${CONFIG.SUGGESTIONS_TOKEN}`, 'Content-Type': 'application/json' },
+      body: JSON.stringify({ title: `[LOGO REQUEST] ${brand}`, labels: ['logo-request'], body })
+    });
+    if (!res.ok) throw new Error('GitHub API error');
+    document.getElementById('req_form_wrap').classList.add('hidden');
+    document.getElementById('requestSuccess').classList.remove('hidden');
+  } catch (err) {
+    document.getElementById('requestErr').textContent = err.message.includes('not configured')
+      ? 'Requests are not yet enabled for this plugin.'
+      : "Couldn't submit right now. Try again.";
+  }
+}
+
+function resetRequestForm() {
+  document.getElementById('req_brand').value = '';
+  document.getElementById('req_category').value = '';
+  document.getElementById('req_use').value = '';
+  document.getElementById('req_contributor').value = '';
+  document.getElementById('req_existing_wrap').classList.add('hidden');
+  document.getElementById('req_form_wrap').classList.remove('hidden');
+  document.getElementById('requestSuccess').classList.add('hidden');
+  document.getElementById('requestErr').textContent = '';
+}
+
+// ============================================================
+// MODALS
+// ============================================================
+function closeModal(id) {
+  document.getElementById(id).classList.add('hidden');
+}
+document.querySelectorAll('.modal-bg').forEach(modal => {
+  modal.addEventListener('click', e => { if (e.target === modal) modal.classList.add('hidden'); });
+});
+
+function openGithubTokenHelp(e) {
+  e.preventDefault();
+  showToast('Go to GitHub → Settings → Developer settings → Personal access tokens');
+}
+
+// ============================================================
+// INIT
+// ============================================================
+buildCategoryChips();
+loadManifest();
+</script>
+</body>
+</html>
