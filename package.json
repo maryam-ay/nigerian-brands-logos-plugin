@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "description": "A Figma plugin for Nigerian brand logos",
   "scripts": {
-    "build": "tsc -p plugin/tsconfig.json",
-    "watch": "tsc -p plugin/tsconfig.json --watch",
+    "build": "esbuild plugin/code.ts --bundle --platform=browser --format=iife --outfile=plugin/code.js",
+    "watch": "esbuild plugin/code.ts --bundle --platform=browser --format=iife --outfile=plugin/code.js --watch",
     "export-logos": "node data-scripts/export-from-figma.js",
     "build-manifest": "node data-scripts/build-manifest.js",
     "dev": "concurrently \"npm run watch\" \"echo Plugin ready — load in Figma Desktop\""
@@ -12,6 +12,7 @@
   "devDependencies": {
     "@figma/plugin-typings": "^1.76.0",
     "concurrently": "^8.0.0",
+    "esbuild": "^0.28.0",
     "typescript": "^5.0.0"
   },
   "dependencies": {
