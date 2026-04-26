@@ -3,7 +3,7 @@
 declare function btoa(data: string): string;
 declare function atob(data: string): string;
 
-import { LogoEntry, LogosManifest } from "./types";
+import type { LogoEntry, LogosManifest } from "./types";
 
 figma.showUI(__html__, { width: 400, height: 600, title: "Nigerian Brands Logos" });
 
@@ -252,3 +252,5 @@ figma.ui.onmessage = async (msg: Record<string, unknown>) => {
     }
   }
 };
+
+export {};

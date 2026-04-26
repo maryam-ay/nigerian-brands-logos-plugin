@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "description": "A Figma plugin for Nigerian brand logos",
   "scripts": {
-    "build": "esbuild plugin/code.ts --bundle --platform=browser --format=iife --outfile=plugin/code.js",
-    "watch": "esbuild plugin/code.ts --bundle --platform=browser --format=iife --outfile=plugin/code.js --watch",
+    "build": "node node_modules/esbuild/bin/esbuild plugin/code.ts --bundle --outfile=plugin/code.js --target=es6 --format=iife",
+    "watch": "node node_modules/esbuild/bin/esbuild plugin/code.ts --bundle --outfile=plugin/code.js --target=es6 --format=iife --watch",
     "export-logos": "node data-scripts/export-from-figma.js",
     "build-manifest": "node data-scripts/build-manifest.js",
     "dev": "concurrently \"npm run watch\" \"echo Plugin ready — load in Figma Desktop\""
