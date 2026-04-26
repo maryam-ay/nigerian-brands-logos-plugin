@@ -2,7 +2,7 @@
 // Scans public/assets/logos/ and regenerates public/logos.json
 // Run with: npm run build-manifest
 
-require('dotenv').config({ path: require('path').join(__dirname, '../.env') });
+require('dotenv').config({ path: require('path').join(__dirname, '.env') });
 
 const fs = require('fs');
 const path = require('path');

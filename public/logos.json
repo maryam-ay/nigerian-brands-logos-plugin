@@ -1,6 +1,6007 @@
 {
   "version": "1.0.0",
-  "lastUpdated": "2026-04-25T00:00:00.000Z",
-  "totalLogos": 0,
-  "logos": []
+  "lastUpdated": "2026-04-26T22:02:33.067Z",
+  "totalLogos": 300,
+  "logos": [
+    {
+      "id": "3sc",
+      "name": "3sc",
+      "brand": "3sc",
+      "category": "Other",
+      "tags": [
+        "other"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/3sc.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.052Z",
+      "updatedAt": "2026-04-26T22:02:33.052Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "9mobile",
+      "name": "9mobile",
+      "brand": "9mobile",
+      "category": "Telecom",
+      "tags": [
+        "telecom"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/9mobile.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.053Z",
+      "updatedAt": "2026-04-26T22:02:33.053Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "aarano",
+      "name": "Aarano",
+      "brand": "Aarano",
+      "category": "Other",
+      "tags": [
+        "other"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/aarano.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.053Z",
+      "updatedAt": "2026-04-26T22:02:33.053Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "ab-microfinance",
+      "name": "Ab Microfinance",
+      "brand": "Ab",
+      "category": "Banking",
+      "tags": [
+        "banking"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/ab-microfinance.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.053Z",
+      "updatedAt": "2026-04-26T22:02:33.053Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "abeg",
+      "name": "Abeg",
+      "brand": "Abeg",
+      "category": "Other",
+      "tags": [
+        "other"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/abeg.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.053Z",
+      "updatedAt": "2026-04-26T22:02:33.053Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "academy-press",
+      "name": "Academy Press",
+      "brand": "Academy",
+      "category": "Other",
+      "tags": [
+        "other"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/academy-press.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.053Z",
+      "updatedAt": "2026-04-26T22:02:33.053Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "acceede",
+      "name": "Acceede",
+      "brand": "Acceede",
+      "category": "Other",
+      "tags": [
+        "other"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/acceede.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.053Z",
+      "updatedAt": "2026-04-26T22:02:33.053Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "accenture",
+      "name": "Accenture",
+      "brand": "Accenture",
+      "category": "Other",
+      "tags": [
+        "other"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/accenture.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.053Z",
+      "updatedAt": "2026-04-26T22:02:33.053Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "access",
+      "name": "Access",
+      "brand": "Access",
+      "category": "Banking",
+      "tags": [
+        "banking"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/access.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.053Z",
+      "updatedAt": "2026-04-26T22:02:33.053Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "accion",
+      "name": "Accion",
+      "brand": "Accion",
+      "category": "Other",
+      "tags": [
+        "other"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/accion.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.053Z",
+      "updatedAt": "2026-04-26T22:02:33.053Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "accounteer",
+      "name": "Accounteer",
+      "brand": "Accounteer",
+      "category": "Other",
+      "tags": [
+        "other"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/accounteer.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.053Z",
+      "updatedAt": "2026-04-26T22:02:33.053Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "accrue",
+      "name": "Accrue",
+      "brand": "Accrue",
+      "category": "Other",
+      "tags": [
+        "other"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/accrue.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.053Z",
+      "updatedAt": "2026-04-26T22:02:33.053Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "acumen",
+      "name": "Acumen",
+      "brand": "Acumen",
+      "category": "Other",
+      "tags": [
+        "other"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/acumen.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.053Z",
+      "updatedAt": "2026-04-26T22:02:33.053Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "advancly",
+      "name": "Advancly",
+      "brand": "Advancly",
+      "category": "Other",
+      "tags": [
+        "other"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/advancly.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.053Z",
+      "updatedAt": "2026-04-26T22:02:33.053Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "advocaat",
+      "name": "Advocaat",
+      "brand": "Advocaat",
+      "category": "Other",
+      "tags": [
+        "other"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/advocaat.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.053Z",
+      "updatedAt": "2026-04-26T22:02:33.053Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "aedc",
+      "name": "Aedc",
+      "brand": "Aedc",
+      "category": "Other",
+      "tags": [
+        "other"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/aedc.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.053Z",
+      "updatedAt": "2026-04-26T22:02:33.053Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "aella",
+      "name": "Aella",
+      "brand": "Aella",
+      "category": "Other",
+      "tags": [
+        "other"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/aella.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.053Z",
+      "updatedAt": "2026-04-26T22:02:33.053Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "aella-credit",
+      "name": "Aella Credit",
+      "brand": "Aella",
+      "category": "Other",
+      "tags": [
+        "other"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/aella-credit.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.053Z",
+      "updatedAt": "2026-04-26T22:02:33.053Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "aero",
+      "name": "Aero",
+      "brand": "Aero",
+      "category": "Other",
+      "tags": [
+        "other"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/aero.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.053Z",
+      "updatedAt": "2026-04-26T22:02:33.053Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "aerobotics",
+      "name": "Aerobotics",
+      "brand": "Aerobotics",
+      "category": "Other",
+      "tags": [
+        "other"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/aerobotics.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.053Z",
+      "updatedAt": "2026-04-26T22:02:33.053Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "africa-fintech-foundry",
+      "name": "Africa Fintech Foundry",
+      "brand": "Africa",
+      "category": "Banking",
+      "tags": [
+        "banking"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/africa-fintech-foundry.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.053Z",
+      "updatedAt": "2026-04-26T22:02:33.053Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "africhange",
+      "name": "Africhange",
+      "brand": "Africhange",
+      "category": "Other",
+      "tags": [
+        "other"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/africhange.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.053Z",
+      "updatedAt": "2026-04-26T22:02:33.053Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "afriex",
+      "name": "Afriex",
+      "brand": "Afriex",
+      "category": "Other",
+      "tags": [
+        "other"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/afriex.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.053Z",
+      "updatedAt": "2026-04-26T22:02:33.053Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "afrione",
+      "name": "Afrione",
+      "brand": "Afrione",
+      "category": "Other",
+      "tags": [
+        "other"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/afrione.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.053Z",
+      "updatedAt": "2026-04-26T22:02:33.053Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "afriskaut",
+      "name": "Afriskaut",
+      "brand": "Afriskaut",
+      "category": "Other",
+      "tags": [
+        "other"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/afriskaut.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.053Z",
+      "updatedAt": "2026-04-26T22:02:33.053Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "afropolitan",
+      "name": "Afropolitan",
+      "brand": "Afropolitan",
+      "category": "Other",
+      "tags": [
+        "other"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/afropolitan.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.053Z",
+      "updatedAt": "2026-04-26T22:02:33.053Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "afyacare",
+      "name": "Afyacare",
+      "brand": "Afyacare",
+      "category": "Other",
+      "tags": [
+        "other"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/afyacare.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.053Z",
+      "updatedAt": "2026-04-26T22:02:33.053Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "agofure",
+      "name": "Agofure",
+      "brand": "Agofure",
+      "category": "Other",
+      "tags": [
+        "other"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/agofure.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.053Z",
+      "updatedAt": "2026-04-26T22:02:33.053Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "agrocenta",
+      "name": "Agrocenta",
+      "brand": "Agrocenta",
+      "category": "Other",
+      "tags": [
+        "other"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/agrocenta.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.053Z",
+      "updatedAt": "2026-04-26T22:02:33.053Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "agusto-co",
+      "name": "Agusto Co",
+      "brand": "Agusto",
+      "category": "Other",
+      "tags": [
+        "other"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/agusto-co.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.053Z",
+      "updatedAt": "2026-04-26T22:02:33.053Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "aiico",
+      "name": "Aiico",
+      "brand": "Aiico",
+      "category": "Insurance",
+      "tags": [
+        "insurance"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/aiico.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.053Z",
+      "updatedAt": "2026-04-26T22:02:33.053Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "airpeace",
+      "name": "Airpeace",
+      "brand": "Airpeace",
+      "category": "Other",
+      "tags": [
+        "other"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/airpeace.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.053Z",
+      "updatedAt": "2026-04-26T22:02:33.053Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "airtel",
+      "name": "Airtel",
+      "brand": "Airtel",
+      "category": "Telecom",
+      "tags": [
+        "telecom"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/airtel.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.053Z",
+      "updatedAt": "2026-04-26T22:02:33.053Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "ait",
+      "name": "Ait",
+      "brand": "Ait",
+      "category": "Other",
+      "tags": [
+        "other"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/ait.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.053Z",
+      "updatedAt": "2026-04-26T22:02:33.053Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "ajocard",
+      "name": "Ajocard",
+      "brand": "Ajocard",
+      "category": "Other",
+      "tags": [
+        "other"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/ajocard.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.053Z",
+      "updatedAt": "2026-04-26T22:02:33.053Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "akoma-health",
+      "name": "Akoma Health",
+      "brand": "Akoma",
+      "category": "Other",
+      "tags": [
+        "other"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/akoma-health.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.053Z",
+      "updatedAt": "2026-04-26T22:02:33.053Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "aku",
+      "name": "Aku",
+      "brand": "Aku",
+      "category": "Other",
+      "tags": [
+        "other"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/aku.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.053Z",
+      "updatedAt": "2026-04-26T22:02:33.053Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "alajo",
+      "name": "Alajo",
+      "brand": "Alajo",
+      "category": "Other",
+      "tags": [
+        "other"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/alajo.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.053Z",
+      "updatedAt": "2026-04-26T22:02:33.053Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "alatbywema",
+      "name": "Alatbywema",
+      "brand": "Alatbywema",
+      "category": "Banking",
+      "tags": [
+        "banking"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/alatbywema.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.053Z",
+      "updatedAt": "2026-04-26T22:02:33.053Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "alerzo",
+      "name": "Alerzo",
+      "brand": "Alerzo",
+      "category": "Other",
+      "tags": [
+        "other"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/alerzo.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.053Z",
+      "updatedAt": "2026-04-26T22:02:33.053Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "allawee",
+      "name": "Allawee",
+      "brand": "Allawee",
+      "category": "Other",
+      "tags": [
+        "other"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/allawee.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.053Z",
+      "updatedAt": "2026-04-26T22:02:33.053Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "alpha-wallet",
+      "name": "Alpha Wallet",
+      "brand": "Alpha",
+      "category": "Other",
+      "tags": [
+        "other"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/alpha-wallet.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.053Z",
+      "updatedAt": "2026-04-26T22:02:33.053Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "altschool",
+      "name": "Altschool",
+      "brand": "Altschool",
+      "category": "Other",
+      "tags": [
+        "other"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/altschool.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.053Z",
+      "updatedAt": "2026-04-26T22:02:33.053Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "ammasco",
+      "name": "Ammasco",
+      "brand": "Ammasco",
+      "category": "Other",
+      "tags": [
+        "other"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/ammasco.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.053Z",
+      "updatedAt": "2026-04-26T22:02:33.053Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "amobyng",
+      "name": "Amobyng",
+      "brand": "Amobyng",
+      "category": "Other",
+      "tags": [
+        "other"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/amobyng.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.053Z",
+      "updatedAt": "2026-04-26T22:02:33.053Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "anchor",
+      "name": "Anchor",
+      "brand": "Anchor",
+      "category": "Other",
+      "tags": [
+        "other"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/anchor.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.053Z",
+      "updatedAt": "2026-04-26T22:02:33.053Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "andela",
+      "name": "Andela",
+      "brand": "Andela",
+      "category": "Other",
+      "tags": [
+        "other"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/andela.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.053Z",
+      "updatedAt": "2026-04-26T22:02:33.053Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "anderson-tax",
+      "name": "Anderson Tax",
+      "brand": "Anderson",
+      "category": "Other",
+      "tags": [
+        "other"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/anderson-tax.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.053Z",
+      "updatedAt": "2026-04-26T22:02:33.053Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "apata",
+      "name": "Apata",
+      "brand": "Apata",
+      "category": "Other",
+      "tags": [
+        "other"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/apata.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.053Z",
+      "updatedAt": "2026-04-26T22:02:33.053Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "apc",
+      "name": "Apc",
+      "brand": "Apc",
+      "category": "Other",
+      "tags": [
+        "other"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/apc.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.053Z",
+      "updatedAt": "2026-04-26T22:02:33.053Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "apmterminals",
+      "name": "Apmterminals",
+      "brand": "Apmterminals",
+      "category": "Other",
+      "tags": [
+        "other"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/apmterminals.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.053Z",
+      "updatedAt": "2026-04-26T22:02:33.053Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "appzone",
+      "name": "Appzone",
+      "brand": "Appzone",
+      "category": "FMCG",
+      "tags": [
+        "fmcg"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/appzone.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.053Z",
+      "updatedAt": "2026-04-26T22:02:33.053Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "archivi-ng",
+      "name": "Archivi Ng",
+      "brand": "Archivi",
+      "category": "FMCG",
+      "tags": [
+        "fmcg"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/archivi-ng.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.053Z",
+      "updatedAt": "2026-04-26T22:02:33.053Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "ardovaplc",
+      "name": "Ardovaplc",
+      "brand": "Ardovaplc",
+      "category": "Other",
+      "tags": [
+        "other"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/ardovaplc.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.053Z",
+      "updatedAt": "2026-04-26T22:02:33.053Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "arikair",
+      "name": "Arikair",
+      "brand": "Arikair",
+      "category": "Other",
+      "tags": [
+        "other"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/arikair.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.053Z",
+      "updatedAt": "2026-04-26T22:02:33.053Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "ark",
+      "name": "Ark",
+      "brand": "Ark",
+      "category": "Other",
+      "tags": [
+        "other"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/ark.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.053Z",
+      "updatedAt": "2026-04-26T22:02:33.053Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "arkland",
+      "name": "Arkland",
+      "brand": "Arkland",
+      "category": "Other",
+      "tags": [
+        "other"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/arkland.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.053Z",
+      "updatedAt": "2026-04-26T22:02:33.053Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "arla",
+      "name": "Arla",
+      "brand": "Arla",
+      "category": "Other",
+      "tags": [
+        "other"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/arla.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.053Z",
+      "updatedAt": "2026-04-26T22:02:33.053Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "arm-pensions",
+      "name": "Arm Pensions",
+      "brand": "Arm",
+      "category": "Other",
+      "tags": [
+        "other"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/arm-pensions.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.053Z",
+      "updatedAt": "2026-04-26T22:02:33.053Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "arnergy",
+      "name": "Arnergy",
+      "brand": "Arnergy",
+      "category": "Other",
+      "tags": [
+        "other"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/arnergy.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.053Z",
+      "updatedAt": "2026-04-26T22:02:33.053Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "arone",
+      "name": "Arone",
+      "brand": "Arone",
+      "category": "Other",
+      "tags": [
+        "other"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/arone.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.053Z",
+      "updatedAt": "2026-04-26T22:02:33.053Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "asosavings-loans",
+      "name": "Asosavings Loans",
+      "brand": "Asosavings",
+      "category": "Other",
+      "tags": [
+        "other"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/asosavings-loans.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.053Z",
+      "updatedAt": "2026-04-26T22:02:33.053Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "asset-base",
+      "name": "Asset Base",
+      "brand": "Asset",
+      "category": "Other",
+      "tags": [
+        "other"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/asset-base.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.053Z",
+      "updatedAt": "2026-04-26T22:02:33.053Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "atlantic-energy",
+      "name": "Atlantic Energy",
+      "brand": "Atlantic",
+      "category": "Energy",
+      "tags": [
+        "energy"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/atlantic-energy.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.053Z",
+      "updatedAt": "2026-04-26T22:02:33.053Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "awabah",
+      "name": "Awabah",
+      "brand": "Awabah",
+      "category": "Other",
+      "tags": [
+        "other"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/awabah.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.053Z",
+      "updatedAt": "2026-04-26T22:02:33.053Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "axamansard",
+      "name": "Axamansard",
+      "brand": "Axamansard",
+      "category": "Insurance",
+      "tags": [
+        "insurance"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/axamansard.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.053Z",
+      "updatedAt": "2026-04-26T22:02:33.053Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "aza",
+      "name": "Aza",
+      "brand": "Aza",
+      "category": "Other",
+      "tags": [
+        "other"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/aza.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.053Z",
+      "updatedAt": "2026-04-26T22:02:33.053Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "azman-air-services-ltd",
+      "name": "Azman Air Services Ltd",
+      "brand": "Azman",
+      "category": "Other",
+      "tags": [
+        "other"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/azman-air-services-ltd.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.053Z",
+      "updatedAt": "2026-04-26T22:02:33.053Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "backdrop",
+      "name": "Backdrop",
+      "brand": "Backdrop",
+      "category": "Other",
+      "tags": [
+        "other"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/backdrop.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.053Z",
+      "updatedAt": "2026-04-26T22:02:33.053Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "bamboo",
+      "name": "Bamboo",
+      "brand": "Bamboo",
+      "category": "Other",
+      "tags": [
+        "other"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/bamboo.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.053Z",
+      "updatedAt": "2026-04-26T22:02:33.053Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "bankly",
+      "name": "Bankly",
+      "brand": "Bankly",
+      "category": "Banking",
+      "tags": [
+        "banking"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/bankly.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.053Z",
+      "updatedAt": "2026-04-26T22:02:33.053Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "bankofindustry",
+      "name": "Bankofindustry",
+      "brand": "Bankofindustry",
+      "category": "Banking",
+      "tags": [
+        "banking"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/bankofindustry.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.053Z",
+      "updatedAt": "2026-04-26T22:02:33.053Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "barter",
+      "name": "Barter",
+      "brand": "Barter",
+      "category": "Other",
+      "tags": [
+        "other"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/barter.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.053Z",
+      "updatedAt": "2026-04-26T22:02:33.053Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "baxi",
+      "name": "Baxi",
+      "brand": "Baxi",
+      "category": "Other",
+      "tags": [
+        "other"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/baxi.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.053Z",
+      "updatedAt": "2026-04-26T22:02:33.053Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "bedmate",
+      "name": "Bedmate",
+      "brand": "Bedmate",
+      "category": "Other",
+      "tags": [
+        "other"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/bedmate.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.053Z",
+      "updatedAt": "2026-04-26T22:02:33.053Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "beezop",
+      "name": "Beezop",
+      "brand": "Beezop",
+      "category": "Other",
+      "tags": [
+        "other"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/beezop.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.053Z",
+      "updatedAt": "2026-04-26T22:02:33.053Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "beloxxi",
+      "name": "Beloxxi",
+      "brand": "Beloxxi",
+      "category": "Other",
+      "tags": [
+        "other"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/beloxxi.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.053Z",
+      "updatedAt": "2026-04-26T22:02:33.053Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "benjamin-dada",
+      "name": "Benjamin Dada",
+      "brand": "Benjamin",
+      "category": "Other",
+      "tags": [
+        "other"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/benjamin-dada.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.053Z",
+      "updatedAt": "2026-04-26T22:02:33.053Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "berger-paint",
+      "name": "Berger Paint",
+      "brand": "Berger",
+      "category": "Other",
+      "tags": [
+        "other"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/berger-paint.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.053Z",
+      "updatedAt": "2026-04-26T22:02:33.053Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "bet9ja",
+      "name": "Bet9ja",
+      "brand": "Bet9ja",
+      "category": "Other",
+      "tags": [
+        "other"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/bet9ja.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.053Z",
+      "updatedAt": "2026-04-26T22:02:33.053Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "betway",
+      "name": "Betway",
+      "brand": "Betway",
+      "category": "Other",
+      "tags": [
+        "other"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/betway.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.053Z",
+      "updatedAt": "2026-04-26T22:02:33.053Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "big-cabal-media",
+      "name": "Big Cabal Media",
+      "brand": "Big",
+      "category": "Media",
+      "tags": [
+        "media"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/big-cabal-media.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.053Z",
+      "updatedAt": "2026-04-26T22:02:33.053Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "bigibrand",
+      "name": "Bigibrand",
+      "brand": "Bigibrand",
+      "category": "Other",
+      "tags": [
+        "other"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/bigibrand.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.053Z",
+      "updatedAt": "2026-04-26T22:02:33.053Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "bitmama",
+      "name": "Bitmama",
+      "brand": "Bitmama",
+      "category": "Other",
+      "tags": [
+        "other"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/bitmama.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.053Z",
+      "updatedAt": "2026-04-26T22:02:33.053Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "bitnob",
+      "name": "Bitnob",
+      "brand": "Bitnob",
+      "category": "Other",
+      "tags": [
+        "other"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/bitnob.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.054Z",
+      "updatedAt": "2026-04-26T22:02:33.054Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "bitpesa",
+      "name": "Bitpesa",
+      "brand": "Bitpesa",
+      "category": "Other",
+      "tags": [
+        "other"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/bitpesa.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.054Z",
+      "updatedAt": "2026-04-26T22:02:33.054Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "bitsika",
+      "name": "Bitsika",
+      "brand": "Bitsika",
+      "category": "Other",
+      "tags": [
+        "other"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/bitsika.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.054Z",
+      "updatedAt": "2026-04-26T22:02:33.054Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "bloc",
+      "name": "Bloc",
+      "brand": "Bloc",
+      "category": "Other",
+      "tags": [
+        "other"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/bloc.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.054Z",
+      "updatedAt": "2026-04-26T22:02:33.054Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "bn-foods",
+      "name": "Bn Foods",
+      "brand": "Bn",
+      "category": "Other",
+      "tags": [
+        "other"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/bn-foods.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.054Z",
+      "updatedAt": "2026-04-26T22:02:33.054Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "bolt",
+      "name": "Bolt",
+      "brand": "Bolt",
+      "category": "Other",
+      "tags": [
+        "other"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/bolt.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.054Z",
+      "updatedAt": "2026-04-26T22:02:33.054Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "boston-consulting-broup",
+      "name": "Boston Consulting Broup",
+      "brand": "Boston",
+      "category": "Other",
+      "tags": [
+        "other"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/boston-consulting-broup.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.054Z",
+      "updatedAt": "2026-04-26T22:02:33.054Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "bovas",
+      "name": "Bovas",
+      "brand": "Bovas",
+      "category": "Other",
+      "tags": [
+        "other"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/bovas.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.054Z",
+      "updatedAt": "2026-04-26T22:02:33.054Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "branch",
+      "name": "Branch",
+      "brand": "Branch",
+      "category": "Other",
+      "tags": [
+        "other"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/branch.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.054Z",
+      "updatedAt": "2026-04-26T22:02:33.054Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "brass",
+      "name": "Brass",
+      "brand": "Brass",
+      "category": "Other",
+      "tags": [
+        "other"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/brass.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.054Z",
+      "updatedAt": "2026-04-26T22:02:33.054Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "bravewood",
+      "name": "Bravewood",
+      "brand": "Bravewood",
+      "category": "Other",
+      "tags": [
+        "other"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/bravewood.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.054Z",
+      "updatedAt": "2026-04-26T22:02:33.054Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "bridge-card",
+      "name": "Bridge Card",
+      "brand": "Bridge",
+      "category": "Other",
+      "tags": [
+        "other"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/bridge-card.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.054Z",
+      "updatedAt": "2026-04-26T22:02:33.054Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "brimble",
+      "name": "Brimble",
+      "brand": "Brimble",
+      "category": "Other",
+      "tags": [
+        "other"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/brimble.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.054Z",
+      "updatedAt": "2026-04-26T22:02:33.054Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "briscoe",
+      "name": "Briscoe",
+      "brand": "Briscoe",
+      "category": "Other",
+      "tags": [
+        "other"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/briscoe.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.054Z",
+      "updatedAt": "2026-04-26T22:02:33.054Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "brydge",
+      "name": "Brydge",
+      "brand": "Brydge",
+      "category": "Other",
+      "tags": [
+        "other"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/brydge.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.054Z",
+      "updatedAt": "2026-04-26T22:02:33.054Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "buafoods",
+      "name": "Buafoods",
+      "brand": "Buafoods",
+      "category": "Other",
+      "tags": [
+        "other"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/buafoods.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.054Z",
+      "updatedAt": "2026-04-26T22:02:33.054Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "buagroup",
+      "name": "Buagroup",
+      "brand": "Buagroup",
+      "category": "Other",
+      "tags": [
+        "other"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/buagroup.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.054Z",
+      "updatedAt": "2026-04-26T22:02:33.054Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "bunce",
+      "name": "Bunce",
+      "brand": "Bunce",
+      "category": "Other",
+      "tags": [
+        "other"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/bunce.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.054Z",
+      "updatedAt": "2026-04-26T22:02:33.054Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "bundle",
+      "name": "Bundle",
+      "brand": "Bundle",
+      "category": "Other",
+      "tags": [
+        "other"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/bundle.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.054Z",
+      "updatedAt": "2026-04-26T22:02:33.054Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "busha",
+      "name": "Busha",
+      "brand": "Busha",
+      "category": "Transport",
+      "tags": [
+        "transport"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/busha.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.054Z",
+      "updatedAt": "2026-04-26T22:02:33.054Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "businessday",
+      "name": "Businessday",
+      "brand": "Businessday",
+      "category": "Transport",
+      "tags": [
+        "transport"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/businessday.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.054Z",
+      "updatedAt": "2026-04-26T22:02:33.054Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "buycoins",
+      "name": "Buycoins",
+      "brand": "Buycoins",
+      "category": "Other",
+      "tags": [
+        "other"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/buycoins.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.054Z",
+      "updatedAt": "2026-04-26T22:02:33.054Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "buypower",
+      "name": "Buypower",
+      "brand": "Buypower",
+      "category": "Energy",
+      "tags": [
+        "energy"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/buypower.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.054Z",
+      "updatedAt": "2026-04-26T22:02:33.054Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "byte",
+      "name": "Byte",
+      "brand": "Byte",
+      "category": "Other",
+      "tags": [
+        "other"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/byte.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.054Z",
+      "updatedAt": "2026-04-26T22:02:33.054Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "cadbury",
+      "name": "Cadbury",
+      "brand": "Cadbury",
+      "category": "FMCG",
+      "tags": [
+        "fmcg"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/cadbury.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.054Z",
+      "updatedAt": "2026-04-26T22:02:33.054Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "cappa-d-alberto",
+      "name": "Cappa D Alberto",
+      "brand": "Cappa",
+      "category": "Other",
+      "tags": [
+        "other"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/cappa-d-alberto.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.054Z",
+      "updatedAt": "2026-04-26T22:02:33.054Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "carbon",
+      "name": "Carbon",
+      "brand": "Carbon",
+      "category": "Tech",
+      "tags": [
+        "tech"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/carbon.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.054Z",
+      "updatedAt": "2026-04-26T22:02:33.054Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "carlcare",
+      "name": "Carlcare",
+      "brand": "Carlcare",
+      "category": "Other",
+      "tags": [
+        "other"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/carlcare.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.054Z",
+      "updatedAt": "2026-04-26T22:02:33.054Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "carry-africa",
+      "name": "Carry Africa",
+      "brand": "Carry",
+      "category": "Other",
+      "tags": [
+        "other"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/carry-africa.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.054Z",
+      "updatedAt": "2026-04-26T22:02:33.054Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "cars45",
+      "name": "Cars45",
+      "brand": "Cars45",
+      "category": "Other",
+      "tags": [
+        "other"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/cars45.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.054Z",
+      "updatedAt": "2026-04-26T22:02:33.054Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "cassava",
+      "name": "Cassava",
+      "brand": "Cassava",
+      "category": "Other",
+      "tags": [
+        "other"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/cassava.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.054Z",
+      "updatedAt": "2026-04-26T22:02:33.054Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "catalog",
+      "name": "Catalog",
+      "brand": "Catalog",
+      "category": "Other",
+      "tags": [
+        "other"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/catalog.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.054Z",
+      "updatedAt": "2026-04-26T22:02:33.054Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "caverton",
+      "name": "Caverton",
+      "brand": "Caverton",
+      "category": "Other",
+      "tags": [
+        "other"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/caverton.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.054Z",
+      "updatedAt": "2026-04-26T22:02:33.054Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "cbre-excellerate",
+      "name": "Cbre Excellerate",
+      "brand": "Cbre",
+      "category": "Other",
+      "tags": [
+        "other"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/cbre-excellerate.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.054Z",
+      "updatedAt": "2026-04-26T22:02:33.054Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "cchub",
+      "name": "Cchub",
+      "brand": "Cchub",
+      "category": "Other",
+      "tags": [
+        "other"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/cchub.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.054Z",
+      "updatedAt": "2026-04-26T22:02:33.054Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "cedarcrest",
+      "name": "Cedarcrest",
+      "brand": "Cedarcrest",
+      "category": "Other",
+      "tags": [
+        "other"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/cedarcrest.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.054Z",
+      "updatedAt": "2026-04-26T22:02:33.054Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "cellulant",
+      "name": "Cellulant",
+      "brand": "Cellulant",
+      "category": "Other",
+      "tags": [
+        "other"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/cellulant.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.054Z",
+      "updatedAt": "2026-04-26T22:02:33.054Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "cenoa",
+      "name": "Cenoa",
+      "brand": "Cenoa",
+      "category": "Other",
+      "tags": [
+        "other"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/cenoa.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.054Z",
+      "updatedAt": "2026-04-26T22:02:33.054Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "central-bank-of-nigeria",
+      "name": "Central Bank Of Nigeria",
+      "brand": "Central",
+      "category": "Banking",
+      "tags": [
+        "banking"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/central-bank-of-nigeria.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.054Z",
+      "updatedAt": "2026-04-26T22:02:33.054Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "chaka",
+      "name": "Chaka",
+      "brand": "Chaka",
+      "category": "Other",
+      "tags": [
+        "other"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/chaka.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.054Z",
+      "updatedAt": "2026-04-26T22:02:33.054Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "champion",
+      "name": "Champion",
+      "brand": "Champion",
+      "category": "Other",
+      "tags": [
+        "other"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/champion.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.054Z",
+      "updatedAt": "2026-04-26T22:02:33.054Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "chams",
+      "name": "Chams",
+      "brand": "Chams",
+      "category": "Other",
+      "tags": [
+        "other"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/chams.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.054Z",
+      "updatedAt": "2026-04-26T22:02:33.054Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "changera",
+      "name": "Changera",
+      "brand": "Changera",
+      "category": "Other",
+      "tags": [
+        "other"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/changera.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.054Z",
+      "updatedAt": "2026-04-26T22:02:33.054Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "channels",
+      "name": "Channels",
+      "brand": "Channels",
+      "category": "Media",
+      "tags": [
+        "media"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/channels.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.054Z",
+      "updatedAt": "2026-04-26T22:02:33.054Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "chapel-hill-denham",
+      "name": "Chapel Hill Denham",
+      "brand": "Chapel",
+      "category": "Other",
+      "tags": [
+        "other"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/chapel-hill-denham.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.054Z",
+      "updatedAt": "2026-04-26T22:02:33.054Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "checkdc",
+      "name": "Checkdc",
+      "brand": "Checkdc",
+      "category": "Other",
+      "tags": [
+        "other"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/checkdc.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.054Z",
+      "updatedAt": "2026-04-26T22:02:33.054Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "chevron",
+      "name": "Chevron",
+      "brand": "Chevron",
+      "category": "Energy",
+      "tags": [
+        "energy"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/chevron.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.054Z",
+      "updatedAt": "2026-04-26T22:02:33.054Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "chi-farms",
+      "name": "Chi Farms",
+      "brand": "Chi",
+      "category": "FMCG",
+      "tags": [
+        "fmcg"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/chi-farms.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.054Z",
+      "updatedAt": "2026-04-26T22:02:33.054Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "chi-limited-logo-e1692620066899-1",
+      "name": "Chi Limited Logo E1692620066899 1",
+      "brand": "Chi",
+      "category": "FMCG",
+      "tags": [
+        "fmcg"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/chi-limited-logo-e1692620066899-1.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.054Z",
+      "updatedAt": "2026-04-26T22:02:33.054Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "chicken-republic",
+      "name": "Chicken Republic",
+      "brand": "Chicken",
+      "category": "FMCG",
+      "tags": [
+        "fmcg"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/chicken-republic.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.054Z",
+      "updatedAt": "2026-04-26T22:02:33.054Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "chilimited",
+      "name": "Chilimited",
+      "brand": "Chilimited",
+      "category": "FMCG",
+      "tags": [
+        "fmcg"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/chilimited.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.054Z",
+      "updatedAt": "2026-04-26T22:02:33.054Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "chipper-cash",
+      "name": "Chipper Cash",
+      "brand": "Chipper",
+      "category": "FMCG",
+      "tags": [
+        "fmcg"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/chipper-cash.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.054Z",
+      "updatedAt": "2026-04-26T22:02:33.054Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "chisco",
+      "name": "Chisco",
+      "brand": "Chisco",
+      "category": "FMCG",
+      "tags": [
+        "fmcg"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/chisco.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.054Z",
+      "updatedAt": "2026-04-26T22:02:33.054Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "chowcentral",
+      "name": "Chowcentral",
+      "brand": "Chowcentral",
+      "category": "Other",
+      "tags": [
+        "other"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/chowcentral.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.054Z",
+      "updatedAt": "2026-04-26T22:02:33.054Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "chowdeck",
+      "name": "Chowdeck",
+      "brand": "Chowdeck",
+      "category": "Other",
+      "tags": [
+        "other"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/chowdeck.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.054Z",
+      "updatedAt": "2026-04-26T22:02:33.054Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "circa",
+      "name": "Circa",
+      "brand": "Circa",
+      "category": "Other",
+      "tags": [
+        "other"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/circa.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.054Z",
+      "updatedAt": "2026-04-26T22:02:33.054Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "circlepanda",
+      "name": "Circlepanda",
+      "brand": "Circlepanda",
+      "category": "Other",
+      "tags": [
+        "other"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/circlepanda.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.054Z",
+      "updatedAt": "2026-04-26T22:02:33.054Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "citi-bank",
+      "name": "Citi Bank",
+      "brand": "Citi",
+      "category": "Banking",
+      "tags": [
+        "banking"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/citi-bank.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.054Z",
+      "updatedAt": "2026-04-26T22:02:33.054Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "clafiya",
+      "name": "Clafiya",
+      "brand": "Clafiya",
+      "category": "Other",
+      "tags": [
+        "other"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/clafiya.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.054Z",
+      "updatedAt": "2026-04-26T22:02:33.054Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "cleva",
+      "name": "Cleva",
+      "brand": "Cleva",
+      "category": "Other",
+      "tags": [
+        "other"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/cleva.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.054Z",
+      "updatedAt": "2026-04-26T22:02:33.054Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "cloud-trains",
+      "name": "Cloud Trains",
+      "brand": "Cloud",
+      "category": "Other",
+      "tags": [
+        "other"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/cloud-trains.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.054Z",
+      "updatedAt": "2026-04-26T22:02:33.054Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "coinprofile",
+      "name": "Coinprofile",
+      "brand": "Coinprofile",
+      "category": "Other",
+      "tags": [
+        "other"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/coinprofile.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.054Z",
+      "updatedAt": "2026-04-26T22:02:33.054Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "conoil",
+      "name": "Conoil",
+      "brand": "Conoil",
+      "category": "Other",
+      "tags": [
+        "other"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/conoil.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.054Z",
+      "updatedAt": "2026-04-26T22:02:33.054Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "continentalreinsurance",
+      "name": "Continentalreinsurance",
+      "brand": "Continentalreinsurance",
+      "category": "Insurance",
+      "tags": [
+        "insurance"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/continentalreinsurance.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.054Z",
+      "updatedAt": "2026-04-26T22:02:33.054Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "convoy",
+      "name": "Convoy",
+      "brand": "Convoy",
+      "category": "Other",
+      "tags": [
+        "other"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/convoy.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.054Z",
+      "updatedAt": "2026-04-26T22:02:33.054Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "coolfm",
+      "name": "Coolfm",
+      "brand": "Coolfm",
+      "category": "Other",
+      "tags": [
+        "other"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/coolfm.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.054Z",
+      "updatedAt": "2026-04-26T22:02:33.054Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "coralpay",
+      "name": "Coralpay",
+      "brand": "Coralpay",
+      "category": "Other",
+      "tags": [
+        "other"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/coralpay.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.054Z",
+      "updatedAt": "2026-04-26T22:02:33.054Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "cordros",
+      "name": "Cordros",
+      "brand": "Cordros",
+      "category": "Other",
+      "tags": [
+        "other"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/cordros.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.054Z",
+      "updatedAt": "2026-04-26T22:02:33.054Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "cover",
+      "name": "Cover",
+      "brand": "Cover",
+      "category": "Other",
+      "tags": [
+        "other"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/cover.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.054Z",
+      "updatedAt": "2026-04-26T22:02:33.054Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "cowry",
+      "name": "Cowry",
+      "brand": "Cowry",
+      "category": "Tech",
+      "tags": [
+        "tech"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/cowry.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.054Z",
+      "updatedAt": "2026-04-26T22:02:33.054Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "cowrywise",
+      "name": "Cowrywise",
+      "brand": "Cowrywise",
+      "category": "Tech",
+      "tags": [
+        "tech"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/cowrywise.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.054Z",
+      "updatedAt": "2026-04-26T22:02:33.054Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "crane",
+      "name": "Crane",
+      "brand": "Crane",
+      "category": "Other",
+      "tags": [
+        "other"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/crane.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.054Z",
+      "updatedAt": "2026-04-26T22:02:33.054Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "cravvings",
+      "name": "Cravvings",
+      "brand": "Cravvings",
+      "category": "Other",
+      "tags": [
+        "other"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/cravvings.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.054Z",
+      "updatedAt": "2026-04-26T22:02:33.054Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "credify",
+      "name": "Credify",
+      "brand": "Credify",
+      "category": "Other",
+      "tags": [
+        "other"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/credify.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.054Z",
+      "updatedAt": "2026-04-26T22:02:33.054Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "credpal",
+      "name": "Credpal",
+      "brand": "Credpal",
+      "category": "Other",
+      "tags": [
+        "other"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/credpal.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.054Z",
+      "updatedAt": "2026-04-26T22:02:33.054Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "creyv",
+      "name": "Creyv",
+      "brand": "Creyv",
+      "category": "Other",
+      "tags": [
+        "other"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/creyv.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.054Z",
+      "updatedAt": "2026-04-26T22:02:33.054Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "crop2cash",
+      "name": "Crop2cash",
+      "brand": "Crop2cash",
+      "category": "Other",
+      "tags": [
+        "other"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/crop2cash.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.054Z",
+      "updatedAt": "2026-04-26T22:02:33.054Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "cropsafe",
+      "name": "Cropsafe",
+      "brand": "Cropsafe",
+      "category": "Other",
+      "tags": [
+        "other"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/cropsafe.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.054Z",
+      "updatedAt": "2026-04-26T22:02:33.054Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "cross-country",
+      "name": "Cross Country",
+      "brand": "Cross",
+      "category": "Other",
+      "tags": [
+        "other"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/cross-country.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.054Z",
+      "updatedAt": "2026-04-26T22:02:33.054Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "crowdforce",
+      "name": "Crowdforce",
+      "brand": "Crowdforce",
+      "category": "Other",
+      "tags": [
+        "other"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/crowdforce.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.054Z",
+      "updatedAt": "2026-04-26T22:02:33.054Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "crowdyvest",
+      "name": "Crowdyvest",
+      "brand": "Crowdyvest",
+      "category": "Other",
+      "tags": [
+        "other"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/crowdyvest.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.054Z",
+      "updatedAt": "2026-04-26T22:02:33.054Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "crownnatures",
+      "name": "Crownnatures",
+      "brand": "Crownnatures",
+      "category": "Other",
+      "tags": [
+        "other"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/crownnatures.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.054Z",
+      "updatedAt": "2026-04-26T22:02:33.054Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "css-bookshops",
+      "name": "Css Bookshops",
+      "brand": "Css",
+      "category": "Other",
+      "tags": [
+        "other"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/css-bookshops.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.054Z",
+      "updatedAt": "2026-04-26T22:02:33.054Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "cuddle",
+      "name": "Cuddle",
+      "brand": "Cuddle",
+      "category": "Other",
+      "tags": [
+        "other"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/cuddle.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.054Z",
+      "updatedAt": "2026-04-26T22:02:33.054Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "cutix-plc",
+      "name": "Cutix Plc",
+      "brand": "Cutix",
+      "category": "Other",
+      "tags": [
+        "other"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/cutix-plc.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.054Z",
+      "updatedAt": "2026-04-26T22:02:33.054Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "cwg",
+      "name": "Cwg",
+      "brand": "Cwg",
+      "category": "Other",
+      "tags": [
+        "other"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/cwg.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.054Z",
+      "updatedAt": "2026-04-26T22:02:33.054Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "dailytrust",
+      "name": "Dailytrust",
+      "brand": "Dailytrust",
+      "category": "Other",
+      "tags": [
+        "other"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/dailytrust.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.054Z",
+      "updatedAt": "2026-04-26T22:02:33.054Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "danaair",
+      "name": "Danaair",
+      "brand": "Danaair",
+      "category": "Other",
+      "tags": [
+        "other"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/danaair.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.054Z",
+      "updatedAt": "2026-04-26T22:02:33.054Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "dangote",
+      "name": "Dangote",
+      "brand": "Dangote",
+      "category": "FMCG",
+      "tags": [
+        "fmcg"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/dangote.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.054Z",
+      "updatedAt": "2026-04-26T22:02:33.054Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "dano",
+      "name": "Dano",
+      "brand": "Dano",
+      "category": "Other",
+      "tags": [
+        "other"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/dano.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.054Z",
+      "updatedAt": "2026-04-26T22:02:33.054Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "dantata-agric",
+      "name": "Dantata Agric",
+      "brand": "Dantata",
+      "category": "Other",
+      "tags": [
+        "other"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/dantata-agric.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.054Z",
+      "updatedAt": "2026-04-26T22:02:33.054Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "dantata-plastic",
+      "name": "Dantata Plastic",
+      "brand": "Dantata",
+      "category": "Other",
+      "tags": [
+        "other"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/dantata-plastic.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.054Z",
+      "updatedAt": "2026-04-26T22:02:33.054Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "ddb",
+      "name": "Ddb",
+      "brand": "Ddb",
+      "category": "Other",
+      "tags": [
+        "other"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/ddb.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.054Z",
+      "updatedAt": "2026-04-26T22:02:33.054Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "dealday",
+      "name": "Dealday",
+      "brand": "Dealday",
+      "category": "Other",
+      "tags": [
+        "other"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/dealday.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.054Z",
+      "updatedAt": "2026-04-26T22:02:33.054Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "deardesigner",
+      "name": "Deardesigner",
+      "brand": "Deardesigner",
+      "category": "Other",
+      "tags": [
+        "other"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/deardesigner.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.054Z",
+      "updatedAt": "2026-04-26T22:02:33.054Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "frame-18",
+      "name": "Frame 18",
+      "brand": "Frame",
+      "category": "Other",
+      "tags": [
+        "other"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/frame-18.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.054Z",
+      "updatedAt": "2026-04-26T22:02:33.054Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "frame-20",
+      "name": "Frame 20",
+      "brand": "Frame",
+      "category": "Other",
+      "tags": [
+        "other"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/frame-20.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.054Z",
+      "updatedAt": "2026-04-26T22:02:33.054Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "frame-25",
+      "name": "Frame 25",
+      "brand": "Frame",
+      "category": "Other",
+      "tags": [
+        "other"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/frame-25.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.054Z",
+      "updatedAt": "2026-04-26T22:02:33.054Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "getcarbon",
+      "name": "Getcarbon",
+      "brand": "Getcarbon",
+      "category": "Tech",
+      "tags": [
+        "tech"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/getcarbon.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.054Z",
+      "updatedAt": "2026-04-26T22:02:33.054Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "logo-3sc",
+      "name": "Logo 3sc",
+      "brand": "Logo",
+      "category": "Other",
+      "tags": [
+        "other"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/logo-3sc.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.054Z",
+      "updatedAt": "2026-04-26T22:02:33.054Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "logo-9mobile",
+      "name": "Logo 9mobile",
+      "brand": "Logo",
+      "category": "Telecom",
+      "tags": [
+        "telecom"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/logo-9mobile.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.054Z",
+      "updatedAt": "2026-04-26T22:02:33.054Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "logo-abeg-logo",
+      "name": "Logo Abeg Logo",
+      "brand": "Logo",
+      "category": "Other",
+      "tags": [
+        "other"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/logo-abeg-logo.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.054Z",
+      "updatedAt": "2026-04-26T22:02:33.054Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "logo-accenture",
+      "name": "Logo Accenture",
+      "brand": "Logo",
+      "category": "Other",
+      "tags": [
+        "other"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/logo-accenture.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.054Z",
+      "updatedAt": "2026-04-26T22:02:33.054Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "logo-accessbank",
+      "name": "Logo Accessbank",
+      "brand": "Logo",
+      "category": "Banking",
+      "tags": [
+        "banking"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/logo-accessbank.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.054Z",
+      "updatedAt": "2026-04-26T22:02:33.054Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "logo-accion",
+      "name": "Logo Accion",
+      "brand": "Logo",
+      "category": "Other",
+      "tags": [
+        "other"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/logo-accion.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.054Z",
+      "updatedAt": "2026-04-26T22:02:33.054Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "logo-accounteer",
+      "name": "Logo Accounteer",
+      "brand": "Logo",
+      "category": "Other",
+      "tags": [
+        "other"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/logo-accounteer.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.054Z",
+      "updatedAt": "2026-04-26T22:02:33.054Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "logo-acumen-digital-logo",
+      "name": "Logo Acumen Digital Logo",
+      "brand": "Logo",
+      "category": "Other",
+      "tags": [
+        "other"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/logo-acumen-digital-logo.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.054Z",
+      "updatedAt": "2026-04-26T22:02:33.054Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "logo-advancly",
+      "name": "Logo Advancly",
+      "brand": "Logo",
+      "category": "Other",
+      "tags": [
+        "other"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/logo-advancly.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.054Z",
+      "updatedAt": "2026-04-26T22:02:33.054Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "logo-advocaat",
+      "name": "Logo Advocaat",
+      "brand": "Logo",
+      "category": "Other",
+      "tags": [
+        "other"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/logo-advocaat.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.054Z",
+      "updatedAt": "2026-04-26T22:02:33.054Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "logo-aella",
+      "name": "Logo Aella",
+      "brand": "Logo",
+      "category": "Other",
+      "tags": [
+        "other"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/logo-aella.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.054Z",
+      "updatedAt": "2026-04-26T22:02:33.054Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "logo-aella-credit-logo",
+      "name": "Logo Aella Credit Logo",
+      "brand": "Logo",
+      "category": "Other",
+      "tags": [
+        "other"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/logo-aella-credit-logo.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.054Z",
+      "updatedAt": "2026-04-26T22:02:33.054Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "logo-aerobotics",
+      "name": "Logo Aerobotics",
+      "brand": "Logo",
+      "category": "Other",
+      "tags": [
+        "other"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/logo-aerobotics.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.054Z",
+      "updatedAt": "2026-04-26T22:02:33.054Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "logo-aerocontractors",
+      "name": "Logo Aerocontractors",
+      "brand": "Logo",
+      "category": "Other",
+      "tags": [
+        "other"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/logo-aerocontractors.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.054Z",
+      "updatedAt": "2026-04-26T22:02:33.054Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "logo-africa-fintech-foundry-logo",
+      "name": "Logo Africa Fintech Foundry Logo",
+      "brand": "Logo",
+      "category": "Banking",
+      "tags": [
+        "banking"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/logo-africa-fintech-foundry-logo.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.055Z",
+      "updatedAt": "2026-04-26T22:02:33.055Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "logo-africhange",
+      "name": "Logo Africhange",
+      "brand": "Logo",
+      "category": "Other",
+      "tags": [
+        "other"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/logo-africhange.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.055Z",
+      "updatedAt": "2026-04-26T22:02:33.055Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "logo-afriex",
+      "name": "Logo Afriex",
+      "brand": "Logo",
+      "category": "Other",
+      "tags": [
+        "other"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/logo-afriex.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.055Z",
+      "updatedAt": "2026-04-26T22:02:33.055Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "logo-afriskaut",
+      "name": "Logo Afriskaut",
+      "brand": "Logo",
+      "category": "Other",
+      "tags": [
+        "other"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/logo-afriskaut.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.055Z",
+      "updatedAt": "2026-04-26T22:02:33.055Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "logo-afropolitan",
+      "name": "Logo Afropolitan",
+      "brand": "Logo",
+      "category": "Other",
+      "tags": [
+        "other"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/logo-afropolitan.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.055Z",
+      "updatedAt": "2026-04-26T22:02:33.055Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "logo-agrocenta",
+      "name": "Logo Agrocenta",
+      "brand": "Logo",
+      "category": "Other",
+      "tags": [
+        "other"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/logo-agrocenta.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.055Z",
+      "updatedAt": "2026-04-26T22:02:33.055Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "logo-airpeace",
+      "name": "Logo Airpeace",
+      "brand": "Logo",
+      "category": "Other",
+      "tags": [
+        "other"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/logo-airpeace.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.055Z",
+      "updatedAt": "2026-04-26T22:02:33.055Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "logo-airtel",
+      "name": "Logo Airtel",
+      "brand": "Logo",
+      "category": "Telecom",
+      "tags": [
+        "telecom"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/logo-airtel.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.055Z",
+      "updatedAt": "2026-04-26T22:02:33.055Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "logo-ajocard",
+      "name": "Logo Ajocard",
+      "brand": "Logo",
+      "category": "Other",
+      "tags": [
+        "other"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/logo-ajocard.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.055Z",
+      "updatedAt": "2026-04-26T22:02:33.055Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "logo-akoma-health",
+      "name": "Logo Akoma Health",
+      "brand": "Logo",
+      "category": "Other",
+      "tags": [
+        "other"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/logo-akoma-health.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.055Z",
+      "updatedAt": "2026-04-26T22:02:33.055Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "logo-aku",
+      "name": "Logo Aku",
+      "brand": "Logo",
+      "category": "Other",
+      "tags": [
+        "other"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/logo-aku.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.055Z",
+      "updatedAt": "2026-04-26T22:02:33.055Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "logo-alajo",
+      "name": "Logo Alajo",
+      "brand": "Logo",
+      "category": "Other",
+      "tags": [
+        "other"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/logo-alajo.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.055Z",
+      "updatedAt": "2026-04-26T22:02:33.055Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "logo-alatbywema",
+      "name": "Logo Alatbywema",
+      "brand": "Logo",
+      "category": "Banking",
+      "tags": [
+        "banking"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/logo-alatbywema.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.055Z",
+      "updatedAt": "2026-04-26T22:02:33.055Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "logo-alerzo",
+      "name": "Logo Alerzo",
+      "brand": "Logo",
+      "category": "Other",
+      "tags": [
+        "other"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/logo-alerzo.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.055Z",
+      "updatedAt": "2026-04-26T22:02:33.055Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "logo-allawee",
+      "name": "Logo Allawee",
+      "brand": "Logo",
+      "category": "Other",
+      "tags": [
+        "other"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/logo-allawee.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.055Z",
+      "updatedAt": "2026-04-26T22:02:33.055Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "logo-alphawallet",
+      "name": "Logo Alphawallet",
+      "brand": "Logo",
+      "category": "Other",
+      "tags": [
+        "other"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/logo-alphawallet.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.055Z",
+      "updatedAt": "2026-04-26T22:02:33.055Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "logo-altschool-africa-logo",
+      "name": "Logo Altschool Africa Logo",
+      "brand": "Logo",
+      "category": "Other",
+      "tags": [
+        "other"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/logo-altschool-africa-logo.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.055Z",
+      "updatedAt": "2026-04-26T22:02:33.055Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "logo-anchor",
+      "name": "Logo Anchor",
+      "brand": "Logo",
+      "category": "Other",
+      "tags": [
+        "other"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/logo-anchor.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.055Z",
+      "updatedAt": "2026-04-26T22:02:33.055Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "logo-andela-nigeria-logo",
+      "name": "Logo Andela Nigeria Logo",
+      "brand": "Logo",
+      "category": "Other",
+      "tags": [
+        "other"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/logo-andela-nigeria-logo.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.055Z",
+      "updatedAt": "2026-04-26T22:02:33.055Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "logo-apata",
+      "name": "Logo Apata",
+      "brand": "Logo",
+      "category": "Other",
+      "tags": [
+        "other"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/logo-apata.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.055Z",
+      "updatedAt": "2026-04-26T22:02:33.055Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "logo-apmterminals",
+      "name": "Logo Apmterminals",
+      "brand": "Logo",
+      "category": "Other",
+      "tags": [
+        "other"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/logo-apmterminals.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.055Z",
+      "updatedAt": "2026-04-26T22:02:33.055Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "logo-appzone",
+      "name": "Logo Appzone",
+      "brand": "Logo",
+      "category": "FMCG",
+      "tags": [
+        "fmcg"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/logo-appzone.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.055Z",
+      "updatedAt": "2026-04-26T22:02:33.055Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "logo-arciving",
+      "name": "Logo Arciving",
+      "brand": "Logo",
+      "category": "Other",
+      "tags": [
+        "other"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/logo-arciving.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.055Z",
+      "updatedAt": "2026-04-26T22:02:33.055Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "logo-ardovaplc",
+      "name": "Logo Ardovaplc",
+      "brand": "Logo",
+      "category": "Other",
+      "tags": [
+        "other"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/logo-ardovaplc.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.055Z",
+      "updatedAt": "2026-04-26T22:02:33.055Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "logo-arikair",
+      "name": "Logo Arikair",
+      "brand": "Logo",
+      "category": "Other",
+      "tags": [
+        "other"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/logo-arikair.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.055Z",
+      "updatedAt": "2026-04-26T22:02:33.055Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "logo-arla",
+      "name": "Logo Arla",
+      "brand": "Logo",
+      "category": "Other",
+      "tags": [
+        "other"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/logo-arla.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.055Z",
+      "updatedAt": "2026-04-26T22:02:33.055Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "logo-asosavings-loans",
+      "name": "Logo Asosavings Loans",
+      "brand": "Logo",
+      "category": "Other",
+      "tags": [
+        "other"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/logo-asosavings-loans.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.055Z",
+      "updatedAt": "2026-04-26T22:02:33.055Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "logo-assetbase",
+      "name": "Logo Assetbase",
+      "brand": "Logo",
+      "category": "Other",
+      "tags": [
+        "other"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/logo-assetbase.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.055Z",
+      "updatedAt": "2026-04-26T22:02:33.055Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "logo-awabah",
+      "name": "Logo Awabah",
+      "brand": "Logo",
+      "category": "Other",
+      "tags": [
+        "other"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/logo-awabah.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.055Z",
+      "updatedAt": "2026-04-26T22:02:33.055Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "logo-axamansard",
+      "name": "Logo Axamansard",
+      "brand": "Logo",
+      "category": "Insurance",
+      "tags": [
+        "insurance"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/logo-axamansard.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.055Z",
+      "updatedAt": "2026-04-26T22:02:33.055Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "logo-backdrop",
+      "name": "Logo Backdrop",
+      "brand": "Logo",
+      "category": "Other",
+      "tags": [
+        "other"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/logo-backdrop.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.055Z",
+      "updatedAt": "2026-04-26T22:02:33.055Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "logo-bamboo",
+      "name": "Logo Bamboo",
+      "brand": "Logo",
+      "category": "Other",
+      "tags": [
+        "other"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/logo-bamboo.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.055Z",
+      "updatedAt": "2026-04-26T22:02:33.055Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "logo-bankly",
+      "name": "Logo Bankly",
+      "brand": "Logo",
+      "category": "Banking",
+      "tags": [
+        "banking"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/logo-bankly.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.055Z",
+      "updatedAt": "2026-04-26T22:02:33.055Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "logo-barter-logo",
+      "name": "Logo Barter Logo",
+      "brand": "Logo",
+      "category": "Other",
+      "tags": [
+        "other"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/logo-barter-logo.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.055Z",
+      "updatedAt": "2026-04-26T22:02:33.055Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "logo-benjamindada",
+      "name": "Logo Benjamindada",
+      "brand": "Logo",
+      "category": "Other",
+      "tags": [
+        "other"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/logo-benjamindada.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.055Z",
+      "updatedAt": "2026-04-26T22:02:33.055Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "logo-bet9ja",
+      "name": "Logo Bet9ja",
+      "brand": "Logo",
+      "category": "Other",
+      "tags": [
+        "other"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/logo-bet9ja.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.055Z",
+      "updatedAt": "2026-04-26T22:02:33.055Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "logo-betway",
+      "name": "Logo Betway",
+      "brand": "Logo",
+      "category": "Other",
+      "tags": [
+        "other"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/logo-betway.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.055Z",
+      "updatedAt": "2026-04-26T22:02:33.055Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "logo-bigibrand",
+      "name": "Logo Bigibrand",
+      "brand": "Logo",
+      "category": "Other",
+      "tags": [
+        "other"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/logo-bigibrand.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.055Z",
+      "updatedAt": "2026-04-26T22:02:33.055Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "logo-bitmama",
+      "name": "Logo Bitmama",
+      "brand": "Logo",
+      "category": "Other",
+      "tags": [
+        "other"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/logo-bitmama.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.055Z",
+      "updatedAt": "2026-04-26T22:02:33.055Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "logo-bitnob",
+      "name": "Logo Bitnob",
+      "brand": "Logo",
+      "category": "Other",
+      "tags": [
+        "other"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/logo-bitnob.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.055Z",
+      "updatedAt": "2026-04-26T22:02:33.055Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "logo-bitpesa",
+      "name": "Logo Bitpesa",
+      "brand": "Logo",
+      "category": "Other",
+      "tags": [
+        "other"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/logo-bitpesa.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.055Z",
+      "updatedAt": "2026-04-26T22:02:33.055Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "logo-bitsika",
+      "name": "Logo Bitsika",
+      "brand": "Logo",
+      "category": "Other",
+      "tags": [
+        "other"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/logo-bitsika.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.055Z",
+      "updatedAt": "2026-04-26T22:02:33.055Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "logo-bloc",
+      "name": "Logo Bloc",
+      "brand": "Logo",
+      "category": "Other",
+      "tags": [
+        "other"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/logo-bloc.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.055Z",
+      "updatedAt": "2026-04-26T22:02:33.055Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "logo-bolt-logo",
+      "name": "Logo Bolt Logo",
+      "brand": "Logo",
+      "category": "Other",
+      "tags": [
+        "other"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/logo-bolt-logo.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.055Z",
+      "updatedAt": "2026-04-26T22:02:33.055Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "logo-bostonconsultinggroupnigeria",
+      "name": "Logo Bostonconsultinggroupnigeria",
+      "brand": "Logo",
+      "category": "Other",
+      "tags": [
+        "other"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/logo-bostonconsultinggroupnigeria.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.055Z",
+      "updatedAt": "2026-04-26T22:02:33.055Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "logo-branch-logo",
+      "name": "Logo Branch Logo",
+      "brand": "Logo",
+      "category": "Other",
+      "tags": [
+        "other"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/logo-branch-logo.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.055Z",
+      "updatedAt": "2026-04-26T22:02:33.055Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "logo-brass",
+      "name": "Logo Brass",
+      "brand": "Logo",
+      "category": "Other",
+      "tags": [
+        "other"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/logo-brass.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.055Z",
+      "updatedAt": "2026-04-26T22:02:33.055Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "logo-bridgecards",
+      "name": "Logo Bridgecards",
+      "brand": "Logo",
+      "category": "Other",
+      "tags": [
+        "other"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/logo-bridgecards.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.055Z",
+      "updatedAt": "2026-04-26T22:02:33.055Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "logo-brimble",
+      "name": "Logo Brimble",
+      "brand": "Logo",
+      "category": "Other",
+      "tags": [
+        "other"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/logo-brimble.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.055Z",
+      "updatedAt": "2026-04-26T22:02:33.055Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "logo-brydge",
+      "name": "Logo Brydge",
+      "brand": "Logo",
+      "category": "Other",
+      "tags": [
+        "other"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/logo-brydge.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.055Z",
+      "updatedAt": "2026-04-26T22:02:33.055Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "logo-buafoods",
+      "name": "Logo Buafoods",
+      "brand": "Logo",
+      "category": "Other",
+      "tags": [
+        "other"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/logo-buafoods.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.055Z",
+      "updatedAt": "2026-04-26T22:02:33.055Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "logo-bunce",
+      "name": "Logo Bunce",
+      "brand": "Logo",
+      "category": "Other",
+      "tags": [
+        "other"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/logo-bunce.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.055Z",
+      "updatedAt": "2026-04-26T22:02:33.055Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "logo-bundle-africa",
+      "name": "Logo Bundle Africa",
+      "brand": "Logo",
+      "category": "Other",
+      "tags": [
+        "other"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/logo-bundle-africa.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.055Z",
+      "updatedAt": "2026-04-26T22:02:33.055Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "logo-busha-logo",
+      "name": "Logo Busha Logo",
+      "brand": "Logo",
+      "category": "Transport",
+      "tags": [
+        "transport"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/logo-busha-logo.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.055Z",
+      "updatedAt": "2026-04-26T22:02:33.055Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "logo-businessday",
+      "name": "Logo Businessday",
+      "brand": "Logo",
+      "category": "Transport",
+      "tags": [
+        "transport"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/logo-businessday.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.055Z",
+      "updatedAt": "2026-04-26T22:02:33.055Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "logo-buycoins",
+      "name": "Logo Buycoins",
+      "brand": "Logo",
+      "category": "Other",
+      "tags": [
+        "other"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/logo-buycoins.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.055Z",
+      "updatedAt": "2026-04-26T22:02:33.055Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "logo-buypower",
+      "name": "Logo Buypower",
+      "brand": "Logo",
+      "category": "Energy",
+      "tags": [
+        "energy"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/logo-buypower.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.055Z",
+      "updatedAt": "2026-04-26T22:02:33.055Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "logo-byte",
+      "name": "Logo Byte",
+      "brand": "Logo",
+      "category": "Other",
+      "tags": [
+        "other"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/logo-byte.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.055Z",
+      "updatedAt": "2026-04-26T22:02:33.055Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "logo-cadbury",
+      "name": "Logo Cadbury",
+      "brand": "Logo",
+      "category": "FMCG",
+      "tags": [
+        "fmcg"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/logo-cadbury.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.055Z",
+      "updatedAt": "2026-04-26T22:02:33.055Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "logo-carry",
+      "name": "Logo Carry",
+      "brand": "Logo",
+      "category": "Other",
+      "tags": [
+        "other"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/logo-carry.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.055Z",
+      "updatedAt": "2026-04-26T22:02:33.055Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "logo-cars45-logo-new",
+      "name": "Logo Cars45 Logo New",
+      "brand": "Logo",
+      "category": "Other",
+      "tags": [
+        "other"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/logo-cars45-logo-new.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.055Z",
+      "updatedAt": "2026-04-26T22:02:33.055Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "logo-cassava",
+      "name": "Logo Cassava",
+      "brand": "Logo",
+      "category": "Other",
+      "tags": [
+        "other"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/logo-cassava.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.055Z",
+      "updatedAt": "2026-04-26T22:02:33.055Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "logo-catlog",
+      "name": "Logo Catlog",
+      "brand": "Logo",
+      "category": "Other",
+      "tags": [
+        "other"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/logo-catlog.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.055Z",
+      "updatedAt": "2026-04-26T22:02:33.055Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "logo-cbn",
+      "name": "Logo Cbn",
+      "brand": "Logo",
+      "category": "Other",
+      "tags": [
+        "other"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/logo-cbn.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.055Z",
+      "updatedAt": "2026-04-26T22:02:33.055Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "logo-cbreexcellerate",
+      "name": "Logo Cbreexcellerate",
+      "brand": "Logo",
+      "category": "Other",
+      "tags": [
+        "other"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/logo-cbreexcellerate.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.055Z",
+      "updatedAt": "2026-04-26T22:02:33.055Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "logo-cenoa",
+      "name": "Logo Cenoa",
+      "brand": "Logo",
+      "category": "Other",
+      "tags": [
+        "other"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/logo-cenoa.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.056Z",
+      "updatedAt": "2026-04-26T22:02:33.056Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "logo-chaka",
+      "name": "Logo Chaka",
+      "brand": "Logo",
+      "category": "Other",
+      "tags": [
+        "other"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/logo-chaka.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.056Z",
+      "updatedAt": "2026-04-26T22:02:33.056Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "logo-changera",
+      "name": "Logo Changera",
+      "brand": "Logo",
+      "category": "Other",
+      "tags": [
+        "other"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/logo-changera.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.056Z",
+      "updatedAt": "2026-04-26T22:02:33.056Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "logo-channelstv",
+      "name": "Logo Channelstv",
+      "brand": "Logo",
+      "category": "Media",
+      "tags": [
+        "media"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/logo-channelstv.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.056Z",
+      "updatedAt": "2026-04-26T22:02:33.056Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "logo-check-dc-logo",
+      "name": "Logo Check Dc Logo",
+      "brand": "Logo",
+      "category": "Other",
+      "tags": [
+        "other"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/logo-check-dc-logo.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.056Z",
+      "updatedAt": "2026-04-26T22:02:33.056Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "logo-checkdc",
+      "name": "Logo Checkdc",
+      "brand": "Logo",
+      "category": "Other",
+      "tags": [
+        "other"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/logo-checkdc.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.056Z",
+      "updatedAt": "2026-04-26T22:02:33.056Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "logo-chevron",
+      "name": "Logo Chevron",
+      "brand": "Logo",
+      "category": "Energy",
+      "tags": [
+        "energy"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/logo-chevron.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.056Z",
+      "updatedAt": "2026-04-26T22:02:33.056Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "logo-chickenrepublic",
+      "name": "Logo Chickenrepublic",
+      "brand": "Logo",
+      "category": "FMCG",
+      "tags": [
+        "fmcg"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/logo-chickenrepublic.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.056Z",
+      "updatedAt": "2026-04-26T22:02:33.056Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "logo-chipper",
+      "name": "Logo Chipper",
+      "brand": "Logo",
+      "category": "FMCG",
+      "tags": [
+        "fmcg"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/logo-chipper.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.056Z",
+      "updatedAt": "2026-04-26T22:02:33.056Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "logo-chisco-1",
+      "name": "Logo Chisco 1",
+      "brand": "Logo",
+      "category": "FMCG",
+      "tags": [
+        "fmcg"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/logo-chisco-1.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.056Z",
+      "updatedAt": "2026-04-26T22:02:33.056Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "logo-chowcentral",
+      "name": "Logo Chowcentral",
+      "brand": "Logo",
+      "category": "Other",
+      "tags": [
+        "other"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/logo-chowcentral.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.056Z",
+      "updatedAt": "2026-04-26T22:02:33.056Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "logo-chowdeck",
+      "name": "Logo Chowdeck",
+      "brand": "Logo",
+      "category": "Other",
+      "tags": [
+        "other"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/logo-chowdeck.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.056Z",
+      "updatedAt": "2026-04-26T22:02:33.056Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "logo-circalagos",
+      "name": "Logo Circalagos",
+      "brand": "Logo",
+      "category": "Other",
+      "tags": [
+        "other"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/logo-circalagos.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.056Z",
+      "updatedAt": "2026-04-26T22:02:33.056Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "logo-circlepanda",
+      "name": "Logo Circlepanda",
+      "brand": "Logo",
+      "category": "Other",
+      "tags": [
+        "other"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/logo-circlepanda.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.056Z",
+      "updatedAt": "2026-04-26T22:02:33.056Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "logo-citibank",
+      "name": "Logo Citibank",
+      "brand": "Logo",
+      "category": "Banking",
+      "tags": [
+        "banking"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/logo-citibank.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.056Z",
+      "updatedAt": "2026-04-26T22:02:33.056Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "logo-clafiya",
+      "name": "Logo Clafiya",
+      "brand": "Logo",
+      "category": "Other",
+      "tags": [
+        "other"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/logo-clafiya.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.056Z",
+      "updatedAt": "2026-04-26T22:02:33.056Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "logo-cleva",
+      "name": "Logo Cleva",
+      "brand": "Logo",
+      "category": "Other",
+      "tags": [
+        "other"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/logo-cleva.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.056Z",
+      "updatedAt": "2026-04-26T22:02:33.056Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "logo-coinprofile",
+      "name": "Logo Coinprofile",
+      "brand": "Logo",
+      "category": "Other",
+      "tags": [
+        "other"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/logo-coinprofile.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.056Z",
+      "updatedAt": "2026-04-26T22:02:33.056Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "logo-conoil",
+      "name": "Logo Conoil",
+      "brand": "Logo",
+      "category": "Other",
+      "tags": [
+        "other"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/logo-conoil.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.056Z",
+      "updatedAt": "2026-04-26T22:02:33.056Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "logo-continentalreinsurance",
+      "name": "Logo Continentalreinsurance",
+      "brand": "Logo",
+      "category": "Insurance",
+      "tags": [
+        "insurance"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/logo-continentalreinsurance.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.056Z",
+      "updatedAt": "2026-04-26T22:02:33.056Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "logo-convoy",
+      "name": "Logo Convoy",
+      "brand": "Logo",
+      "category": "Other",
+      "tags": [
+        "other"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/logo-convoy.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.056Z",
+      "updatedAt": "2026-04-26T22:02:33.056Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "logo-coolfm",
+      "name": "Logo Coolfm",
+      "brand": "Logo",
+      "category": "Other",
+      "tags": [
+        "other"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/logo-coolfm.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.056Z",
+      "updatedAt": "2026-04-26T22:02:33.056Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "logo-coralpay",
+      "name": "Logo Coralpay",
+      "brand": "Logo",
+      "category": "Other",
+      "tags": [
+        "other"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/logo-coralpay.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.056Z",
+      "updatedAt": "2026-04-26T22:02:33.056Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "logo-cowry",
+      "name": "Logo Cowry",
+      "brand": "Logo",
+      "category": "Tech",
+      "tags": [
+        "tech"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/logo-cowry.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.056Z",
+      "updatedAt": "2026-04-26T22:02:33.056Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "logo-cowrywise",
+      "name": "Logo Cowrywise",
+      "brand": "Logo",
+      "category": "Tech",
+      "tags": [
+        "tech"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/logo-cowrywise.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.056Z",
+      "updatedAt": "2026-04-26T22:02:33.056Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "logo-cravvings-logo",
+      "name": "Logo Cravvings Logo",
+      "brand": "Logo",
+      "category": "Other",
+      "tags": [
+        "other"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/logo-cravvings-logo.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.056Z",
+      "updatedAt": "2026-04-26T22:02:33.056Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "logo-credpal",
+      "name": "Logo Credpal",
+      "brand": "Logo",
+      "category": "Other",
+      "tags": [
+        "other"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/logo-credpal.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.056Z",
+      "updatedAt": "2026-04-26T22:02:33.056Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "logo-creyv",
+      "name": "Logo Creyv",
+      "brand": "Logo",
+      "category": "Other",
+      "tags": [
+        "other"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/logo-creyv.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.056Z",
+      "updatedAt": "2026-04-26T22:02:33.056Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "logo-crop2cash",
+      "name": "Logo Crop2cash",
+      "brand": "Logo",
+      "category": "Other",
+      "tags": [
+        "other"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/logo-crop2cash.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.056Z",
+      "updatedAt": "2026-04-26T22:02:33.056Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "logo-crowdforce",
+      "name": "Logo Crowdforce",
+      "brand": "Logo",
+      "category": "Other",
+      "tags": [
+        "other"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/logo-crowdforce.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.056Z",
+      "updatedAt": "2026-04-26T22:02:33.056Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "logo-crowdyvest",
+      "name": "Logo Crowdyvest",
+      "brand": "Logo",
+      "category": "Other",
+      "tags": [
+        "other"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/logo-crowdyvest.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.056Z",
+      "updatedAt": "2026-04-26T22:02:33.056Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "logo-cuddle",
+      "name": "Logo Cuddle",
+      "brand": "Logo",
+      "category": "Other",
+      "tags": [
+        "other"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/logo-cuddle.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.056Z",
+      "updatedAt": "2026-04-26T22:02:33.056Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "logo-cwgplc",
+      "name": "Logo Cwgplc",
+      "brand": "Logo",
+      "category": "Other",
+      "tags": [
+        "other"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/logo-cwgplc.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.056Z",
+      "updatedAt": "2026-04-26T22:02:33.056Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "logo-dailytrust",
+      "name": "Logo Dailytrust",
+      "brand": "Logo",
+      "category": "Other",
+      "tags": [
+        "other"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/logo-dailytrust.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.056Z",
+      "updatedAt": "2026-04-26T22:02:33.056Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "logo-dangote",
+      "name": "Logo Dangote",
+      "brand": "Logo",
+      "category": "FMCG",
+      "tags": [
+        "fmcg"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/logo-dangote.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.056Z",
+      "updatedAt": "2026-04-26T22:02:33.056Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "logo-danomilk",
+      "name": "Logo Danomilk",
+      "brand": "Logo",
+      "category": "Other",
+      "tags": [
+        "other"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/logo-danomilk.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.056Z",
+      "updatedAt": "2026-04-26T22:02:33.056Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "logo-dealday",
+      "name": "Logo Dealday",
+      "brand": "Logo",
+      "category": "Other",
+      "tags": [
+        "other"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/logo-dealday.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.056Z",
+      "updatedAt": "2026-04-26T22:02:33.056Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    },
+    {
+      "id": "ubenwa",
+      "name": "Ubenwa",
+      "brand": "Ubenwa",
+      "category": "Other",
+      "tags": [
+        "other"
+      ],
+      "svgUrl": "https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/assets/logos/ubenwa.svg",
+      "pngUrl": null,
+      "quality": "svg",
+      "figmaNodeId": "0:0",
+      "figmaComponentKey": "",
+      "addedAt": "2026-04-26T22:02:33.056Z",
+      "updatedAt": "2026-04-26T22:02:33.056Z",
+      "contributedBy": {
+        "handle": "admin",
+        "source": "admin"
+      }
+    }
+  ]
 }

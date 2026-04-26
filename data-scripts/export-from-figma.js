@@ -1,209 +1,332 @@
 // export-from-figma.js
-// One-time script: pulls all components from the Nigerian Brands Figma community file
-// and saves them as SVG/PNG files + generates the logos.json manifest.
-//
+// Exports all logo components from the Nigerian Brands Figma file.
+// Processes in batches of 5, waits 3s between batches, skips files
+// already on disk, and saves progress so it can resume if interrupted.
 // Run with: npm run export-logos
 
-require('dotenv').config({ path: require('path').join(__dirname, '../.env') });
+require('dotenv').config({ path: require('path').join(__dirname, '.env') });
 
 const fs = require('fs');
 const path = require('path');
 const fetch = require('node-fetch');
 
-const FIGMA_TOKEN = process.env.FIGMA_TOKEN;
-const FILE_KEY = process.env.FIGMA_FILE_KEY || '1423382612609415986';
-const OUT_DIR = path.join(__dirname, '../public/assets/logos');
+const FIGMA_TOKEN  = process.env.FIGMA_TOKEN;
+const FILE_KEY     = process.env.FIGMA_FILE_KEY || 'Scp7i5b52gFyFOyyY4HXwT';
+const GITHUB_OWNER = process.env.GITHUB_OWNER  || 'maryam-ay';
+const GITHUB_REPO  = process.env.GITHUB_REPO   || 'nigerian-brands-logos-plugin';
+
+const OUT_DIR       = path.join(__dirname, '../public/assets/logos');
 const MANIFEST_PATH = path.join(__dirname, '../public/logos.json');
+const PROGRESS_PATH = path.join(__dirname, '../public/assets/export-progress.json');
+const RAW_BASE      = `https://raw.githubusercontent.com/${GITHUB_OWNER}/${GITHUB_REPO}/main/public/assets/logos`;
 
-if (!FIGMA_TOKEN) {
-  console.error('❌  FIGMA_TOKEN not set in .env');
-  process.exit(1);
-}
+const BATCH_SIZE  = 5;
+const BATCH_DELAY = 65000; // ms between batches — Figma export endpoint: ~1 req/min safe rate
 
-const headers = { 'X-Figma-Token': FIGMA_TOKEN };
+if (!FIGMA_TOKEN) { console.error('❌  FIGMA_TOKEN not set in .env'); process.exit(1); }
+
+const figmaHeaders = { 'X-Figma-Token': FIGMA_TOKEN };
+
+// ── helpers ──────────────────────────────────────────────────────────────────
 
 function slugify(text) {
-  return text.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
+  return text.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '') || 'logo';
 }
 
 function detectCategory(name) {
   const n = name.toLowerCase();
-  if (/bank|finance|fintech|pay|money|zenith|gtb|uba|access|fidelity|stanbic|union|heritage|keystone|polaris|sterling|wema|jaiz/.test(n)) return 'Banking';
-  if (/mtn|airtel|glo|9mobile|etisalat|ntel|spectranet|smile|swift|telecom|mobile|network/.test(n)) return 'Telecom';
-  if (/nestle|unilever|dangote|flour|breweries|cadbury|pz|reckitt|friesland|chi|indomie|honeywell/.test(n)) return 'FMCG';
-  if (/tv|radio|media|channels|arise|silverbird|dstv|gotv|startimes|premium|punch|guardian|vanguard/.test(n)) return 'Media';
-  if (/nnpc|oando|seplat|total|shell|chevron|mobil|petrol|energy|gas|power|electricity|eko|ikeja/.test(n)) return 'Energy';
-  if (/tech|software|jumia|konga|paystack|flutterwave|interswitch|opay|palmpay|moniepoint|cowry|carbon/.test(n)) return 'Tech';
-  if (/insurance|aiico|leadway|custodian|axamansard|nicon|sovereign|prestige|mutual/.test(n)) return 'Insurance';
-  if (/airline|aviation|transport|bus|uber|bolt|gokada|okada|rail|shipping|agility|dangote/.test(n)) return 'Transport';
-  if (/shoprite|spar|justrite|ebeano|supermarket|store|market|retail/.test(n)) return 'Retail';
+  if (/bank|zenith|gtb|uba|access|fidelity|stanbic|union|heritage|keystone|polaris|sterling|wema|jaiz|fcmb|ecobank/.test(n)) return 'Banking';
+  if (/mtn|airtel|glo|9mobile|etisalat|ntel|spectranet|smile|swift/.test(n)) return 'Telecom';
+  if (/nestle|unilever|dangote|flour|breweries|cadbury|pz|reckitt|friesland|chi|indomie|honeywell|nasco/.test(n)) return 'FMCG';
+  if (/tv|radio|channels|arise|silverbird|dstv|gotv|startimes|punch|guardian|vanguard|tvc|cool/.test(n)) return 'Media';
+  if (/nnpc|oando|seplat|total|shell|chevron|mobil|petrol|energy|gas|eko|ikeja|power/.test(n)) return 'Energy';
+  if (/tech|jumia|konga|paystack|flutterwave|interswitch|opay|palmpay|moniepoint|cowry|carbon|kuda|piggyvest/.test(n)) return 'Tech';
+  if (/insurance|aiico|leadway|custodian|axamansard|nicon|sovereign|mutual|prestige/.test(n)) return 'Insurance';
+  if (/airline|aviation|arik|dana|transport|bus|gokada|rail|bolt|uber/.test(n)) return 'Transport';
+  if (/shoprite|spar|justrite|ebeano|supermarket|store|market/.test(n)) return 'Retail';
   return 'Other';
 }
 
 function extractTags(name, category) {
-  const tags = [category.toLowerCase()];
+  const tags = [category.toLowerCase(), 'nigeria', 'nigerian'];
   const n = name.toLowerCase();
-  if (n.includes('nigeria')) tags.push('nigeria');
-  if (n.includes('bank') || n.includes('financial')) tags.push('finance');
-  if (n.includes('group')) tags.push('conglomerate');
+  if (n.includes('group') || n.includes('holdings')) tags.push('conglomerate');
+  if (n.includes('bank') || n.includes('finance')) tags.push('finance');
+  if (n.includes('tech') || n.includes('digital')) tags.push('digital');
   return [...new Set(tags)];
 }
 
-async function delay(ms) {
-  return new Promise(r => setTimeout(r, ms));
+function collectNodes(node, results = [], depth = 0) {
+  if (!node) return results;
+  if (node.type === 'COMPONENT' || node.type === 'COMPONENT_SET') {
+    results.push({ id: node.id, name: node.name, type: node.type });
+  } else if (depth <= 3 && node.type === 'FRAME' && node.name &&
+             !node.name.startsWith('_') && !node.name.startsWith('.')) {
+    results.push({ id: node.id, name: node.name, type: node.type });
+  }
+  if (node.children && depth < 6) {
+    for (const child of node.children) collectNodes(child, results, depth + 1);
+  }
+  return results;
 }
 
-async function fetchWithRetry(url, options, retries = 3) {
+// ── progress persistence ──────────────────────────────────────────────────────
+
+function loadProgress() {
+  if (fs.existsSync(PROGRESS_PATH)) {
+    try { return JSON.parse(fs.readFileSync(PROGRESS_PATH, 'utf8')); } catch {}
+  }
+  return { processedIds: [], logos: [] };
+}
+
+function saveProgress(progress) {
+  fs.writeFileSync(PROGRESS_PATH, JSON.stringify(progress, null, 2));
+}
+
+// ── network helpers ───────────────────────────────────────────────────────────
+
+function delay(ms) { return new Promise(r => setTimeout(r, ms)); }
+
+async function fetchWithRetry(url, options, retries = 12) {
   for (let i = 0; i < retries; i++) {
     try {
       const res = await fetch(url, options);
-      if (res.ok) return res;
       if (res.status === 429) {
-        console.log('  Rate limited, waiting 10s…');
-        await delay(10000);
+        // 5-minute flat wait — Figma image-export lockouts last 20-40 min after heavy use
+        console.log(`\n  ⏳ Rate limited (attempt ${i + 1}/${retries}) — waiting 300s…`);
+        await delay(300000);
         continue;
       }
-      throw new Error(`HTTP ${res.status}`);
+      return res;
     } catch (err) {
       if (i === retries - 1) throw err;
-      await delay(2000 * (i + 1));
+      await delay(5000 * (i + 1));
     }
   }
+  throw new Error('Max retries exceeded');
 }
 
-async function exportSvg(fileKey, nodeId) {
-  const url = `https://api.figma.com/v1/images/${fileKey}?ids=${encodeURIComponent(nodeId)}&format=svg&svg_include_id=false`;
-  const res = await fetchWithRetry(url, { headers });
+async function batchGetSvgUrls(nodeIds) {
+  const url = `https://api.figma.com/v1/images/${FILE_KEY}?ids=${nodeIds.map(encodeURIComponent).join(',')}&format=svg&svg_include_id=false`;
+  const res = await fetchWithRetry(url, { headers: figmaHeaders });
   const data = await res.json();
-  if (data.err) throw new Error(data.err);
-  const imageUrl = data.images && data.images[nodeId];
-  if (!imageUrl) throw new Error('No image URL returned');
-  const svgRes = await fetchWithRetry(imageUrl, {});
-  return svgRes.text();
+  return data.images || {};
 }
 
-async function exportPng(fileKey, nodeId, scale = 2) {
-  const url = `https://api.figma.com/v1/images/${fileKey}?ids=${encodeURIComponent(nodeId)}&format=png&scale=${scale}`;
-  const res = await fetchWithRetry(url, { headers });
+async function batchGetPngUrls(nodeIds, scale = 2) {
+  const url = `https://api.figma.com/v1/images/${FILE_KEY}?ids=${nodeIds.map(encodeURIComponent).join(',')}&format=png&scale=${scale}`;
+  const res = await fetchWithRetry(url, { headers: figmaHeaders });
   const data = await res.json();
-  if (data.err) throw new Error(data.err);
-  const imageUrl = data.images && data.images[nodeId];
-  if (!imageUrl) throw new Error('No image URL returned');
-  const pngRes = await fetchWithRetry(imageUrl, {});
-  const buf = await pngRes.buffer();
-  return buf;
+  return data.images || {};
 }
+
+// ── main ──────────────────────────────────────────────────────────────────────
 
 async function main() {
-  console.log('🚀 Starting Figma logo export…');
-  console.log(`   File: ${FILE_KEY}\n`);
+  console.log('🚀  Starting Figma logo export  (batch=5, skip existing, resumable)');
+  console.log(`    File: ${FILE_KEY}\n`);
 
   if (!fs.existsSync(OUT_DIR)) fs.mkdirSync(OUT_DIR, { recursive: true });
 
-  // Fetch all components from the file
-  console.log('📦 Fetching component list from Figma…');
-  const compRes = await fetchWithRetry(
-    `https://api.figma.com/v1/files/${FILE_KEY}/components`,
-    { headers }
+  // Load saved progress
+  const progress = loadProgress();
+  const doneIds  = new Set(progress.processedIds);
+  console.log(`📂  Progress file: ${doneIds.size} node IDs already processed`);
+
+  // Fetch Figma document tree
+  console.log('📄  Fetching Figma document tree…');
+  const fileRes = await fetchWithRetry(
+    `https://api.figma.com/v1/files/${FILE_KEY}?depth=5`,
+    { headers: figmaHeaders }
   );
-  const compData = await compRes.json();
+  if (!fileRes.ok) { console.error(`❌  Cannot read file: HTTP ${fileRes.status}`); process.exit(1); }
+  const fileData = await fileRes.json();
 
-  if (!compData.meta || !compData.meta.components) {
-    console.error('❌  No components found. Check your FIGMA_TOKEN and FILE_KEY.');
-    process.exit(1);
-  }
+  const allNodes = [];
+  if (fileData.document) collectNodes(fileData.document, allNodes);
 
-  const components = compData.meta.components;
-  console.log(`   Found ${components.length} components\n`);
+  // Deduplicate by slug
+  const seen  = new Set();
+  const nodes = allNodes.filter(n => {
+    const key = slugify(n.name);
+    if (seen.has(key) || !n.name || n.name.length < 2) return false;
+    seen.add(key);
+    return true;
+  });
+  console.log(`    Found ${nodes.length} total logo nodes in Figma\n`);
 
-  const logos = [];
-  let svgCount = 0;
-  let lqCount = 0;
-  let failCount = 0;
+  // Filter: skip if already in progress OR if the output file exists on disk
+  const remaining = nodes.filter(n => {
+    if (doneIds.has(n.id)) return false;
+    const slug = slugify(n.name);
+    if (fs.existsSync(path.join(OUT_DIR, `${slug}.svg`))) return false;
+    if (fs.existsSync(path.join(OUT_DIR, `${slug}.png`))) return false;
+    return true;
+  });
 
-  for (let i = 0; i < components.length; i++) {
-    const comp = components[i];
-    const name = comp.name;
-    const nodeId = comp.node_id;
-    const id = slugify(name);
-    const category = detectCategory(name);
-    const tags = extractTags(name, category);
+  const skipped = nodes.length - remaining.length;
+  console.log(`    ${skipped} already done (skipping)  |  ${remaining.length} remaining\n`);
 
-    process.stdout.write(`[${i + 1}/${components.length}] ${name}… `);
+  if (remaining.length === 0) {
+    console.log('✅  Nothing left to export — all logos already on disk.');
+  } else {
+    let svgCount = 0, lqCount = 0, failCount = 0;
+    const totalBatches = Math.ceil(remaining.length / BATCH_SIZE);
 
-    try {
-      // Try SVG first
-      let svgText;
+    for (let i = 0; i < remaining.length; i += BATCH_SIZE) {
+      const batch    = remaining.slice(i, i + BATCH_SIZE);
+      const batchNum = Math.floor(i / BATCH_SIZE) + 1;
+      console.log(`\n📦  Batch ${batchNum}/${totalBatches}  (logos ${i + 1}–${Math.min(i + BATCH_SIZE, remaining.length)} of ${remaining.length})`);
+
+      // Step 1: get SVG export URLs for this batch (1 API call)
+      let svgUrls = {};
       try {
-        svgText = await exportSvg(FILE_KEY, nodeId);
-      } catch (svgErr) {
-        svgText = null;
+        svgUrls = await batchGetSvgUrls(batch.map(n => n.id));
+      } catch (err) {
+        console.log(`    ⚠️  Could not get SVG URLs for batch: ${err.message}`);
       }
 
+      // Step 2: download SVGs (CDN calls — not rate-limited by Figma)
+      const needPng = []; // nodes whose SVG failed; we'll batch-fetch their PNGs
+      const partialResults = {};
+
+      for (const node of batch) {
+        const slug   = slugify(node.name);
+        const svgUrl = svgUrls[node.id];
+        process.stdout.write(`    ${node.name}… `);
+
+        if (svgUrl) {
+          try {
+            const svgRes  = await fetchWithRetry(svgUrl, {});
+            const svgText = await svgRes.text();
+            if (svgText && svgText.trim().startsWith('<')) {
+              const cleaned = svgText
+                .replace(/<script[\s\S]*?<\/script>/gi, '')
+                .replace(/\s+on\w+="[^"]*"/gi, '')
+                .replace(/<foreignObject[\s\S]*?<\/foreignObject>/gi, '');
+              fs.writeFileSync(path.join(OUT_DIR, `${slug}.svg`), cleaned);
+              partialResults[node.id] = 'svg';
+              svgCount++;
+              console.log('✅ SVG');
+            } else {
+              needPng.push(node);
+              process.stdout.write('(SVG empty, trying PNG)\n');
+            }
+          } catch (_) {
+            needPng.push(node);
+            process.stdout.write('(SVG failed, trying PNG)\n');
+          }
+        } else {
+          needPng.push(node);
+          process.stdout.write('(no SVG URL, trying PNG)\n');
+        }
+      }
+
+      // Step 3: batch-fetch PNG URLs for all nodes that need it (1 API call max)
+      if (needPng.length > 0) {
+        let pngUrls = {};
+        try {
+          pngUrls = await batchGetPngUrls(needPng.map(n => n.id));
+        } catch (err) {
+          console.log(`    ⚠️  Could not get PNG URLs: ${err.message}`);
+        }
+
+        for (const node of needPng) {
+          const slug   = slugify(node.name);
+          const pngUrl = pngUrls[node.id];
+          process.stdout.write(`    ${node.name} (PNG)… `);
+
+          if (pngUrl) {
+            try {
+              const pngRes = await fetchWithRetry(pngUrl, {});
+              const pngBuf = await pngRes.buffer();
+              fs.writeFileSync(path.join(OUT_DIR, `${slug}.png`), pngBuf);
+              partialResults[node.id] = 'png';
+              lqCount++;
+              console.log('⚠️  PNG saved');
+            } catch (err) {
+              partialResults[node.id] = 'fail';
+              failCount++;
+              console.log(`❌  Failed: ${err.message}`);
+            }
+          } else {
+            partialResults[node.id] = 'fail';
+            failCount++;
+            console.log('❌  No PNG URL returned');
+          }
+        }
+      }
+
+      // Step 4: record all results in progress
       const now = new Date().toISOString();
+      for (const node of batch) {
+        const slug     = slugify(node.name);
+        const category = detectCategory(node.name);
+        const tags     = extractTags(node.name, category);
+        const result   = partialResults[node.id];
 
-      if (svgText && svgText.trim().startsWith('<')) {
-        // Sanitize and save SVG
-        const cleaned = svgText
-          .replace(/<script[\s\S]*?<\/script>/gi, '')
-          .replace(/\s+on\w+="[^"]*"/gi, '')
-          .replace(/<foreignObject[\s\S]*?<\/foreignObject>/gi, '');
-        fs.writeFileSync(path.join(OUT_DIR, `${id}.svg`), cleaned);
-        const rawBase = `https://raw.githubusercontent.com/${process.env.GITHUB_OWNER}/${process.env.GITHUB_REPO}/main/public/assets/logos`;
-        logos.push({
-          id, name, brand: name.split(' ')[0], category, tags,
-          svgUrl: `${rawBase}/${id}.svg`,
-          pngUrl: null,
-          quality: 'svg',
-          figmaNodeId: nodeId,
-          figmaComponentKey: comp.key,
-          addedAt: now, updatedAt: now,
-          contributedBy: { handle: 'community', source: 'admin' }
-        });
-        svgCount++;
-        console.log('✅ SVG');
-      } else {
-        // Fall back to PNG
-        const pngBuf = await exportPng(FILE_KEY, nodeId, 2);
-        fs.writeFileSync(path.join(OUT_DIR, `${id}.png`), pngBuf);
-        const rawBase = `https://raw.githubusercontent.com/${process.env.GITHUB_OWNER}/${process.env.GITHUB_REPO}/main/public/assets/logos`;
-        logos.push({
-          id, name, brand: name.split(' ')[0], category, tags,
-          svgUrl: null,
-          pngUrl: `${rawBase}/${id}.png`,
-          quality: 'png-lq',
-          figmaNodeId: nodeId,
-          figmaComponentKey: comp.key,
-          addedAt: now, updatedAt: now,
-          contributedBy: { handle: 'community', source: 'admin' }
-        });
-        lqCount++;
-        console.log('⚠️  PNG (low quality)');
+        if (result === 'svg') {
+          progress.logos.push({
+            id: slug, name: node.name, brand: node.name.split(' ')[0],
+            category, tags,
+            svgUrl: `${RAW_BASE}/${slug}.svg`, pngUrl: null, quality: 'svg',
+            figmaNodeId: node.id, figmaComponentKey: node.id,
+            addedAt: now, updatedAt: now,
+            contributedBy: { handle: 'community', source: 'admin' }
+          });
+        } else if (result === 'png') {
+          progress.logos.push({
+            id: slug, name: node.name, brand: node.name.split(' ')[0],
+            category, tags,
+            svgUrl: null, pngUrl: `${RAW_BASE}/${slug}.png`, quality: 'png-lq',
+            figmaNodeId: node.id, figmaComponentKey: node.id,
+            addedAt: now, updatedAt: now,
+            contributedBy: { handle: 'community', source: 'admin' }
+          });
+        }
+        // Always mark processed so we don't re-attempt broken nodes
+        progress.processedIds.push(node.id);
       }
-    } catch (err) {
-      failCount++;
-      console.log(`❌  Failed: ${err.message}`);
+
+      // Save progress after every batch
+      saveProgress(progress);
+      console.log(`    💾  Progress saved (${progress.processedIds.length} total processed)`);
+
+      // Pause before next batch (skip after the last one)
+      if (i + BATCH_SIZE < remaining.length) {
+        process.stdout.write(`    ⏳  Waiting ${BATCH_DELAY / 1000}s…`);
+        await delay(BATCH_DELAY);
+        console.log(' done');
+      }
     }
 
-    // Respectful rate limiting
-    await delay(300);
+    console.log('\n──────────────────────────────────────');
+    console.log(`✅  Exported this run: ${svgCount} SVG, ${lqCount} PNG, ${failCount} failed`);
   }
 
-  // Write manifest
+  // ── Write final manifest ──
+  // Load existing logos.json so we keep previously exported entries (the 300 on disk)
+  let existingLogos = {};
+  if (fs.existsSync(MANIFEST_PATH)) {
+    try {
+      const prev = JSON.parse(fs.readFileSync(MANIFEST_PATH, 'utf8'));
+      (prev.logos || []).forEach(l => { existingLogos[l.id] = l; });
+    } catch {}
+  }
+  // Merge: progress logos override existing ones with the same id
+  progress.logos.forEach(l => { existingLogos[l.id] = l; });
+
+  const allLogos = Object.values(existingLogos).sort((a, b) => a.name.localeCompare(b.name));
   const manifest = {
     version: '1.0.0',
     lastUpdated: new Date().toISOString(),
-    totalLogos: logos.length,
-    logos
+    totalLogos: allLogos.length,
+    logos: allLogos
   };
   fs.writeFileSync(MANIFEST_PATH, JSON.stringify(manifest, null, 2));
-
-  console.log('\n──────────────────────────────');
-  console.log(`✅  Exported ${svgCount} SVG logos`);
-  console.log(`⚠️   ${lqCount} logos are low-quality PNG — marked for replacement`);
-  if (failCount > 0) console.log(`❌  ${failCount} logos failed to export`);
-  console.log(`📄  Manifest saved to public/logos.json`);
-  console.log('\nNext step: git add . && git commit -m "feat: add logos" && git push');
+  console.log(`\n📄  Manifest saved → public/logos.json  (${allLogos.length} total logos)`);
+  console.log('\n🚀  Next: push to GitHub');
+  console.log('    git add public/ && git commit -m "feat: add logos" && git push');
 }
 
 main().catch(err => {
