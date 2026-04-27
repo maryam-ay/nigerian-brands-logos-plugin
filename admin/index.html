@@ -1,0 +1,1074 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Nigerian Brands — Admin</title>
+<style>
+:root {
+  --bg: #f4f5f7;
+  --surface: #ffffff;
+  --border: #e2e4e9;
+  --text: #111318;
+  --muted: #6b7280;
+  --accent: #008751;
+  --accent-dark: #006640;
+  --accent-bg: rgba(0,135,81,.08);
+  --danger: #dc2626;
+  --danger-bg: rgba(220,38,38,.07);
+  --shadow-sm: 0 1px 3px rgba(0,0,0,.08), 0 1px 2px rgba(0,0,0,.04);
+  --shadow-md: 0 4px 16px rgba(0,0,0,.10);
+  --shadow-lg: 0 8px 40px rgba(0,0,0,.16);
+  --radius: 10px;
+  --badge-svg: #008751;
+  --badge-svg-bg: #dcfce7;
+  --badge-png: #b45309;
+  --badge-png-bg: #fef3c7;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0f1117; --surface: #1a1d27; --border: #272b3a;
+    --text: #e8eaf0; --muted: #8891a8;
+    --accent: #00c47a; --accent-dark: #00a868; --accent-bg: rgba(0,196,122,.10);
+    --danger: #f87171; --danger-bg: rgba(248,113,113,.10);
+    --shadow-sm: 0 1px 3px rgba(0,0,0,.3); --shadow-md: 0 4px 16px rgba(0,0,0,.4);
+    --shadow-lg: 0 8px 40px rgba(0,0,0,.5);
+    --badge-svg: #4ade80; --badge-svg-bg: rgba(74,222,128,.15);
+    --badge-png: #fbbf24; --badge-png-bg: rgba(251,191,36,.15);
+  }
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: var(--bg); color: var(--text); font-size: 14px; line-height: 1.5; min-height: 100vh; }
+
+/* ── Utilities ── */
+.hidden { display: none !important; }
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0,0,0,0); }
+
+/* ── Login ── */
+#loginScreen {
+  min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 20px;
+  background: radial-gradient(ellipse at 60% 40%, var(--accent-bg) 0%, transparent 60%);
+}
+.login-card {
+  background: var(--surface); border: 1px solid var(--border); border-radius: 16px;
+  padding: 36px 32px; width: 360px; box-shadow: var(--shadow-lg);
+  display: flex; flex-direction: column; gap: 16px;
+}
+.login-flag { font-size: 52px; text-align: center; }
+.login-card h1 { font-size: 20px; font-weight: 700; text-align: center; }
+.login-card p { font-size: 13px; color: var(--muted); text-align: center; line-height: 1.6; }
+
+/* ── Header ── */
+header {
+  background: var(--surface); border-bottom: 1px solid var(--border);
+  padding: 0 24px; height: 58px; display: flex; align-items: center; gap: 16px;
+  position: sticky; top: 0; z-index: 50;
+}
+.header-brand { font-size: 15px; font-weight: 700; display: flex; align-items: center; gap: 8px; white-space: nowrap; }
+.header-stats { display: flex; gap: 6px; flex-wrap: wrap; }
+.stat-pill {
+  font-size: 11px; font-weight: 600; padding: 3px 10px; border-radius: 20px;
+  border: 1px solid var(--border); color: var(--muted); white-space: nowrap; cursor: default;
+}
+.stat-pill.svg { color: var(--badge-svg); border-color: var(--badge-svg-bg); background: var(--badge-svg-bg); }
+.stat-pill.png { color: var(--badge-png); border-color: var(--badge-png-bg); background: var(--badge-png-bg); }
+.header-actions { margin-left: auto; display: flex; gap: 8px; align-items: center; }
+
+/* ── Toolbar ── */
+.toolbar {
+  max-width: 1280px; margin: 20px auto 0; padding: 0 20px;
+  display: flex; gap: 10px; align-items: center; flex-wrap: wrap;
+}
+.search-wrap { flex: 1; min-width: 200px; position: relative; }
+.search-wrap svg { position: absolute; left: 10px; top: 50%; transform: translateY(-50%); color: var(--muted); pointer-events: none; }
+#searchInput { width: 100%; padding: 8px 12px 8px 34px; border: 1px solid var(--border); border-radius: 8px; background: var(--surface); color: var(--text); font-size: 13px; font-family: inherit; outline: none; }
+#searchInput:focus { border-color: var(--accent); }
+.filter-chips { display: flex; gap: 6px; }
+.chip {
+  padding: 6px 14px; border-radius: 20px; font-size: 12px; font-weight: 600;
+  border: 1px solid var(--border); background: var(--surface); color: var(--muted);
+  cursor: pointer; transition: all .15s; white-space: nowrap;
+}
+.chip:hover { border-color: var(--accent); color: var(--accent); }
+.chip.active { background: var(--accent); border-color: var(--accent); color: #fff; }
+.result-count { font-size: 12px; color: var(--muted); white-space: nowrap; }
+
+/* ── Grid ── */
+#logoGrid {
+  max-width: 1280px; margin: 16px auto 40px; padding: 0 20px;
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 14px;
+}
+.logo-card {
+  background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius);
+  overflow: hidden; cursor: pointer; position: relative; transition: box-shadow .15s, transform .15s;
+  display: flex; flex-direction: column;
+}
+.logo-card:hover { box-shadow: var(--shadow-md); transform: translateY(-2px); }
+.logo-card:hover .card-actions { opacity: 1; }
+.card-img {
+  width: 100%; aspect-ratio: 1; display: flex; align-items: center; justify-content: center;
+  padding: 16px; background: #fafafa; border-bottom: 1px solid var(--border);
+}
+@media (prefers-color-scheme: dark) { .card-img { background: #13151e; } }
+.card-img img { max-width: 100%; max-height: 96px; object-fit: contain; }
+.card-img .img-placeholder { font-size: 32px; opacity: .25; }
+.card-body { padding: 10px 12px 12px; flex: 1; display: flex; flex-direction: column; gap: 4px; }
+.card-name { font-size: 12px; font-weight: 600; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.card-cat { font-size: 11px; color: var(--muted); }
+.q-badge {
+  display: inline-block; font-size: 10px; font-weight: 700; padding: 2px 7px;
+  border-radius: 4px; text-transform: uppercase; letter-spacing: .3px; margin-top: 2px; width: fit-content;
+}
+.q-badge.svg { background: var(--badge-svg-bg); color: var(--badge-svg); }
+.q-badge.png { background: var(--badge-png-bg); color: var(--badge-png); }
+.card-actions {
+  position: absolute; top: 6px; right: 6px; opacity: 0; transition: opacity .15s;
+  display: flex; gap: 4px;
+}
+.icon-btn {
+  width: 28px; height: 28px; border-radius: 7px; border: 1px solid var(--border);
+  background: var(--surface); color: var(--muted); display: flex; align-items: center; justify-content: center;
+  cursor: pointer; font-size: 13px; line-height: 1; transition: all .15s; box-shadow: var(--shadow-sm);
+}
+.icon-btn:hover { background: var(--danger-bg); color: var(--danger); border-color: var(--danger); }
+.icon-btn.edit:hover { background: var(--accent-bg); color: var(--accent); border-color: var(--accent); }
+
+/* ── Empty state ── */
+#emptyState {
+  grid-column: 1 / -1; padding: 80px 20px;
+  display: flex; flex-direction: column; align-items: center; gap: 12px; text-align: center;
+}
+#emptyState .empty-icon { font-size: 48px; }
+#emptyState h3 { font-size: 16px; font-weight: 600; }
+#emptyState p { font-size: 13px; color: var(--muted); max-width: 280px; }
+
+/* ── Spinner ── */
+.spinner {
+  width: 28px; height: 28px; border: 3px solid var(--border); border-top-color: var(--accent);
+  border-radius: 50%; animation: spin .7s linear infinite; margin: 60px auto; display: block;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* ── Forms ── */
+.form-group { display: flex; flex-direction: column; gap: 5px; }
+label { font-size: 13px; font-weight: 500; }
+label .req { color: var(--accent); }
+label .hint { font-size: 11px; font-weight: 400; color: var(--muted); margin-left: 4px; }
+input[type=text], input[type=password], textarea, select {
+  padding: 8px 12px; border: 1px solid var(--border); border-radius: 8px;
+  background: var(--surface); color: var(--text); font-size: 13px; font-family: inherit;
+  outline: none; width: 100%; transition: border-color .15s;
+}
+input:focus, textarea:focus, select:focus { border-color: var(--accent); }
+textarea { resize: vertical; min-height: 100px; }
+.field-hint { font-size: 11px; color: var(--muted); }
+
+/* ── Buttons ── */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 6px;
+  border: none; border-radius: 8px; font-size: 13px; font-weight: 600; cursor: pointer;
+  padding: 9px 18px; transition: background .15s, opacity .15s; font-family: inherit; white-space: nowrap;
+}
+.btn:disabled { opacity: .5; cursor: not-allowed; pointer-events: none; }
+.btn-primary { background: var(--accent); color: #fff; }
+.btn-primary:hover { background: var(--accent-dark); }
+.btn-secondary { background: var(--surface); border: 1px solid var(--border); color: var(--text); }
+.btn-secondary:hover { background: var(--bg); }
+.btn-danger { background: var(--danger-bg); border: 1px solid transparent; color: var(--danger); }
+.btn-danger:hover { border-color: var(--danger); }
+.btn-sm { padding: 6px 12px; font-size: 12px; border-radius: 7px; }
+.btn-block { width: 100%; }
+.btn-icon { width: 36px; height: 36px; padding: 0; border-radius: 8px; border: 1px solid var(--border); background: var(--surface); color: var(--muted); cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all .15s; font-family: inherit; }
+.btn-icon:hover { border-color: var(--accent); color: var(--accent); }
+
+/* ── Modal ── */
+.modal-overlay {
+  position: fixed; inset: 0; background: rgba(0,0,0,.55); z-index: 100;
+  display: flex; align-items: center; justify-content: center; padding: 20px;
+  animation: fadeIn .15s ease;
+}
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+.modal {
+  background: var(--surface); border-radius: 14px; width: 100%; max-width: 540px;
+  max-height: 90vh; overflow-y: auto; padding: 24px; display: flex; flex-direction: column; gap: 16px;
+  box-shadow: var(--shadow-lg); animation: slideUp .2s ease;
+}
+.modal.modal-wide { max-width: 680px; }
+@keyframes slideUp { from { transform: translateY(16px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+.modal-header { display: flex; align-items: center; justify-content: space-between; }
+.modal-title { font-size: 16px; font-weight: 700; }
+.modal-close { width: 32px; height: 32px; border-radius: 8px; border: 1px solid var(--border); background: none; cursor: pointer; font-size: 16px; color: var(--muted); display: flex; align-items: center; justify-content: center; }
+.modal-close:hover { background: var(--bg); color: var(--text); }
+.modal-footer { display: flex; gap: 10px; padding-top: 4px; }
+.modal-footer .btn { flex: 1; }
+
+/* ── Replace modal two-pane ── */
+.replace-panes { display: grid; grid-template-columns: 160px 1fr; gap: 20px; }
+@media (max-width: 520px) { .replace-panes { grid-template-columns: 1fr; } }
+.current-logo-pane { display: flex; flex-direction: column; gap: 8px; }
+.current-logo-img {
+  width: 100%; aspect-ratio: 1; background: var(--bg); border: 1px solid var(--border);
+  border-radius: 10px; display: flex; align-items: center; justify-content: center; padding: 12px;
+}
+.current-logo-img img { max-width: 100%; max-height: 100%; object-fit: contain; }
+.current-logo-name { font-size: 12px; font-weight: 600; text-align: center; }
+
+/* ── Live preview ── */
+.live-preview {
+  width: 100%; height: 100px; background: var(--bg); border: 1px solid var(--border);
+  border-radius: 8px; display: flex; align-items: center; justify-content: center;
+  padding: 8px; overflow: hidden;
+}
+.live-preview img { max-width: 100%; max-height: 84px; object-fit: contain; }
+.preview-empty { font-size: 12px; color: var(--muted); }
+
+/* ── Tabs inside modal ── */
+.asset-tabs { display: flex; border-bottom: 1px solid var(--border); gap: 0; }
+.asset-tab {
+  padding: 8px 16px; background: none; border: none; border-bottom: 2px solid transparent;
+  font-size: 13px; font-weight: 500; color: var(--muted); cursor: pointer; font-family: inherit;
+}
+.asset-tab.active { color: var(--accent); border-bottom-color: var(--accent); }
+
+/* ── Error text ── */
+.err-msg { font-size: 12px; color: var(--danger); min-height: 16px; }
+
+/* ── Toast ── */
+#toast {
+  position: fixed; bottom: 24px; right: 24px; background: #1c1f2b; color: #fff;
+  padding: 11px 18px; border-radius: 10px; font-size: 13px; font-weight: 500;
+  z-index: 999; opacity: 0; pointer-events: none; transform: translateY(8px);
+  transition: opacity .2s, transform .2s; max-width: 340px;
+}
+#toast.show { opacity: 1; transform: translateY(0); }
+
+/* ── Settings modal ── */
+.settings-section { display: flex; flex-direction: column; gap: 10px; padding-bottom: 16px; border-bottom: 1px solid var(--border); }
+.settings-section:last-child { border-bottom: none; padding-bottom: 0; }
+.settings-section h3 { font-size: 13px; font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: .5px; }
+</style>
+</head>
+<body>
+
+<!-- ══════════════════════════════════════════════════
+     LOGIN SCREEN
+══════════════════════════════════════════════════ -->
+<div id="loginScreen">
+  <div class="login-card">
+    <div class="login-flag">🇳🇬</div>
+    <h1>Admin Dashboard</h1>
+    <p>Nigerian Brands Logos — manage the logo library, commit changes directly to GitHub.</p>
+    <div class="form-group">
+      <label for="loginPw">Password</label>
+      <input type="password" id="loginPw" placeholder="Enter admin password" autocomplete="current-password" />
+      <div class="field-hint" id="loginHint">First time? Any password you enter becomes your admin password.</div>
+    </div>
+    <div class="err-msg" id="loginErr"></div>
+    <button class="btn btn-primary btn-block" id="loginBtn" onclick="doLogin()">Sign In</button>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════
+     MAIN APP
+══════════════════════════════════════════════════ -->
+<div id="app" class="hidden">
+
+  <!-- Header -->
+  <header>
+    <div class="header-brand">🇳🇬 Nigerian Brands Admin</div>
+    <div class="header-stats" id="headerStats"></div>
+    <div class="header-actions">
+      <button class="btn btn-primary btn-sm" onclick="openAddModal()">+ Add Logo</button>
+      <button class="btn-icon" title="Reload logos" onclick="loadManifest(true)">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 1 0 .49-3.5"/></svg>
+      </button>
+      <button class="btn-icon" title="Settings" onclick="openSettingsModal()">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+      </button>
+      <button class="btn-icon" title="Sign out" onclick="doLogout()">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <!-- Toolbar -->
+  <div class="toolbar">
+    <div class="search-wrap">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      <input type="text" id="searchInput" placeholder="Search logos by name, category or tag…" oninput="applyFilter()" />
+    </div>
+    <div class="filter-chips">
+      <button class="chip active" data-q="" onclick="setQuality('',this)">All</button>
+      <button class="chip" data-q="svg" onclick="setQuality('svg',this)">SVG</button>
+      <button class="chip" data-q="png" onclick="setQuality('png',this)">PNG</button>
+    </div>
+    <span class="result-count" id="resultCount"></span>
+  </div>
+
+  <!-- Logo Grid -->
+  <div id="logoGrid">
+    <div class="spinner" id="gridSpinner"></div>
+  </div>
+
+</div>
+
+<!-- ══════════════════════════════════════════════════
+     REPLACE MODAL
+══════════════════════════════════════════════════ -->
+<div class="modal-overlay hidden" id="replaceModal" onclick="overlayClose(event,'replaceModal')">
+  <div class="modal modal-wide" role="dialog" aria-modal="true">
+    <div class="modal-header">
+      <span class="modal-title">Replace Logo</span>
+      <button class="modal-close" onclick="closeModal('replaceModal')">✕</button>
+    </div>
+
+    <div class="replace-panes">
+      <!-- Current logo -->
+      <div class="current-logo-pane">
+        <div style="font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.5px;color:var(--muted)">Current</div>
+        <div class="current-logo-img"><img id="r_currentImg" src="" alt="" /></div>
+        <div class="current-logo-name" id="r_currentName"></div>
+        <span class="q-badge" id="r_currentBadge" style="margin:0 auto"></span>
+      </div>
+
+      <!-- Replacement form -->
+      <div style="display:flex;flex-direction:column;gap:12px">
+        <div class="form-group">
+          <label>Category</label>
+          <select id="r_category">
+            <option>Banking</option><option>Telecom</option><option>FMCG</option>
+            <option>Media</option><option>Energy</option><option>Tech</option>
+            <option>Insurance</option><option>Transport</option><option>Retail</option><option>Other</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Tags <span class="hint">(comma-separated)</span></label>
+          <input type="text" id="r_tags" placeholder="fintech, mobile, lagos" />
+        </div>
+        <div>
+          <div class="asset-tabs">
+            <button class="asset-tab active" data-tab="svg" onclick="switchAssetTab('svg',this,'r')">Paste SVG</button>
+            <button class="asset-tab" data-tab="upload" onclick="switchAssetTab('upload',this,'r')">Upload File</button>
+          </div>
+          <div id="r_tabSvg" style="padding-top:10px">
+            <textarea id="r_svg" rows="5" placeholder="Paste SVG code here… leave blank to keep existing asset" oninput="updatePreview('r')"></textarea>
+          </div>
+          <div id="r_tabUpload" class="hidden" style="padding-top:10px">
+            <input type="file" id="r_file" accept=".svg,.png,.jpg,.jpeg,.webp" onchange="handleFileUpload('r')" style="font-size:13px" />
+            <div class="field-hint" style="margin-top:4px">SVG preferred. PNG accepted as fallback.</div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>New asset preview</label>
+          <div class="live-preview" id="r_preview"><span class="preview-empty">No new asset — existing will be kept</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="err-msg" id="r_err"></div>
+    <div class="modal-footer">
+      <button class="btn btn-secondary" onclick="closeModal('replaceModal')">Cancel</button>
+      <button class="btn btn-primary" id="r_saveBtn" onclick="submitReplace()">Save Changes</button>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════
+     ADD MODAL
+══════════════════════════════════════════════════ -->
+<div class="modal-overlay hidden" id="addModal" onclick="overlayClose(event,'addModal')">
+  <div class="modal modal-wide" role="dialog" aria-modal="true">
+    <div class="modal-header">
+      <span class="modal-title">Add New Logo</span>
+      <button class="modal-close" onclick="closeModal('addModal')">✕</button>
+    </div>
+
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px">
+      <div class="form-group">
+        <label for="a_name">Brand Name <span class="req">*</span></label>
+        <input type="text" id="a_name" placeholder="e.g. Dangote Group" oninput="autoSlug()" />
+      </div>
+      <div class="form-group">
+        <label for="a_slug">Slug / ID <span class="req">*</span></label>
+        <input type="text" id="a_slug" placeholder="dangote-group" />
+      </div>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px">
+      <div class="form-group">
+        <label for="a_category">Category <span class="req">*</span></label>
+        <select id="a_category">
+          <option value="">Select…</option>
+          <option>Banking</option><option>Telecom</option><option>FMCG</option>
+          <option>Media</option><option>Energy</option><option>Tech</option>
+          <option>Insurance</option><option>Transport</option><option>Retail</option><option>Other</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="a_tags">Tags <span class="hint">(comma-separated)</span></label>
+        <input type="text" id="a_tags" placeholder="cement, conglomerate" />
+      </div>
+    </div>
+
+    <div>
+      <div class="asset-tabs">
+        <button class="asset-tab active" data-tab="svg" onclick="switchAssetTab('svg',this,'a')">Paste SVG</button>
+        <button class="asset-tab" data-tab="upload" onclick="switchAssetTab('upload',this,'a')">Upload File</button>
+      </div>
+      <div id="a_tabSvg" style="padding-top:10px">
+        <textarea id="a_svg" rows="5" placeholder="Paste raw SVG code here…" oninput="updatePreview('a')"></textarea>
+      </div>
+      <div id="a_tabUpload" class="hidden" style="padding-top:10px">
+        <input type="file" id="a_file" accept=".svg,.png,.jpg,.jpeg,.webp" onchange="handleFileUpload('a')" style="font-size:13px" />
+        <div class="field-hint" style="margin-top:4px">SVG preferred. PNG accepted as fallback.</div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label>Preview</label>
+      <div class="live-preview" id="a_preview"><span class="preview-empty">No asset yet</span></div>
+    </div>
+
+    <div class="err-msg" id="a_err"></div>
+    <div class="modal-footer">
+      <button class="btn btn-secondary" onclick="closeModal('addModal')">Cancel</button>
+      <button class="btn btn-primary" id="a_saveBtn" onclick="submitAdd()">Add to Library</button>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════
+     SETTINGS MODAL
+══════════════════════════════════════════════════ -->
+<div class="modal-overlay hidden" id="settingsModal" onclick="overlayClose(event,'settingsModal')">
+  <div class="modal" role="dialog" aria-modal="true">
+    <div class="modal-header">
+      <span class="modal-title">Settings</span>
+      <button class="modal-close" onclick="closeModal('settingsModal')">✕</button>
+    </div>
+
+    <div class="settings-section">
+      <h3>GitHub Connection</h3>
+      <div class="form-group">
+        <label>Personal Access Token</label>
+        <input type="password" id="s_token" placeholder="ghp_xxxxxxxxxxxx" autocomplete="off" />
+        <div class="field-hint">Needs <code>repo</code> write scope. Stored in this browser only.</div>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
+        <div class="form-group">
+          <label>GitHub Username</label>
+          <input type="text" id="s_owner" placeholder="maryam-ay" />
+        </div>
+        <div class="form-group">
+          <label>Repository</label>
+          <input type="text" id="s_repo" placeholder="nigerian-brands-logos-plugin" />
+        </div>
+      </div>
+      <button class="btn btn-primary btn-sm" style="width:fit-content" onclick="saveSettings()">Save GitHub Settings</button>
+    </div>
+
+    <div class="settings-section">
+      <h3>Change Password</h3>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
+        <div class="form-group">
+          <label>New Password</label>
+          <input type="password" id="s_pw1" placeholder="New password" autocomplete="new-password" />
+        </div>
+        <div class="form-group">
+          <label>Confirm Password</label>
+          <input type="password" id="s_pw2" placeholder="Repeat password" autocomplete="new-password" />
+        </div>
+      </div>
+      <div class="err-msg" id="s_pwErr"></div>
+      <button class="btn btn-secondary btn-sm" style="width:fit-content" onclick="changePassword()">Update Password</button>
+    </div>
+
+    <div class="settings-section">
+      <h3>Danger Zone</h3>
+      <button class="btn btn-danger btn-sm" style="width:fit-content" onclick="doLogout()">Sign Out</button>
+    </div>
+  </div>
+</div>
+
+<!-- Toast -->
+<div id="toast"></div>
+
+<script>
+// ══════════════════════════════════════════════════
+// CONFIG
+// ══════════════════════════════════════════════════
+const CFG = {
+  MANIFEST_URL: 'https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/logos.json',
+  DEFAULT_OWNER: 'maryam-ay',
+  DEFAULT_REPO:  'nigerian-brands-logos-plugin',
+};
+
+// ══════════════════════════════════════════════════
+// STATE
+// ══════════════════════════════════════════════════
+const ST = {
+  logos: [],        // full list from manifest
+  filtered: [],     // after search+quality filter
+  qualityFilter: '', // '' | 'svg' | 'png'
+  editingLogo: null,
+  pendingAsset: { prefix: null, content: null, isSvg: null }, // staged upload data
+};
+
+function cfg() {
+  return {
+    token: localStorage.getItem('gh-token') || '',
+    owner: localStorage.getItem('gh-owner') || CFG.DEFAULT_OWNER,
+    repo:  localStorage.getItem('gh-repo')  || CFG.DEFAULT_REPO,
+  };
+}
+
+// ══════════════════════════════════════════════════
+// AUTH
+// ══════════════════════════════════════════════════
+async function sha256(s) {
+  const buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(s));
+  return Array.from(new Uint8Array(buf)).map(b => b.toString(16).padStart(2,'0')).join('');
+}
+
+document.getElementById('loginPw').addEventListener('keydown', e => { if (e.key === 'Enter') doLogin(); });
+
+async function doLogin() {
+  const pw = document.getElementById('loginPw').value;
+  if (!pw) return;
+  const hash = await sha256(pw);
+  const stored = localStorage.getItem('admin-pw-hash');
+  if (!stored) {
+    localStorage.setItem('admin-pw-hash', hash);
+    showApp();
+  } else if (hash === stored) {
+    showApp();
+  } else {
+    document.getElementById('loginErr').textContent = 'Incorrect password.';
+    document.getElementById('loginPw').value = '';
+    document.getElementById('loginPw').focus();
+  }
+}
+
+function showApp() {
+  document.getElementById('loginScreen').classList.add('hidden');
+  document.getElementById('app').classList.remove('hidden');
+  loadSettings();
+  loadManifest(false);
+}
+
+function doLogout() {
+  if (confirm('Sign out?')) location.reload();
+}
+
+// Show "first time" hint if no password stored yet
+if (!localStorage.getItem('admin-pw-hash')) {
+  document.getElementById('loginHint').textContent = 'First time? The password you enter now will be saved as your admin password.';
+} else {
+  document.getElementById('loginHint').textContent = '';
+}
+
+// ══════════════════════════════════════════════════
+// MANIFEST
+// ══════════════════════════════════════════════════
+async function loadManifest(showToastOnDone = false) {
+  document.getElementById('gridSpinner').style.display = 'block';
+  document.getElementById('logoGrid').innerHTML = '<div class="spinner" id="gridSpinner"></div>';
+  try {
+    const res = await fetch(CFG.MANIFEST_URL + '?_=' + Date.now());
+    if (!res.ok) throw new Error('HTTP ' + res.status);
+    const data = await res.json();
+    ST.logos = data.logos || [];
+    applyFilter();
+    updateHeaderStats();
+    if (showToastOnDone) toast('✅ Reloaded ' + ST.logos.length + ' logos');
+  } catch (e) {
+    document.getElementById('logoGrid').innerHTML = `
+      <div id="emptyState">
+        <div class="empty-icon">⚠️</div>
+        <h3>Could not load manifest</h3>
+        <p>${e.message}<br/>Check your GitHub settings or try reloading.</p>
+      </div>`;
+  }
+}
+
+function updateHeaderStats() {
+  const svgCount = ST.logos.filter(l => l.quality === 'svg').length;
+  const pngCount = ST.logos.filter(l => l.quality !== 'svg').length;
+  document.getElementById('headerStats').innerHTML = `
+    <span class="stat-pill">Total: ${ST.logos.length}</span>
+    <span class="stat-pill svg">SVG: ${svgCount}</span>
+    <span class="stat-pill png">PNG: ${pngCount}</span>`;
+}
+
+// ══════════════════════════════════════════════════
+// FILTER + SEARCH
+// ══════════════════════════════════════════════════
+function setQuality(q, btn) {
+  ST.qualityFilter = q;
+  document.querySelectorAll('.chip').forEach(c => c.classList.remove('active'));
+  btn.classList.add('active');
+  applyFilter();
+}
+
+function applyFilter() {
+  const q = document.getElementById('searchInput').value.toLowerCase().trim();
+  ST.filtered = ST.logos.filter(l => {
+    const matchQ = !q ||
+      l.name.toLowerCase().includes(q) ||
+      (l.category || '').toLowerCase().includes(q) ||
+      (l.tags || []).some(t => t.toLowerCase().includes(q));
+    const matchQuality = !ST.qualityFilter ||
+      (ST.qualityFilter === 'svg' ? l.quality === 'svg' : l.quality !== 'svg');
+    return matchQ && matchQuality;
+  });
+  document.getElementById('resultCount').textContent =
+    ST.filtered.length === ST.logos.length
+      ? `${ST.logos.length} logos`
+      : `${ST.filtered.length} of ${ST.logos.length}`;
+  renderGrid();
+}
+
+// ══════════════════════════════════════════════════
+// GRID RENDER
+// ══════════════════════════════════════════════════
+function renderGrid() {
+  const grid = document.getElementById('logoGrid');
+  if (ST.filtered.length === 0) {
+    grid.innerHTML = `
+      <div id="emptyState">
+        <div class="empty-icon">🔍</div>
+        <h3>${ST.logos.length === 0 ? 'No logos yet' : 'No results'}</h3>
+        <p>${ST.logos.length === 0 ? 'Add your first logo using the button above.' : 'Try a different search term or filter.'}</p>
+      </div>`;
+    return;
+  }
+  grid.innerHTML = ST.filtered.map(logo => {
+    const src = logo.svgUrl || logo.pngUrl || '';
+    const isSvg = logo.quality === 'svg';
+    const badge = isSvg
+      ? `<span class="q-badge svg">SVG</span>`
+      : `<span class="q-badge png">PNG</span>`;
+    const safeLogoJson = encodeURIComponent(JSON.stringify(logo));
+    return `<div class="logo-card" onclick="openReplace('${safeLogoJson}')" title="Click to replace ${escHtml(logo.name)}">
+      <div class="card-img">
+        ${src ? `<img src="${escHtml(src)}" alt="${escHtml(logo.name)}" loading="lazy" onerror="this.style.opacity='.2'" />` : '<div class="img-placeholder">🏷️</div>'}
+      </div>
+      <div class="card-body">
+        <div class="card-name" title="${escHtml(logo.name)}">${escHtml(logo.name)}</div>
+        <div class="card-cat">${escHtml(logo.category || '')}</div>
+        ${badge}
+      </div>
+      <div class="card-actions">
+        <button class="icon-btn edit" title="Replace" onclick="event.stopPropagation();openReplace('${safeLogoJson}')">✎</button>
+        <button class="icon-btn" title="Delete" onclick="event.stopPropagation();doDelete('${safeLogoJson}')">✕</button>
+      </div>
+    </div>`;
+  }).join('');
+}
+
+function escHtml(s) {
+  return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#39;');
+}
+
+// ══════════════════════════════════════════════════
+// ASSET TAB SWITCHER (shared by add + replace)
+// ══════════════════════════════════════════════════
+function switchAssetTab(tab, btn, prefix) {
+  const wrap = btn.closest('.modal');
+  wrap.querySelectorAll('.asset-tab').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  document.getElementById(prefix + '_tabSvg').classList.toggle('hidden', tab !== 'svg');
+  document.getElementById(prefix + '_tabUpload').classList.toggle('hidden', tab !== 'upload');
+}
+
+// ══════════════════════════════════════════════════
+// LIVE PREVIEW
+// ══════════════════════════════════════════════════
+function updatePreview(prefix) {
+  const svg = document.getElementById(prefix + '_svg').value.trim();
+  const p = document.getElementById(prefix + '_preview');
+  if (!svg) { p.innerHTML = '<span class="preview-empty">No asset yet</span>'; return; }
+  const clean = sanitizeSvg(svg);
+  p.innerHTML = `<img src="data:image/svg+xml;charset=utf-8,${encodeURIComponent(clean)}" />`;
+  // Store for submission
+  if (prefix === 'a' || prefix === 'r') {
+    ST.pendingAsset = { prefix, content: clean, isSvg: true };
+  }
+}
+
+async function handleFileUpload(prefix) {
+  const input = document.getElementById(prefix + '_file');
+  const file = input.files[0];
+  if (!file) return;
+  const isSvg = file.name.toLowerCase().endsWith('.svg') || file.type === 'image/svg+xml';
+  const p = document.getElementById(prefix + '_preview');
+  if (isSvg) {
+    const text = await readAsText(file);
+    const clean = sanitizeSvg(text);
+    p.innerHTML = `<img src="data:image/svg+xml;charset=utf-8,${encodeURIComponent(clean)}" />`;
+    ST.pendingAsset = { prefix, content: clean, isSvg: true };
+  } else {
+    const b64 = await readAsBase64(file);
+    p.innerHTML = `<img src="data:image/png;base64,${b64}" />`;
+    ST.pendingAsset = { prefix, content: b64, isSvg: false };
+  }
+}
+
+// ══════════════════════════════════════════════════
+// ADD LOGO
+// ══════════════════════════════════════════════════
+function openAddModal() {
+  document.getElementById('a_name').value = '';
+  document.getElementById('a_slug').value = '';
+  document.getElementById('a_category').value = '';
+  document.getElementById('a_tags').value = '';
+  document.getElementById('a_svg').value = '';
+  document.getElementById('a_file').value = '';
+  document.getElementById('a_preview').innerHTML = '<span class="preview-empty">No asset yet</span>';
+  document.getElementById('a_err').textContent = '';
+  document.getElementById('a_saveBtn').disabled = false;
+  ST.pendingAsset = { prefix: null, content: null, isSvg: null };
+  // Reset to SVG tab
+  document.getElementById('a_tabSvg').classList.remove('hidden');
+  document.getElementById('a_tabUpload').classList.add('hidden');
+  document.querySelectorAll('#addModal .asset-tab').forEach((b,i) => b.classList.toggle('active', i===0));
+  openModal('addModal');
+  setTimeout(() => document.getElementById('a_name').focus(), 50);
+}
+
+function autoSlug() {
+  document.getElementById('a_slug').value = slugify(document.getElementById('a_name').value);
+}
+
+async function submitAdd() {
+  const name     = document.getElementById('a_name').value.trim();
+  const id       = document.getElementById('a_slug').value.trim();
+  const category = document.getElementById('a_category').value;
+  const tags     = document.getElementById('a_tags').value.split(',').map(t => t.trim()).filter(Boolean);
+  const svgText  = document.getElementById('a_svg').value.trim();
+  const err      = document.getElementById('a_err');
+
+  if (!name || !id || !category) { err.textContent = 'Name, slug, and category are required.'; return; }
+  if (ST.logos.find(l => l.id === id)) { err.textContent = `Slug "${id}" already exists.`; return; }
+
+  // Resolve asset: prefer SVG textarea over file upload
+  let assetContent = null, isSvg = null;
+  if (svgText) {
+    assetContent = sanitizeSvg(svgText); isSvg = true;
+  } else if (ST.pendingAsset.prefix === 'a' && ST.pendingAsset.content) {
+    assetContent = ST.pendingAsset.content; isSvg = ST.pendingAsset.isSvg;
+  }
+  if (!assetContent) { err.textContent = 'Paste SVG code or upload a file.'; return; }
+
+  err.textContent = '';
+  document.getElementById('a_saveBtn').disabled = true;
+  toast('⏳ Uploading…');
+
+  const { token, owner, repo } = cfg();
+  const rawBase = `https://raw.githubusercontent.com/${owner}/${repo}/main/public/assets/logos`;
+  const ext = isSvg ? 'svg' : 'png';
+  const now = new Date().toISOString();
+  const logo = {
+    id, name, brand: name.split(' ')[0], category, tags,
+    quality: isSvg ? 'svg' : 'png-hq',
+    svgUrl:  isSvg ? `${rawBase}/${id}.svg` : null,
+    pngUrl:  isSvg ? null : `${rawBase}/${id}.png`,
+    figmaNodeId: '0:0', figmaComponentKey: '',
+    addedAt: now, updatedAt: now,
+    contributedBy: { handle: 'admin', source: 'admin' },
+  };
+
+  const r = await ghCommit('add', logo, assetContent, isSvg, ext, { token, owner, repo });
+  document.getElementById('a_saveBtn').disabled = false;
+  if (r.ok) {
+    toast('✅ Logo added!');
+    closeModal('addModal');
+    ST.pendingAsset = { prefix: null, content: null, isSvg: null };
+    await loadManifest(false);
+  } else {
+    err.textContent = r.error;
+  }
+}
+
+// ══════════════════════════════════════════════════
+// REPLACE LOGO
+// ══════════════════════════════════════════════════
+function openReplace(safeJson) {
+  const logo = JSON.parse(decodeURIComponent(safeJson));
+  ST.editingLogo = logo;
+  ST.pendingAsset = { prefix: null, content: null, isSvg: null };
+
+  const src = logo.svgUrl || logo.pngUrl || '';
+  document.getElementById('r_currentImg').src = src;
+  document.getElementById('r_currentName').textContent = logo.name;
+  const b = document.getElementById('r_currentBadge');
+  b.textContent = logo.quality === 'svg' ? 'SVG' : 'PNG';
+  b.className = 'q-badge ' + (logo.quality === 'svg' ? 'svg' : 'png');
+  document.getElementById('r_category').value = logo.category || 'Other';
+  document.getElementById('r_tags').value = (logo.tags || []).join(', ');
+  document.getElementById('r_svg').value = '';
+  document.getElementById('r_file').value = '';
+  document.getElementById('r_preview').innerHTML = '<span class="preview-empty">No new asset — existing will be kept</span>';
+  document.getElementById('r_err').textContent = '';
+  document.getElementById('r_saveBtn').disabled = false;
+
+  // Reset to SVG tab
+  document.getElementById('r_tabSvg').classList.remove('hidden');
+  document.getElementById('r_tabUpload').classList.add('hidden');
+  document.querySelectorAll('#replaceModal .asset-tab').forEach((b,i) => b.classList.toggle('active', i===0));
+
+  openModal('replaceModal');
+}
+
+async function submitReplace() {
+  if (!ST.editingLogo) return;
+  const logo     = ST.editingLogo;
+  const category = document.getElementById('r_category').value;
+  const tags     = document.getElementById('r_tags').value.split(',').map(t => t.trim()).filter(Boolean);
+  const svgText  = document.getElementById('r_svg').value.trim();
+  const err      = document.getElementById('r_err');
+
+  let assetContent = null, isSvg = null;
+  if (svgText) {
+    assetContent = sanitizeSvg(svgText); isSvg = true;
+  } else if (ST.pendingAsset.prefix === 'r' && ST.pendingAsset.content) {
+    assetContent = ST.pendingAsset.content; isSvg = ST.pendingAsset.isSvg;
+  }
+
+  const updatedLogo = {
+    ...logo, category, tags,
+    quality:   assetContent ? (isSvg ? 'svg' : 'png-hq') : logo.quality,
+    svgUrl:    assetContent && isSvg  ? logo.svgUrl || `https://raw.githubusercontent.com/${cfg().owner}/${cfg().repo}/main/public/assets/logos/${logo.id}.svg` : (isSvg === false ? null : logo.svgUrl),
+    pngUrl:    assetContent && !isSvg ? logo.pngUrl || `https://raw.githubusercontent.com/${cfg().owner}/${cfg().repo}/main/public/assets/logos/${logo.id}.png` : (isSvg === true  ? null : logo.pngUrl),
+    updatedAt: new Date().toISOString(),
+  };
+
+  err.textContent = '';
+  document.getElementById('r_saveBtn').disabled = true;
+  toast('⏳ Saving…');
+
+  const ext = isSvg ? 'svg' : 'png';
+  const r = await ghCommit('update', updatedLogo, assetContent, isSvg, ext, cfg());
+  document.getElementById('r_saveBtn').disabled = false;
+  if (r.ok) {
+    toast('✅ Logo updated!');
+    closeModal('replaceModal');
+    ST.pendingAsset = { prefix: null, content: null, isSvg: null };
+    await loadManifest(false);
+  } else {
+    err.textContent = r.error;
+  }
+}
+
+// ══════════════════════════════════════════════════
+// DELETE LOGO
+// ══════════════════════════════════════════════════
+async function doDelete(safeJson) {
+  const logo = JSON.parse(decodeURIComponent(safeJson));
+  if (!confirm(`Delete "${logo.name}"?\n\nThis will remove the asset file and update the manifest on GitHub. This cannot be undone.`)) return;
+  toast('⏳ Deleting…');
+  const r = await ghCommit('delete', logo, null, null, null, cfg());
+  if (r.ok) {
+    toast('🗑️ Deleted ' + logo.name);
+    await loadManifest(false);
+  } else {
+    toast('❌ ' + r.error, 5000);
+  }
+}
+
+// ══════════════════════════════════════════════════
+// GITHUB API
+// ══════════════════════════════════════════════════
+const GH = 'https://api.github.com';
+
+function ghHeaders(token) {
+  return { Authorization: `token ${token}`, Accept: 'application/vnd.github.v3+json', 'Content-Type': 'application/json' };
+}
+
+async function ghGetSha(token, owner, repo, path) {
+  const r = await fetch(`${GH}/repos/${owner}/${repo}/contents/${path}`, { headers: ghHeaders(token) });
+  if (!r.ok) return null;
+  return (await r.json()).sha || null;
+}
+
+async function ghPut(token, owner, repo, path, content, message, sha) {
+  // content must be base64
+  const body = { message, content };
+  if (sha) body.sha = sha;
+  const r = await fetch(`${GH}/repos/${owner}/${repo}/contents/${path}`, {
+    method: 'PUT', headers: ghHeaders(token), body: JSON.stringify(body),
+  });
+  return r.ok;
+}
+
+async function ghDelete(token, owner, repo, path, message) {
+  const sha = await ghGetSha(token, owner, repo, path);
+  if (!sha) return true; // already gone
+  const r = await fetch(`${GH}/repos/${owner}/${repo}/contents/${path}`, {
+    method: 'DELETE', headers: ghHeaders(token),
+    body: JSON.stringify({ message, sha }),
+  });
+  return r.ok;
+}
+
+// Encode content to base64 for GitHub API
+function toB64(content, isSvg) {
+  if (isSvg === null) return null;
+  if (isSvg) {
+    // SVG is a text string — encode via UTF-8
+    return btoa(unescape(encodeURIComponent(content)));
+  }
+  // PNG/etc — content is already raw base64
+  return content;
+}
+
+async function ghCommit(action, logo, assetContent, isSvg, ext, { token, owner, repo }) {
+  if (!token) return { ok: false, error: 'GitHub token not configured — open Settings.' };
+
+  try {
+    // 1. Upload/delete asset file
+    if (action === 'delete') {
+      const assetExt = logo.quality === 'svg' ? 'svg' : 'png';
+      await ghDelete(token, owner, repo, `public/assets/logos/${logo.id}.${assetExt}`, `chore: remove ${logo.name} logo`);
+    } else if (assetContent) {
+      const filePath = `public/assets/logos/${logo.id}.${ext}`;
+      const sha = await ghGetSha(token, owner, repo, filePath);
+      const b64 = toB64(assetContent, isSvg);
+      const verb = action === 'add' ? 'feat' : 'fix';
+      const ok = await ghPut(token, owner, repo, filePath, b64, `${verb}: ${action} ${logo.name} logo`, sha);
+      if (!ok) return { ok: false, error: 'Failed to upload asset file to GitHub.' };
+
+      // If replacing SVG with PNG or vice versa, delete the old file
+      if (action === 'update') {
+        const oldExt = ST.editingLogo && ST.editingLogo.quality === 'svg' ? 'svg' : 'png';
+        if (oldExt !== ext) {
+          await ghDelete(token, owner, repo, `public/assets/logos/${logo.id}.${oldExt}`, `chore: remove old ${oldExt} for ${logo.name}`);
+        }
+      }
+    }
+
+    // 2. Read + update manifest
+    const mPath = 'public/logos.json';
+    const mRes = await fetch(`${GH}/repos/${owner}/${repo}/contents/${mPath}`, { headers: ghHeaders(token) });
+    if (!mRes.ok) return { ok: false, error: `Cannot read manifest: HTTP ${mRes.status}` };
+    const mFile = await mRes.json();
+    const manifest = JSON.parse(decodeURIComponent(escape(atob(mFile.content.replace(/\s/g, '')))));
+
+    if (action === 'add') {
+      manifest.logos.push(logo);
+    } else if (action === 'update') {
+      const idx = manifest.logos.findIndex(l => l.id === logo.id);
+      if (idx !== -1) manifest.logos[idx] = logo; else manifest.logos.push(logo);
+    } else {
+      manifest.logos = manifest.logos.filter(l => l.id !== logo.id);
+    }
+    manifest.totalLogos  = manifest.logos.length;
+    manifest.lastUpdated = new Date().toISOString();
+
+    const manifestB64 = btoa(unescape(encodeURIComponent(JSON.stringify(manifest, null, 2))));
+    const mOk = await ghPut(token, owner, repo, mPath, manifestB64, `chore: update manifest (${action} ${logo.name})`, mFile.sha);
+    if (!mOk) return { ok: false, error: 'Asset saved but manifest update failed.' };
+
+    return { ok: true };
+  } catch (e) {
+    return { ok: false, error: String(e) };
+  }
+}
+
+// ══════════════════════════════════════════════════
+// SVG SANITISER
+// ══════════════════════════════════════════════════
+function sanitizeSvg(raw) {
+  try {
+    const parser = new DOMParser();
+    const doc = parser.parseFromString(raw, 'image/svg+xml');
+    const root = doc.documentElement;
+    if (root.nodeName === 'parsererror') return raw;
+    root.querySelectorAll('script, foreignObject').forEach(el => el.remove());
+    root.querySelectorAll('*').forEach(el => {
+      const toRemove = [];
+      for (const attr of el.attributes) {
+        if (attr.name.startsWith('on')) toRemove.push(attr.name);
+        if (['href','src','xlink:href'].includes(attr.name) && /^https?:\/\//.test(attr.value)) toRemove.push(attr.name);
+      }
+      toRemove.forEach(n => el.removeAttribute(n));
+    });
+    if (!root.getAttribute('xmlns')) root.setAttribute('xmlns', 'http://www.w3.org/2000/svg');
+    return new XMLSerializer().serializeToString(root);
+  } catch { return raw; }
+}
+
+// ══════════════════════════════════════════════════
+// FILE READERS
+// ══════════════════════════════════════════════════
+function readAsText(file) {
+  return new Promise((res, rej) => { const r = new FileReader(); r.onload = () => res(r.result); r.onerror = rej; r.readAsText(file); });
+}
+function readAsBase64(file) {
+  return new Promise((res, rej) => { const r = new FileReader(); r.onload = () => res(r.result.split(',')[1]); r.onerror = rej; r.readAsDataURL(file); });
+}
+
+// ══════════════════════════════════════════════════
+// SETTINGS
+// ══════════════════════════════════════════════════
+function loadSettings() {
+  document.getElementById('s_token').value = localStorage.getItem('gh-token') || '';
+  document.getElementById('s_owner').value = localStorage.getItem('gh-owner') || CFG.DEFAULT_OWNER;
+  document.getElementById('s_repo').value  = localStorage.getItem('gh-repo')  || CFG.DEFAULT_REPO;
+}
+
+function saveSettings() {
+  const t = document.getElementById('s_token').value.trim();
+  const o = document.getElementById('s_owner').value.trim();
+  const r = document.getElementById('s_repo').value.trim();
+  if (t) localStorage.setItem('gh-token', t);
+  if (o) localStorage.setItem('gh-owner', o);
+  if (r) localStorage.setItem('gh-repo', r);
+  toast('✅ Settings saved');
+}
+
+async function changePassword() {
+  const pw1 = document.getElementById('s_pw1').value;
+  const pw2 = document.getElementById('s_pw2').value;
+  const err = document.getElementById('s_pwErr');
+  if (!pw1 || !pw2) { err.textContent = 'Fill both fields.'; return; }
+  if (pw1 !== pw2)  { err.textContent = 'Passwords do not match.'; return; }
+  localStorage.setItem('admin-pw-hash', await sha256(pw1));
+  document.getElementById('s_pw1').value = '';
+  document.getElementById('s_pw2').value = '';
+  err.textContent = '';
+  toast('✅ Password updated');
+}
+
+function openSettingsModal() { loadSettings(); openModal('settingsModal'); }
+
+// ══════════════════════════════════════════════════
+// MODAL HELPERS
+// ══════════════════════════════════════════════════
+function openModal(id)  { document.getElementById(id).classList.remove('hidden'); }
+function closeModal(id) { document.getElementById(id).classList.add('hidden'); }
+function overlayClose(e, id) { if (e.target === document.getElementById(id)) closeModal(id); }
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') ['replaceModal','addModal','settingsModal'].forEach(id => closeModal(id));
+});
+
+// ══════════════════════════════════════════════════
+// TOAST
+// ══════════════════════════════════════════════════
+let toastTimer;
+function toast(msg, duration = 3500) {
+  const el = document.getElementById('toast');
+  el.textContent = msg;
+  el.classList.add('show');
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => el.classList.remove('show'), duration);
+}
+
+// ══════════════════════════════════════════════════
+// UTILITIES
+// ══════════════════════════════════════════════════
+function slugify(s) {
+  return s.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '') || 'logo';
+}
+</script>
+</body>
+</html>
