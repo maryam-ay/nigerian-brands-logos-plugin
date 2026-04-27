@@ -20,10 +20,8 @@
   --shadow-md: 0 4px 16px rgba(0,0,0,.10);
   --shadow-lg: 0 8px 40px rgba(0,0,0,.16);
   --radius: 10px;
-  --badge-svg: #008751;
-  --badge-svg-bg: #dcfce7;
-  --badge-png: #b45309;
-  --badge-png-bg: #fef3c7;
+  --badge-svg: #008751; --badge-svg-bg: #dcfce7;
+  --badge-png: #b45309; --badge-png-bg: #fef3c7;
 }
 @media (prefers-color-scheme: dark) {
   :root {
@@ -39,10 +37,7 @@
 }
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: var(--bg); color: var(--text); font-size: 14px; line-height: 1.5; min-height: 100vh; }
-
-/* ── Utilities ── */
 .hidden { display: none !important; }
-.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0,0,0,0); }
 
 /* ── Login ── */
 #loginScreen {
@@ -107,10 +102,16 @@ header {
 .logo-card:hover .card-actions { opacity: 1; }
 .card-img {
   width: 100%; aspect-ratio: 1; display: flex; align-items: center; justify-content: center;
-  padding: 16px; background: #fafafa; border-bottom: 1px solid var(--border);
+  padding: 16px; background: #fafafa; border-bottom: 1px solid var(--border); position: relative;
 }
 @media (prefers-color-scheme: dark) { .card-img { background: #13151e; } }
-.card-img img { max-width: 100%; max-height: 96px; object-fit: contain; }
+.card-img img { max-width: 100%; max-height: 96px; object-fit: contain; transition: opacity .2s; }
+.card-img img.loading { opacity: 0; }
+.card-img .img-skeleton {
+  position: absolute; inset: 0; background: linear-gradient(90deg, var(--border) 25%, var(--bg) 50%, var(--border) 75%);
+  background-size: 200% 100%; animation: shimmer 1.4s infinite;
+}
+@keyframes shimmer { 0% { background-position: 200% 0; } 100% { background-position: -200% 0; } }
 .card-img .img-placeholder { font-size: 32px; opacity: .25; }
 .card-body { padding: 10px 12px 12px; flex: 1; display: flex; flex-direction: column; gap: 4px; }
 .card-name { font-size: 12px; font-weight: 600; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
@@ -133,7 +134,7 @@ header {
 .icon-btn:hover { background: var(--danger-bg); color: var(--danger); border-color: var(--danger); }
 .icon-btn.edit:hover { background: var(--accent-bg); color: var(--accent); border-color: var(--accent); }
 
-/* ── Empty state ── */
+/* ── Empty / spinner ── */
 #emptyState {
   grid-column: 1 / -1; padding: 80px 20px;
   display: flex; flex-direction: column; align-items: center; gap: 12px; text-align: center;
@@ -141,8 +142,6 @@ header {
 #emptyState .empty-icon { font-size: 48px; }
 #emptyState h3 { font-size: 16px; font-weight: 600; }
 #emptyState p { font-size: 13px; color: var(--muted); max-width: 280px; }
-
-/* ── Spinner ── */
 .spinner {
   width: 28px; height: 28px; border: 3px solid var(--border); border-top-color: var(--accent);
   border-radius: 50%; animation: spin .7s linear infinite; margin: 60px auto; display: block;
@@ -181,7 +180,7 @@ textarea { resize: vertical; min-height: 100px; }
 .btn-icon { width: 36px; height: 36px; padding: 0; border-radius: 8px; border: 1px solid var(--border); background: var(--surface); color: var(--muted); cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all .15s; font-family: inherit; }
 .btn-icon:hover { border-color: var(--accent); color: var(--accent); }
 
-/* ── Modal ── */
+/* ── Modal base ── */
 .modal-overlay {
   position: fixed; inset: 0; background: rgba(0,0,0,.55); z-index: 100;
   display: flex; align-items: center; justify-content: center; padding: 20px;
@@ -201,6 +200,53 @@ textarea { resize: vertical; min-height: 100px; }
 .modal-close:hover { background: var(--bg); color: var(--text); }
 .modal-footer { display: flex; gap: 10px; padding-top: 4px; }
 .modal-footer .btn { flex: 1; }
+
+/* ── Expand modal ── */
+#expandModal .modal { max-width: 600px; }
+.expand-stage {
+  width: 100%; aspect-ratio: 1; max-height: 380px; border-radius: 10px;
+  display: flex; align-items: center; justify-content: center;
+  overflow: hidden; position: relative; transition: background .2s;
+}
+.expand-stage.bg-white   { background: #ffffff; }
+.expand-stage.bg-dark    { background: #1a1a1a; }
+.expand-stage.bg-checker {
+  background-image: linear-gradient(45deg,#ccc 25%,transparent 25%),
+                    linear-gradient(-45deg,#ccc 25%,transparent 25%),
+                    linear-gradient(45deg,transparent 75%,#ccc 75%),
+                    linear-gradient(-45deg,transparent 75%,#ccc 75%);
+  background-size: 16px 16px;
+  background-position: 0 0, 0 8px, 8px -8px, -8px 0px;
+  background-color: #f0f0f0;
+}
+.expand-stage img { max-width: 90%; max-height: 90%; object-fit: contain; }
+.expand-stage .expand-spinner {
+  width: 32px; height: 32px; border: 3px solid rgba(0,0,0,.1); border-top-color: var(--accent);
+  border-radius: 50%; animation: spin .7s linear infinite;
+}
+.expand-stage .expand-err { font-size: 12px; color: var(--muted); text-align: center; padding: 20px; }
+.bg-toggle-row {
+  display: flex; align-items: center; gap: 6px; flex-wrap: wrap;
+}
+.bg-toggle-row span { font-size: 11px; color: var(--muted); font-weight: 500; margin-right: 2px; }
+.bg-btn {
+  width: 24px; height: 24px; border-radius: 6px; cursor: pointer;
+  border: 2px solid transparent; transition: border-color .15s; flex-shrink: 0;
+}
+.bg-btn.active { border-color: var(--accent); }
+.bg-btn.white-btn { background: #ffffff; border-color: #ccc; }
+.bg-btn.white-btn.active { border-color: var(--accent); }
+.bg-btn.dark-btn { background: #1a1a1a; }
+.bg-btn.checker-btn {
+  background-image: linear-gradient(45deg,#aaa 25%,transparent 25%),
+                    linear-gradient(-45deg,#aaa 25%,transparent 25%),
+                    linear-gradient(45deg,transparent 75%,#aaa 75%),
+                    linear-gradient(-45deg,transparent 75%,#aaa 75%);
+  background-size: 8px 8px; background-position: 0 0, 0 4px, 4px -4px, -4px 0; background-color: #e0e0e0;
+}
+.expand-meta { display: flex; flex-direction: column; gap: 4px; }
+.expand-name { font-size: 18px; font-weight: 700; }
+.expand-sub { font-size: 13px; color: var(--muted); display: flex; align-items: center; gap: 8px; }
 
 /* ── Replace modal two-pane ── */
 .replace-panes { display: grid; grid-template-columns: 160px 1fr; gap: 20px; }
@@ -222,18 +268,16 @@ textarea { resize: vertical; min-height: 100px; }
 .live-preview img { max-width: 100%; max-height: 84px; object-fit: contain; }
 .preview-empty { font-size: 12px; color: var(--muted); }
 
-/* ── Tabs inside modal ── */
-.asset-tabs { display: flex; border-bottom: 1px solid var(--border); gap: 0; }
+/* ── Asset tabs ── */
+.asset-tabs { display: flex; border-bottom: 1px solid var(--border); }
 .asset-tab {
   padding: 8px 16px; background: none; border: none; border-bottom: 2px solid transparent;
   font-size: 13px; font-weight: 500; color: var(--muted); cursor: pointer; font-family: inherit;
 }
 .asset-tab.active { color: var(--accent); border-bottom-color: var(--accent); }
 
-/* ── Error text ── */
+/* ── Misc ── */
 .err-msg { font-size: 12px; color: var(--danger); min-height: 16px; }
-
-/* ── Toast ── */
 #toast {
   position: fixed; bottom: 24px; right: 24px; background: #1c1f2b; color: #fff;
   padding: 11px 18px; border-radius: 10px; font-size: 13px; font-weight: 500;
@@ -241,8 +285,6 @@ textarea { resize: vertical; min-height: 100px; }
   transition: opacity .2s, transform .2s; max-width: 340px;
 }
 #toast.show { opacity: 1; transform: translateY(0); }
-
-/* ── Settings modal ── */
 .settings-section { display: flex; flex-direction: column; gap: 10px; padding-bottom: 16px; border-bottom: 1px solid var(--border); }
 .settings-section:last-child { border-bottom: none; padding-bottom: 0; }
 .settings-section h3 { font-size: 13px; font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: .5px; }
@@ -250,9 +292,7 @@ textarea { resize: vertical; min-height: 100px; }
 </head>
 <body>
 
-<!-- ══════════════════════════════════════════════════
-     LOGIN SCREEN
-══════════════════════════════════════════════════ -->
+<!-- LOGIN -->
 <div id="loginScreen">
   <div class="login-card">
     <div class="login-flag">🇳🇬</div>
@@ -261,25 +301,21 @@ textarea { resize: vertical; min-height: 100px; }
     <div class="form-group">
       <label for="loginPw">Password</label>
       <input type="password" id="loginPw" placeholder="Enter admin password" autocomplete="current-password" />
-      <div class="field-hint" id="loginHint">First time? Any password you enter becomes your admin password.</div>
+      <div class="field-hint" id="loginHint"></div>
     </div>
     <div class="err-msg" id="loginErr"></div>
-    <button class="btn btn-primary btn-block" id="loginBtn" onclick="doLogin()">Sign In</button>
+    <button class="btn btn-primary btn-block" onclick="doLogin()">Sign In</button>
   </div>
 </div>
 
-<!-- ══════════════════════════════════════════════════
-     MAIN APP
-══════════════════════════════════════════════════ -->
+<!-- MAIN APP -->
 <div id="app" class="hidden">
-
-  <!-- Header -->
   <header>
     <div class="header-brand">🇳🇬 Nigerian Brands Admin</div>
     <div class="header-stats" id="headerStats"></div>
     <div class="header-actions">
       <button class="btn btn-primary btn-sm" onclick="openAddModal()">+ Add Logo</button>
-      <button class="btn-icon" title="Reload logos" onclick="loadManifest(true)">
+      <button class="btn-icon" title="Reload" onclick="loadManifest(true)">
         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 1 0 .49-3.5"/></svg>
       </button>
       <button class="btn-icon" title="Settings" onclick="openSettingsModal()">
@@ -291,47 +327,81 @@ textarea { resize: vertical; min-height: 100px; }
     </div>
   </header>
 
-  <!-- Toolbar -->
   <div class="toolbar">
     <div class="search-wrap">
       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
       <input type="text" id="searchInput" placeholder="Search logos by name, category or tag…" oninput="applyFilter()" />
     </div>
     <div class="filter-chips">
-      <button class="chip active" data-q="" onclick="setQuality('',this)">All</button>
-      <button class="chip" data-q="svg" onclick="setQuality('svg',this)">SVG</button>
-      <button class="chip" data-q="png" onclick="setQuality('png',this)">PNG</button>
+      <button class="chip active" onclick="setQuality('',this)">All</button>
+      <button class="chip" onclick="setQuality('svg',this)">SVG</button>
+      <button class="chip" onclick="setQuality('png',this)">PNG</button>
     </div>
     <span class="result-count" id="resultCount"></span>
   </div>
 
-  <!-- Logo Grid -->
-  <div id="logoGrid">
-    <div class="spinner" id="gridSpinner"></div>
-  </div>
-
+  <div id="logoGrid"><div class="spinner"></div></div>
 </div>
 
-<!-- ══════════════════════════════════════════════════
-     REPLACE MODAL
-══════════════════════════════════════════════════ -->
+<!-- ══ EXPAND MODAL ══ -->
+<div class="modal-overlay hidden" id="expandModal" onclick="overlayClose(event,'expandModal')">
+  <div class="modal" role="dialog" aria-modal="true">
+    <div class="modal-header">
+      <span class="modal-title" id="ex_title">Logo</span>
+      <button class="modal-close" onclick="closeModal('expandModal')">✕</button>
+    </div>
+
+    <!-- Stage (image display area) -->
+    <div class="expand-stage bg-white" id="ex_stage">
+      <div class="expand-spinner" id="ex_spinner"></div>
+    </div>
+
+    <!-- Background toggle -->
+    <div class="bg-toggle-row">
+      <span>Background:</span>
+      <button class="bg-btn white-btn active" id="bg_white"   title="White"       onclick="setBg('white',this)"></button>
+      <button class="bg-btn dark-btn"          id="bg_dark"    title="Dark"        onclick="setBg('dark',this)"></button>
+      <button class="bg-btn checker-btn"       id="bg_checker" title="Transparent" onclick="setBg('checker',this)"></button>
+    </div>
+
+    <!-- Meta -->
+    <div class="expand-meta">
+      <div class="expand-name" id="ex_name"></div>
+      <div class="expand-sub">
+        <span id="ex_cat"></span>
+        <span class="q-badge" id="ex_badge"></span>
+      </div>
+    </div>
+
+    <!-- Actions -->
+    <div class="modal-footer">
+      <button class="btn btn-secondary" onclick="closeModal('expandModal')">Close</button>
+      <button class="btn btn-secondary" id="ex_downloadBtn" onclick="downloadLogo()">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        Download
+      </button>
+      <button class="btn btn-primary" onclick="expandToReplace()">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
+        Replace
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- ══ REPLACE MODAL ══ -->
 <div class="modal-overlay hidden" id="replaceModal" onclick="overlayClose(event,'replaceModal')">
   <div class="modal modal-wide" role="dialog" aria-modal="true">
     <div class="modal-header">
       <span class="modal-title">Replace Logo</span>
       <button class="modal-close" onclick="closeModal('replaceModal')">✕</button>
     </div>
-
     <div class="replace-panes">
-      <!-- Current logo -->
       <div class="current-logo-pane">
         <div style="font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.5px;color:var(--muted)">Current</div>
         <div class="current-logo-img"><img id="r_currentImg" src="" alt="" /></div>
         <div class="current-logo-name" id="r_currentName"></div>
         <span class="q-badge" id="r_currentBadge" style="margin:0 auto"></span>
       </div>
-
-      <!-- Replacement form -->
       <div style="display:flex;flex-direction:column;gap:12px">
         <div class="form-group">
           <label>Category</label>
@@ -347,8 +417,8 @@ textarea { resize: vertical; min-height: 100px; }
         </div>
         <div>
           <div class="asset-tabs">
-            <button class="asset-tab active" data-tab="svg" onclick="switchAssetTab('svg',this,'r')">Paste SVG</button>
-            <button class="asset-tab" data-tab="upload" onclick="switchAssetTab('upload',this,'r')">Upload File</button>
+            <button class="asset-tab active" onclick="switchAssetTab('svg',this,'r')">Paste SVG</button>
+            <button class="asset-tab" onclick="switchAssetTab('upload',this,'r')">Upload File</button>
           </div>
           <div id="r_tabSvg" style="padding-top:10px">
             <textarea id="r_svg" rows="5" placeholder="Paste SVG code here… leave blank to keep existing asset" oninput="updatePreview('r')"></textarea>
@@ -364,7 +434,6 @@ textarea { resize: vertical; min-height: 100px; }
         </div>
       </div>
     </div>
-
     <div class="err-msg" id="r_err"></div>
     <div class="modal-footer">
       <button class="btn btn-secondary" onclick="closeModal('replaceModal')">Cancel</button>
@@ -373,29 +442,26 @@ textarea { resize: vertical; min-height: 100px; }
   </div>
 </div>
 
-<!-- ══════════════════════════════════════════════════
-     ADD MODAL
-══════════════════════════════════════════════════ -->
+<!-- ══ ADD MODAL ══ -->
 <div class="modal-overlay hidden" id="addModal" onclick="overlayClose(event,'addModal')">
   <div class="modal modal-wide" role="dialog" aria-modal="true">
     <div class="modal-header">
       <span class="modal-title">Add New Logo</span>
       <button class="modal-close" onclick="closeModal('addModal')">✕</button>
     </div>
-
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px">
       <div class="form-group">
-        <label for="a_name">Brand Name <span class="req">*</span></label>
+        <label>Brand Name <span class="req">*</span></label>
         <input type="text" id="a_name" placeholder="e.g. Dangote Group" oninput="autoSlug()" />
       </div>
       <div class="form-group">
-        <label for="a_slug">Slug / ID <span class="req">*</span></label>
+        <label>Slug / ID <span class="req">*</span></label>
         <input type="text" id="a_slug" placeholder="dangote-group" />
       </div>
     </div>
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px">
       <div class="form-group">
-        <label for="a_category">Category <span class="req">*</span></label>
+        <label>Category <span class="req">*</span></label>
         <select id="a_category">
           <option value="">Select…</option>
           <option>Banking</option><option>Telecom</option><option>FMCG</option>
@@ -404,15 +470,14 @@ textarea { resize: vertical; min-height: 100px; }
         </select>
       </div>
       <div class="form-group">
-        <label for="a_tags">Tags <span class="hint">(comma-separated)</span></label>
+        <label>Tags <span class="hint">(comma-separated)</span></label>
         <input type="text" id="a_tags" placeholder="cement, conglomerate" />
       </div>
     </div>
-
     <div>
       <div class="asset-tabs">
-        <button class="asset-tab active" data-tab="svg" onclick="switchAssetTab('svg',this,'a')">Paste SVG</button>
-        <button class="asset-tab" data-tab="upload" onclick="switchAssetTab('upload',this,'a')">Upload File</button>
+        <button class="asset-tab active" onclick="switchAssetTab('svg',this,'a')">Paste SVG</button>
+        <button class="asset-tab" onclick="switchAssetTab('upload',this,'a')">Upload File</button>
       </div>
       <div id="a_tabSvg" style="padding-top:10px">
         <textarea id="a_svg" rows="5" placeholder="Paste raw SVG code here…" oninput="updatePreview('a')"></textarea>
@@ -422,12 +487,10 @@ textarea { resize: vertical; min-height: 100px; }
         <div class="field-hint" style="margin-top:4px">SVG preferred. PNG accepted as fallback.</div>
       </div>
     </div>
-
     <div class="form-group">
       <label>Preview</label>
       <div class="live-preview" id="a_preview"><span class="preview-empty">No asset yet</span></div>
     </div>
-
     <div class="err-msg" id="a_err"></div>
     <div class="modal-footer">
       <button class="btn btn-secondary" onclick="closeModal('addModal')">Cancel</button>
@@ -436,16 +499,13 @@ textarea { resize: vertical; min-height: 100px; }
   </div>
 </div>
 
-<!-- ══════════════════════════════════════════════════
-     SETTINGS MODAL
-══════════════════════════════════════════════════ -->
+<!-- ══ SETTINGS MODAL ══ -->
 <div class="modal-overlay hidden" id="settingsModal" onclick="overlayClose(event,'settingsModal')">
   <div class="modal" role="dialog" aria-modal="true">
     <div class="modal-header">
       <span class="modal-title">Settings</span>
       <button class="modal-close" onclick="closeModal('settingsModal')">✕</button>
     </div>
-
     <div class="settings-section">
       <h3>GitHub Connection</h3>
       <div class="form-group">
@@ -454,34 +514,20 @@ textarea { resize: vertical; min-height: 100px; }
         <div class="field-hint">Needs <code>repo</code> write scope. Stored in this browser only.</div>
       </div>
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
-        <div class="form-group">
-          <label>GitHub Username</label>
-          <input type="text" id="s_owner" placeholder="maryam-ay" />
-        </div>
-        <div class="form-group">
-          <label>Repository</label>
-          <input type="text" id="s_repo" placeholder="nigerian-brands-logos-plugin" />
-        </div>
+        <div class="form-group"><label>GitHub Username</label><input type="text" id="s_owner" placeholder="maryam-ay" /></div>
+        <div class="form-group"><label>Repository</label><input type="text" id="s_repo" placeholder="nigerian-brands-logos-plugin" /></div>
       </div>
       <button class="btn btn-primary btn-sm" style="width:fit-content" onclick="saveSettings()">Save GitHub Settings</button>
     </div>
-
     <div class="settings-section">
       <h3>Change Password</h3>
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
-        <div class="form-group">
-          <label>New Password</label>
-          <input type="password" id="s_pw1" placeholder="New password" autocomplete="new-password" />
-        </div>
-        <div class="form-group">
-          <label>Confirm Password</label>
-          <input type="password" id="s_pw2" placeholder="Repeat password" autocomplete="new-password" />
-        </div>
+        <div class="form-group"><label>New Password</label><input type="password" id="s_pw1" placeholder="New password" autocomplete="new-password" /></div>
+        <div class="form-group"><label>Confirm Password</label><input type="password" id="s_pw2" placeholder="Repeat password" autocomplete="new-password" /></div>
       </div>
       <div class="err-msg" id="s_pwErr"></div>
       <button class="btn btn-secondary btn-sm" style="width:fit-content" onclick="changePassword()">Update Password</button>
     </div>
-
     <div class="settings-section">
       <h3>Danger Zone</h3>
       <button class="btn btn-danger btn-sm" style="width:fit-content" onclick="doLogout()">Sign Out</button>
@@ -489,7 +535,6 @@ textarea { resize: vertical; min-height: 100px; }
   </div>
 </div>
 
-<!-- Toast -->
 <div id="toast"></div>
 
 <script>
@@ -497,7 +542,7 @@ textarea { resize: vertical; min-height: 100px; }
 // CONFIG
 // ══════════════════════════════════════════════════
 const CFG = {
-  MANIFEST_URL: 'https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/logos.json',
+  MANIFEST_URL:  'https://raw.githubusercontent.com/maryam-ay/nigerian-brands-logos-plugin/main/public/logos.json',
   DEFAULT_OWNER: 'maryam-ay',
   DEFAULT_REPO:  'nigerian-brands-logos-plugin',
 };
@@ -506,12 +551,15 @@ const CFG = {
 // STATE
 // ══════════════════════════════════════════════════
 const ST = {
-  logos: [],        // full list from manifest
-  filtered: [],     // after search+quality filter
-  qualityFilter: '', // '' | 'svg' | 'png'
-  editingLogo: null,
-  pendingAsset: { prefix: null, content: null, isSvg: null }, // staged upload data
+  logos: [], filtered: [], qualityFilter: '',
+  expandedLogo: null,  // logo open in expand modal
+  editingLogo: null,   // logo open in replace modal
+  pendingAsset: { prefix: null, content: null, isSvg: null },
 };
+
+// Blob-URL cache: id → { objectUrl, mimeType, ext }
+// Avoids re-fetching the same file on repeated opens.
+const blobCache = new Map();
 
 function cfg() {
   return {
@@ -522,6 +570,46 @@ function cfg() {
 }
 
 // ══════════════════════════════════════════════════
+// IMAGE LOADING — blob-URL approach for raster logos
+// ══════════════════════════════════════════════════
+
+// Detect MIME type from first 16 bytes of an ArrayBuffer.
+function sniffMime(buf) {
+  const b = new Uint8Array(buf, 0, Math.min(16, buf.byteLength));
+  if (b[0]===0x89 && b[1]===0x50 && b[2]===0x4E && b[3]===0x47) return { mime:'image/png',  ext:'png' };
+  if (b[0]===0xFF && b[1]===0xD8 && b[2]===0xFF)                 return { mime:'image/jpeg', ext:'jpg' };
+  if (b[0]===0x47 && b[1]===0x49 && b[2]===0x46 && b[3]===0x38) return { mime:'image/gif',  ext:'gif' };
+  if (b[0]===0x52 && b[1]===0x49 && b[2]===0x46 && b[3]===0x46 &&
+      b[8]===0x57 && b[9]===0x45 && b[10]===0x42 && b[11]===0x50) return { mime:'image/webp', ext:'webp' };
+  return { mime:'image/svg+xml', ext:'svg' };
+}
+
+// Returns { objectUrl, mimeType, ext } for any logo.
+// SVG logos bypass the fetch entirely and return the raw URL directly.
+async function resolveAsset(logo) {
+  if (logo.quality === 'svg') {
+    // Genuine vector SVG — browser renders it fine from the URL directly.
+    const url = logo.svgUrl || logo.pngUrl;
+    return { objectUrl: url, mimeType: 'image/svg+xml', ext: 'svg', direct: true };
+  }
+
+  // Raster logo (may have .svg extension) — use cache if available.
+  if (blobCache.has(logo.id)) return blobCache.get(logo.id);
+
+  const url = logo.svgUrl || logo.pngUrl;
+  if (!url) return null;
+
+  const res = await fetch(url);
+  if (!res.ok) throw new Error('HTTP ' + res.status);
+  const buf = await res.arrayBuffer();
+  const { mime, ext } = sniffMime(buf);
+  const objectUrl = URL.createObjectURL(new Blob([buf], { type: mime }));
+  const entry = { objectUrl, mimeType: mime, ext, direct: false };
+  blobCache.set(logo.id, entry);
+  return entry;
+}
+
+// ══════════════════════════════════════════════════
 // AUTH
 // ══════════════════════════════════════════════════
 async function sha256(s) {
@@ -529,19 +617,16 @@ async function sha256(s) {
   return Array.from(new Uint8Array(buf)).map(b => b.toString(16).padStart(2,'0')).join('');
 }
 
-document.getElementById('loginPw').addEventListener('keydown', e => { if (e.key === 'Enter') doLogin(); });
+document.getElementById('loginPw').addEventListener('keydown', e => { if (e.key==='Enter') doLogin(); });
 
 async function doLogin() {
   const pw = document.getElementById('loginPw').value;
   if (!pw) return;
   const hash = await sha256(pw);
   const stored = localStorage.getItem('admin-pw-hash');
-  if (!stored) {
-    localStorage.setItem('admin-pw-hash', hash);
-    showApp();
-  } else if (hash === stored) {
-    showApp();
-  } else {
+  if (!stored) { localStorage.setItem('admin-pw-hash', hash); showApp(); }
+  else if (hash === stored) { showApp(); }
+  else {
     document.getElementById('loginErr').textContent = 'Incorrect password.';
     document.getElementById('loginPw').value = '';
     document.getElementById('loginPw').focus();
@@ -555,23 +640,16 @@ function showApp() {
   loadManifest(false);
 }
 
-function doLogout() {
-  if (confirm('Sign out?')) location.reload();
-}
+function doLogout() { if (confirm('Sign out?')) location.reload(); }
 
-// Show "first time" hint if no password stored yet
-if (!localStorage.getItem('admin-pw-hash')) {
-  document.getElementById('loginHint').textContent = 'First time? The password you enter now will be saved as your admin password.';
-} else {
-  document.getElementById('loginHint').textContent = '';
-}
+document.getElementById('loginHint').textContent = localStorage.getItem('admin-pw-hash')
+  ? '' : 'First time? The password you enter will become your admin password.';
 
 // ══════════════════════════════════════════════════
 // MANIFEST
 // ══════════════════════════════════════════════════
 async function loadManifest(showToastOnDone = false) {
-  document.getElementById('gridSpinner').style.display = 'block';
-  document.getElementById('logoGrid').innerHTML = '<div class="spinner" id="gridSpinner"></div>';
+  document.getElementById('logoGrid').innerHTML = '<div class="spinner"></div>';
   try {
     const res = await fetch(CFG.MANIFEST_URL + '?_=' + Date.now());
     if (!res.ok) throw new Error('HTTP ' + res.status);
@@ -581,22 +659,18 @@ async function loadManifest(showToastOnDone = false) {
     updateHeaderStats();
     if (showToastOnDone) toast('✅ Reloaded ' + ST.logos.length + ' logos');
   } catch (e) {
-    document.getElementById('logoGrid').innerHTML = `
-      <div id="emptyState">
-        <div class="empty-icon">⚠️</div>
-        <h3>Could not load manifest</h3>
-        <p>${e.message}<br/>Check your GitHub settings or try reloading.</p>
-      </div>`;
+    document.getElementById('logoGrid').innerHTML =
+      `<div id="emptyState"><div class="empty-icon">⚠️</div><h3>Could not load manifest</h3><p>${e.message}</p></div>`;
   }
 }
 
 function updateHeaderStats() {
-  const svgCount = ST.logos.filter(l => l.quality === 'svg').length;
-  const pngCount = ST.logos.filter(l => l.quality !== 'svg').length;
-  document.getElementById('headerStats').innerHTML = `
-    <span class="stat-pill">Total: ${ST.logos.length}</span>
-    <span class="stat-pill svg">SVG: ${svgCount}</span>
-    <span class="stat-pill png">PNG: ${pngCount}</span>`;
+  const svgC = ST.logos.filter(l => l.quality==='svg').length;
+  const pngC = ST.logos.length - svgC;
+  document.getElementById('headerStats').innerHTML =
+    `<span class="stat-pill">Total: ${ST.logos.length}</span>
+     <span class="stat-pill svg">SVG: ${svgC}</span>
+     <span class="stat-pill png">PNG: ${pngC}</span>`;
 }
 
 // ══════════════════════════════════════════════════
@@ -612,18 +686,13 @@ function setQuality(q, btn) {
 function applyFilter() {
   const q = document.getElementById('searchInput').value.toLowerCase().trim();
   ST.filtered = ST.logos.filter(l => {
-    const matchQ = !q ||
-      l.name.toLowerCase().includes(q) ||
-      (l.category || '').toLowerCase().includes(q) ||
-      (l.tags || []).some(t => t.toLowerCase().includes(q));
-    const matchQuality = !ST.qualityFilter ||
-      (ST.qualityFilter === 'svg' ? l.quality === 'svg' : l.quality !== 'svg');
-    return matchQ && matchQuality;
+    const mq = !q || l.name.toLowerCase().includes(q) || (l.category||'').toLowerCase().includes(q)
+             || (l.tags||[]).some(t => t.toLowerCase().includes(q));
+    const mf = !ST.qualityFilter || (ST.qualityFilter==='svg' ? l.quality==='svg' : l.quality!=='svg');
+    return mq && mf;
   });
-  document.getElementById('resultCount').textContent =
-    ST.filtered.length === ST.logos.length
-      ? `${ST.logos.length} logos`
-      : `${ST.filtered.length} of ${ST.logos.length}`;
+  document.getElementById('resultCount').textContent = ST.filtered.length === ST.logos.length
+    ? `${ST.logos.length} logos` : `${ST.filtered.length} of ${ST.logos.length}`;
   renderGrid();
 }
 
@@ -633,36 +702,56 @@ function applyFilter() {
 function renderGrid() {
   const grid = document.getElementById('logoGrid');
   if (ST.filtered.length === 0) {
-    grid.innerHTML = `
-      <div id="emptyState">
-        <div class="empty-icon">🔍</div>
-        <h3>${ST.logos.length === 0 ? 'No logos yet' : 'No results'}</h3>
-        <p>${ST.logos.length === 0 ? 'Add your first logo using the button above.' : 'Try a different search term or filter.'}</p>
-      </div>`;
+    grid.innerHTML = `<div id="emptyState">
+      <div class="empty-icon">🔍</div>
+      <h3>${ST.logos.length===0 ? 'No logos yet' : 'No results'}</h3>
+      <p>${ST.logos.length===0 ? 'Add your first logo using the button above.' : 'Try a different search term or filter.'}</p>
+    </div>`;
     return;
   }
+
   grid.innerHTML = ST.filtered.map(logo => {
-    const src = logo.svgUrl || logo.pngUrl || '';
     const isSvg = logo.quality === 'svg';
-    const badge = isSvg
-      ? `<span class="q-badge svg">SVG</span>`
-      : `<span class="q-badge png">PNG</span>`;
-    const safeLogoJson = encodeURIComponent(JSON.stringify(logo));
-    return `<div class="logo-card" onclick="openReplace('${safeLogoJson}')" title="Click to replace ${escHtml(logo.name)}">
-      <div class="card-img">
-        ${src ? `<img src="${escHtml(src)}" alt="${escHtml(logo.name)}" loading="lazy" onerror="this.style.opacity='.2'" />` : '<div class="img-placeholder">🏷️</div>'}
-      </div>
+    const badge = isSvg ? `<span class="q-badge svg">SVG</span>` : `<span class="q-badge png">PNG</span>`;
+    const ej = encodeURIComponent(JSON.stringify(logo));
+
+    // SVG logos can use the direct URL immediately; raster logos get a skeleton
+    // until the async blob loader fills them in.
+    const imgHtml = isSvg && (logo.svgUrl || logo.pngUrl)
+      ? `<img src="${escHtml(logo.svgUrl||logo.pngUrl)}" alt="${escHtml(logo.name)}" loading="lazy" onerror="this.style.opacity='.2'">`
+      : `<div class="img-skeleton" id="skel-${escHtml(logo.id)}"></div>`;
+
+    return `<div class="logo-card" onclick="openExpand('${ej}')" title="${escHtml(logo.name)}">
+      <div class="card-img" id="cimg-${escHtml(logo.id)}">${imgHtml}</div>
       <div class="card-body">
         <div class="card-name" title="${escHtml(logo.name)}">${escHtml(logo.name)}</div>
-        <div class="card-cat">${escHtml(logo.category || '')}</div>
+        <div class="card-cat">${escHtml(logo.category||'')}</div>
         ${badge}
       </div>
       <div class="card-actions">
-        <button class="icon-btn edit" title="Replace" onclick="event.stopPropagation();openReplace('${safeLogoJson}')">✎</button>
-        <button class="icon-btn" title="Delete" onclick="event.stopPropagation();doDelete('${safeLogoJson}')">✕</button>
+        <button class="icon-btn edit" title="Replace" onclick="event.stopPropagation();openReplace('${ej}')">✎</button>
+        <button class="icon-btn" title="Delete" onclick="event.stopPropagation();doDelete('${ej}')">✕</button>
       </div>
     </div>`;
   }).join('');
+
+  // Async: fill in raster logos via blob URLs, in batches to avoid request storms.
+  loadRasterThumbnails(ST.filtered.filter(l => l.quality !== 'svg'));
+}
+
+async function loadRasterThumbnails(logos) {
+  const BATCH = 8;
+  for (let i = 0; i < logos.length; i += BATCH) {
+    const batch = logos.slice(i, i + BATCH);
+    await Promise.allSettled(batch.map(async logo => {
+      try {
+        const asset = await resolveAsset(logo);
+        const cell = document.getElementById('cimg-' + logo.id);
+        if (!cell) return; // card no longer in DOM (filter changed)
+        cell.innerHTML = `<img src="${asset.objectUrl}" alt="${escHtml(logo.name)}" loading="lazy" onerror="this.style.opacity='.2'">`;
+      } catch { /* leave skeleton */ }
+    }));
+  }
 }
 
 function escHtml(s) {
@@ -670,46 +759,150 @@ function escHtml(s) {
 }
 
 // ══════════════════════════════════════════════════
-// ASSET TAB SWITCHER (shared by add + replace)
+// EXPAND MODAL
 // ══════════════════════════════════════════════════
-function switchAssetTab(tab, btn, prefix) {
-  const wrap = btn.closest('.modal');
-  wrap.querySelectorAll('.asset-tab').forEach(b => b.classList.remove('active'));
-  btn.classList.add('active');
-  document.getElementById(prefix + '_tabSvg').classList.toggle('hidden', tab !== 'svg');
-  document.getElementById(prefix + '_tabUpload').classList.toggle('hidden', tab !== 'upload');
-}
+async function openExpand(safeJson) {
+  const logo = JSON.parse(decodeURIComponent(safeJson));
+  ST.expandedLogo = logo;
 
-// ══════════════════════════════════════════════════
-// LIVE PREVIEW
-// ══════════════════════════════════════════════════
-function updatePreview(prefix) {
-  const svg = document.getElementById(prefix + '_svg').value.trim();
-  const p = document.getElementById(prefix + '_preview');
-  if (!svg) { p.innerHTML = '<span class="preview-empty">No asset yet</span>'; return; }
-  const clean = sanitizeSvg(svg);
-  p.innerHTML = `<img src="data:image/svg+xml;charset=utf-8,${encodeURIComponent(clean)}" />`;
-  // Store for submission
-  if (prefix === 'a' || prefix === 'r') {
-    ST.pendingAsset = { prefix, content: clean, isSvg: true };
+  // Reset stage to spinner
+  const stage = document.getElementById('ex_stage');
+  stage.innerHTML = '<div class="expand-spinner"></div>';
+
+  document.getElementById('ex_title').textContent = logo.name;
+  document.getElementById('ex_name').textContent  = logo.name;
+  document.getElementById('ex_cat').textContent   = logo.category || '';
+  const b = document.getElementById('ex_badge');
+  b.textContent = logo.quality === 'svg' ? 'SVG' : 'PNG';
+  b.className = 'q-badge ' + (logo.quality === 'svg' ? 'svg' : 'png');
+
+  openModal('expandModal');
+
+  try {
+    const asset = await resolveAsset(logo);
+    // Guard: modal may have been closed while fetching
+    if (!document.getElementById('expandModal').classList.contains('hidden')) {
+      stage.innerHTML = `<img src="${asset.objectUrl}" alt="${escHtml(logo.name)}" onerror="this.parentElement.innerHTML='<div class=expand-err>Could not render image</div>'">`;
+    }
+  } catch (e) {
+    stage.innerHTML = `<div class="expand-err">Failed to load: ${e.message}</div>`;
   }
 }
 
-async function handleFileUpload(prefix) {
-  const input = document.getElementById(prefix + '_file');
-  const file = input.files[0];
-  if (!file) return;
-  const isSvg = file.name.toLowerCase().endsWith('.svg') || file.type === 'image/svg+xml';
-  const p = document.getElementById(prefix + '_preview');
-  if (isSvg) {
-    const text = await readAsText(file);
-    const clean = sanitizeSvg(text);
-    p.innerHTML = `<img src="data:image/svg+xml;charset=utf-8,${encodeURIComponent(clean)}" />`;
-    ST.pendingAsset = { prefix, content: clean, isSvg: true };
+function expandToReplace() {
+  if (!ST.expandedLogo) return;
+  closeModal('expandModal');
+  openReplace(encodeURIComponent(JSON.stringify(ST.expandedLogo)));
+}
+
+// ── Background toggle ──────────────────────────────
+function setBg(mode, btn) {
+  const stage = document.getElementById('ex_stage');
+  stage.className = `expand-stage bg-${mode}`;
+  document.querySelectorAll('.bg-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+}
+
+// ── Download ──────────────────────────────────────
+async function downloadLogo() {
+  const logo = ST.expandedLogo;
+  if (!logo) return;
+  const btn = document.getElementById('ex_downloadBtn');
+  btn.disabled = true;
+  btn.textContent = 'Downloading…';
+  try {
+    const asset = await resolveAsset(logo);
+    const a = document.createElement('a');
+    a.href = asset.objectUrl;
+    a.download = `${logo.id}.${asset.ext}`;
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+  } catch (e) {
+    toast('❌ Download failed: ' + e.message, 5000);
+  } finally {
+    btn.disabled = false;
+    btn.innerHTML = `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> Download`;
+  }
+}
+
+// ══════════════════════════════════════════════════
+// REPLACE MODAL
+// ══════════════════════════════════════════════════
+async function openReplace(safeJson) {
+  const logo = JSON.parse(decodeURIComponent(safeJson));
+  ST.editingLogo = logo;
+  ST.pendingAsset = { prefix: null, content: null, isSvg: null };
+
+  // Show spinner in current-logo pane while blob loads
+  const cImg = document.getElementById('r_currentImg');
+  cImg.src = '';
+  document.getElementById('r_currentName').textContent = logo.name;
+  const b = document.getElementById('r_currentBadge');
+  b.textContent = logo.quality === 'svg' ? 'SVG' : 'PNG';
+  b.className = 'q-badge ' + (logo.quality === 'svg' ? 'svg' : 'png');
+  document.getElementById('r_category').value = logo.category || 'Other';
+  document.getElementById('r_tags').value = (logo.tags||[]).join(', ');
+  document.getElementById('r_svg').value = '';
+  document.getElementById('r_file').value = '';
+  document.getElementById('r_preview').innerHTML = '<span class="preview-empty">No new asset — existing will be kept</span>';
+  document.getElementById('r_err').textContent = '';
+  document.getElementById('r_saveBtn').disabled = false;
+
+  // Reset to SVG tab
+  document.getElementById('r_tabSvg').classList.remove('hidden');
+  document.getElementById('r_tabUpload').classList.add('hidden');
+  document.querySelectorAll('#replaceModal .asset-tab').forEach((b,i) => b.classList.toggle('active', i===0));
+
+  openModal('replaceModal');
+
+  // Load the correct blob URL for the current logo preview
+  try {
+    const asset = await resolveAsset(logo);
+    if (!document.getElementById('replaceModal').classList.contains('hidden')) {
+      cImg.src = asset.objectUrl;
+    }
+  } catch { /* leave blank */ }
+}
+
+async function submitReplace() {
+  if (!ST.editingLogo) return;
+  const logo     = ST.editingLogo;
+  const category = document.getElementById('r_category').value;
+  const tags     = document.getElementById('r_tags').value.split(',').map(t=>t.trim()).filter(Boolean);
+  const svgText  = document.getElementById('r_svg').value.trim();
+  const err      = document.getElementById('r_err');
+
+  let assetContent = null, isSvg = null;
+  if (svgText) { assetContent = sanitizeSvg(svgText); isSvg = true; }
+  else if (ST.pendingAsset.prefix==='r' && ST.pendingAsset.content) {
+    assetContent = ST.pendingAsset.content; isSvg = ST.pendingAsset.isSvg;
+  }
+
+  const updatedLogo = {
+    ...logo, category, tags,
+    quality:   assetContent ? (isSvg ? 'svg' : 'png-hq') : logo.quality,
+    svgUrl:    assetContent && isSvg  ? (logo.svgUrl  || `https://raw.githubusercontent.com/${cfg().owner}/${cfg().repo}/main/public/assets/logos/${logo.id}.svg`) : (isSvg===false ? null : logo.svgUrl),
+    pngUrl:    assetContent && !isSvg ? (logo.pngUrl  || `https://raw.githubusercontent.com/${cfg().owner}/${cfg().repo}/main/public/assets/logos/${logo.id}.png`) : (isSvg===true  ? null : logo.pngUrl),
+    updatedAt: new Date().toISOString(),
+  };
+
+  err.textContent = '';
+  document.getElementById('r_saveBtn').disabled = true;
+  toast('⏳ Saving…');
+
+  const ext = isSvg ? 'svg' : 'png';
+  const r = await ghCommit('update', updatedLogo, assetContent, isSvg, ext, cfg());
+  document.getElementById('r_saveBtn').disabled = false;
+  if (r.ok) {
+    // Evict cached blob so the grid reloads the new file
+    blobCache.delete(logo.id);
+    toast('✅ Logo updated!');
+    closeModal('replaceModal');
+    ST.pendingAsset = { prefix: null, content: null, isSvg: null };
+    await loadManifest(false);
   } else {
-    const b64 = await readAsBase64(file);
-    p.innerHTML = `<img src="data:image/png;base64,${b64}" />`;
-    ST.pendingAsset = { prefix, content: b64, isSvg: false };
+    err.textContent = r.error;
   }
 }
 
@@ -717,17 +910,14 @@ async function handleFileUpload(prefix) {
 // ADD LOGO
 // ══════════════════════════════════════════════════
 function openAddModal() {
-  document.getElementById('a_name').value = '';
-  document.getElementById('a_slug').value = '';
+  ['a_name','a_slug','a_tags'].forEach(id => document.getElementById(id).value = '');
   document.getElementById('a_category').value = '';
-  document.getElementById('a_tags').value = '';
   document.getElementById('a_svg').value = '';
   document.getElementById('a_file').value = '';
   document.getElementById('a_preview').innerHTML = '<span class="preview-empty">No asset yet</span>';
   document.getElementById('a_err').textContent = '';
   document.getElementById('a_saveBtn').disabled = false;
   ST.pendingAsset = { prefix: null, content: null, isSvg: null };
-  // Reset to SVG tab
   document.getElementById('a_tabSvg').classList.remove('hidden');
   document.getElementById('a_tabUpload').classList.add('hidden');
   document.querySelectorAll('#addModal .asset-tab').forEach((b,i) => b.classList.toggle('active', i===0));
@@ -743,21 +933,19 @@ async function submitAdd() {
   const name     = document.getElementById('a_name').value.trim();
   const id       = document.getElementById('a_slug').value.trim();
   const category = document.getElementById('a_category').value;
-  const tags     = document.getElementById('a_tags').value.split(',').map(t => t.trim()).filter(Boolean);
+  const tags     = document.getElementById('a_tags').value.split(',').map(t=>t.trim()).filter(Boolean);
   const svgText  = document.getElementById('a_svg').value.trim();
   const err      = document.getElementById('a_err');
 
-  if (!name || !id || !category) { err.textContent = 'Name, slug, and category are required.'; return; }
-  if (ST.logos.find(l => l.id === id)) { err.textContent = `Slug "${id}" already exists.`; return; }
+  if (!name||!id||!category) { err.textContent='Name, slug, and category are required.'; return; }
+  if (ST.logos.find(l=>l.id===id)) { err.textContent=`Slug "${id}" already exists.`; return; }
 
-  // Resolve asset: prefer SVG textarea over file upload
   let assetContent = null, isSvg = null;
-  if (svgText) {
-    assetContent = sanitizeSvg(svgText); isSvg = true;
-  } else if (ST.pendingAsset.prefix === 'a' && ST.pendingAsset.content) {
+  if (svgText) { assetContent = sanitizeSvg(svgText); isSvg = true; }
+  else if (ST.pendingAsset.prefix==='a' && ST.pendingAsset.content) {
     assetContent = ST.pendingAsset.content; isSvg = ST.pendingAsset.isSvg;
   }
-  if (!assetContent) { err.textContent = 'Paste SVG code or upload a file.'; return; }
+  if (!assetContent) { err.textContent='Paste SVG code or upload a file.'; return; }
 
   err.textContent = '';
   document.getElementById('a_saveBtn').disabled = true;
@@ -790,84 +978,15 @@ async function submitAdd() {
 }
 
 // ══════════════════════════════════════════════════
-// REPLACE LOGO
-// ══════════════════════════════════════════════════
-function openReplace(safeJson) {
-  const logo = JSON.parse(decodeURIComponent(safeJson));
-  ST.editingLogo = logo;
-  ST.pendingAsset = { prefix: null, content: null, isSvg: null };
-
-  const src = logo.svgUrl || logo.pngUrl || '';
-  document.getElementById('r_currentImg').src = src;
-  document.getElementById('r_currentName').textContent = logo.name;
-  const b = document.getElementById('r_currentBadge');
-  b.textContent = logo.quality === 'svg' ? 'SVG' : 'PNG';
-  b.className = 'q-badge ' + (logo.quality === 'svg' ? 'svg' : 'png');
-  document.getElementById('r_category').value = logo.category || 'Other';
-  document.getElementById('r_tags').value = (logo.tags || []).join(', ');
-  document.getElementById('r_svg').value = '';
-  document.getElementById('r_file').value = '';
-  document.getElementById('r_preview').innerHTML = '<span class="preview-empty">No new asset — existing will be kept</span>';
-  document.getElementById('r_err').textContent = '';
-  document.getElementById('r_saveBtn').disabled = false;
-
-  // Reset to SVG tab
-  document.getElementById('r_tabSvg').classList.remove('hidden');
-  document.getElementById('r_tabUpload').classList.add('hidden');
-  document.querySelectorAll('#replaceModal .asset-tab').forEach((b,i) => b.classList.toggle('active', i===0));
-
-  openModal('replaceModal');
-}
-
-async function submitReplace() {
-  if (!ST.editingLogo) return;
-  const logo     = ST.editingLogo;
-  const category = document.getElementById('r_category').value;
-  const tags     = document.getElementById('r_tags').value.split(',').map(t => t.trim()).filter(Boolean);
-  const svgText  = document.getElementById('r_svg').value.trim();
-  const err      = document.getElementById('r_err');
-
-  let assetContent = null, isSvg = null;
-  if (svgText) {
-    assetContent = sanitizeSvg(svgText); isSvg = true;
-  } else if (ST.pendingAsset.prefix === 'r' && ST.pendingAsset.content) {
-    assetContent = ST.pendingAsset.content; isSvg = ST.pendingAsset.isSvg;
-  }
-
-  const updatedLogo = {
-    ...logo, category, tags,
-    quality:   assetContent ? (isSvg ? 'svg' : 'png-hq') : logo.quality,
-    svgUrl:    assetContent && isSvg  ? logo.svgUrl || `https://raw.githubusercontent.com/${cfg().owner}/${cfg().repo}/main/public/assets/logos/${logo.id}.svg` : (isSvg === false ? null : logo.svgUrl),
-    pngUrl:    assetContent && !isSvg ? logo.pngUrl || `https://raw.githubusercontent.com/${cfg().owner}/${cfg().repo}/main/public/assets/logos/${logo.id}.png` : (isSvg === true  ? null : logo.pngUrl),
-    updatedAt: new Date().toISOString(),
-  };
-
-  err.textContent = '';
-  document.getElementById('r_saveBtn').disabled = true;
-  toast('⏳ Saving…');
-
-  const ext = isSvg ? 'svg' : 'png';
-  const r = await ghCommit('update', updatedLogo, assetContent, isSvg, ext, cfg());
-  document.getElementById('r_saveBtn').disabled = false;
-  if (r.ok) {
-    toast('✅ Logo updated!');
-    closeModal('replaceModal');
-    ST.pendingAsset = { prefix: null, content: null, isSvg: null };
-    await loadManifest(false);
-  } else {
-    err.textContent = r.error;
-  }
-}
-
-// ══════════════════════════════════════════════════
-// DELETE LOGO
+// DELETE
 // ══════════════════════════════════════════════════
 async function doDelete(safeJson) {
   const logo = JSON.parse(decodeURIComponent(safeJson));
-  if (!confirm(`Delete "${logo.name}"?\n\nThis will remove the asset file and update the manifest on GitHub. This cannot be undone.`)) return;
+  if (!confirm(`Delete "${logo.name}"?\n\nThis removes the asset and updates the manifest on GitHub. Cannot be undone.`)) return;
   toast('⏳ Deleting…');
   const r = await ghCommit('delete', logo, null, null, null, cfg());
   if (r.ok) {
+    blobCache.delete(logo.id);
     toast('🗑️ Deleted ' + logo.name);
     await loadManifest(false);
   } else {
@@ -876,102 +995,109 @@ async function doDelete(safeJson) {
 }
 
 // ══════════════════════════════════════════════════
+// ASSET TABS + PREVIEW
+// ══════════════════════════════════════════════════
+function switchAssetTab(tab, btn, prefix) {
+  const wrap = btn.closest('.modal');
+  wrap.querySelectorAll('.asset-tab').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  document.getElementById(prefix+'_tabSvg').classList.toggle('hidden', tab!=='svg');
+  document.getElementById(prefix+'_tabUpload').classList.toggle('hidden', tab!=='upload');
+}
+
+function updatePreview(prefix) {
+  const svg = document.getElementById(prefix+'_svg').value.trim();
+  const p = document.getElementById(prefix+'_preview');
+  if (!svg) { p.innerHTML='<span class="preview-empty">No asset yet</span>'; return; }
+  const clean = sanitizeSvg(svg);
+  p.innerHTML = `<img src="data:image/svg+xml;charset=utf-8,${encodeURIComponent(clean)}">`;
+  ST.pendingAsset = { prefix, content: clean, isSvg: true };
+}
+
+async function handleFileUpload(prefix) {
+  const file = document.getElementById(prefix+'_file').files[0];
+  if (!file) return;
+  const isSvg = file.name.toLowerCase().endsWith('.svg') || file.type==='image/svg+xml';
+  const p = document.getElementById(prefix+'_preview');
+  if (isSvg) {
+    const text = await readAsText(file);
+    const clean = sanitizeSvg(text);
+    p.innerHTML = `<img src="data:image/svg+xml;charset=utf-8,${encodeURIComponent(clean)}">`;
+    ST.pendingAsset = { prefix, content: clean, isSvg: true };
+  } else {
+    const b64 = await readAsBase64(file);
+    p.innerHTML = `<img src="data:${file.type||'image/png'};base64,${b64}">`;
+    ST.pendingAsset = { prefix, content: b64, isSvg: false };
+  }
+}
+
+// ══════════════════════════════════════════════════
 // GITHUB API
 // ══════════════════════════════════════════════════
 const GH = 'https://api.github.com';
-
-function ghHeaders(token) {
-  return { Authorization: `token ${token}`, Accept: 'application/vnd.github.v3+json', 'Content-Type': 'application/json' };
-}
+const ghH = t => ({ Authorization:`token ${t}`, Accept:'application/vnd.github.v3+json', 'Content-Type':'application/json' });
 
 async function ghGetSha(token, owner, repo, path) {
-  const r = await fetch(`${GH}/repos/${owner}/${repo}/contents/${path}`, { headers: ghHeaders(token) });
-  if (!r.ok) return null;
-  return (await r.json()).sha || null;
+  const r = await fetch(`${GH}/repos/${owner}/${repo}/contents/${path}`, { headers: ghH(token) });
+  return r.ok ? (await r.json()).sha || null : null;
 }
 
-async function ghPut(token, owner, repo, path, content, message, sha) {
-  // content must be base64
-  const body = { message, content };
+async function ghPut(token, owner, repo, path, b64, message, sha) {
+  const body = { message, content: b64 };
   if (sha) body.sha = sha;
   const r = await fetch(`${GH}/repos/${owner}/${repo}/contents/${path}`, {
-    method: 'PUT', headers: ghHeaders(token), body: JSON.stringify(body),
+    method:'PUT', headers: ghH(token), body: JSON.stringify(body),
   });
   return r.ok;
 }
 
 async function ghDelete(token, owner, repo, path, message) {
   const sha = await ghGetSha(token, owner, repo, path);
-  if (!sha) return true; // already gone
+  if (!sha) return true;
   const r = await fetch(`${GH}/repos/${owner}/${repo}/contents/${path}`, {
-    method: 'DELETE', headers: ghHeaders(token),
-    body: JSON.stringify({ message, sha }),
+    method:'DELETE', headers: ghH(token), body: JSON.stringify({ message, sha }),
   });
   return r.ok;
 }
 
-// Encode content to base64 for GitHub API
 function toB64(content, isSvg) {
   if (isSvg === null) return null;
-  if (isSvg) {
-    // SVG is a text string — encode via UTF-8
-    return btoa(unescape(encodeURIComponent(content)));
-  }
-  // PNG/etc — content is already raw base64
-  return content;
+  return isSvg ? btoa(unescape(encodeURIComponent(content))) : content;
 }
 
 async function ghCommit(action, logo, assetContent, isSvg, ext, { token, owner, repo }) {
-  if (!token) return { ok: false, error: 'GitHub token not configured — open Settings.' };
-
+  if (!token) return { ok:false, error:'GitHub token not configured — open Settings.' };
   try {
-    // 1. Upload/delete asset file
-    if (action === 'delete') {
-      const assetExt = logo.quality === 'svg' ? 'svg' : 'png';
+    if (action==='delete') {
+      const assetExt = logo.quality==='svg' ? 'svg' : 'png';
       await ghDelete(token, owner, repo, `public/assets/logos/${logo.id}.${assetExt}`, `chore: remove ${logo.name} logo`);
     } else if (assetContent) {
       const filePath = `public/assets/logos/${logo.id}.${ext}`;
       const sha = await ghGetSha(token, owner, repo, filePath);
-      const b64 = toB64(assetContent, isSvg);
-      const verb = action === 'add' ? 'feat' : 'fix';
-      const ok = await ghPut(token, owner, repo, filePath, b64, `${verb}: ${action} ${logo.name} logo`, sha);
-      if (!ok) return { ok: false, error: 'Failed to upload asset file to GitHub.' };
-
-      // If replacing SVG with PNG or vice versa, delete the old file
-      if (action === 'update') {
-        const oldExt = ST.editingLogo && ST.editingLogo.quality === 'svg' ? 'svg' : 'png';
-        if (oldExt !== ext) {
-          await ghDelete(token, owner, repo, `public/assets/logos/${logo.id}.${oldExt}`, `chore: remove old ${oldExt} for ${logo.name}`);
-        }
+      const ok = await ghPut(token, owner, repo, filePath, toB64(assetContent, isSvg),
+        `${action==='add'?'feat':'fix'}: ${action} ${logo.name} logo`, sha);
+      if (!ok) return { ok:false, error:'Failed to upload asset file to GitHub.' };
+      if (action==='update' && ST.editingLogo) {
+        const oldExt = ST.editingLogo.quality==='svg' ? 'svg' : 'png';
+        if (oldExt !== ext) await ghDelete(token, owner, repo, `public/assets/logos/${logo.id}.${oldExt}`, `chore: remove old ${oldExt} for ${logo.name}`);
       }
     }
-
-    // 2. Read + update manifest
     const mPath = 'public/logos.json';
-    const mRes = await fetch(`${GH}/repos/${owner}/${repo}/contents/${mPath}`, { headers: ghHeaders(token) });
-    if (!mRes.ok) return { ok: false, error: `Cannot read manifest: HTTP ${mRes.status}` };
+    const mRes = await fetch(`${GH}/repos/${owner}/${repo}/contents/${mPath}`, { headers: ghH(token) });
+    if (!mRes.ok) return { ok:false, error:`Cannot read manifest: HTTP ${mRes.status}` };
     const mFile = await mRes.json();
-    const manifest = JSON.parse(decodeURIComponent(escape(atob(mFile.content.replace(/\s/g, '')))));
-
-    if (action === 'add') {
-      manifest.logos.push(logo);
-    } else if (action === 'update') {
-      const idx = manifest.logos.findIndex(l => l.id === logo.id);
-      if (idx !== -1) manifest.logos[idx] = logo; else manifest.logos.push(logo);
-    } else {
-      manifest.logos = manifest.logos.filter(l => l.id !== logo.id);
-    }
+    const manifest = JSON.parse(decodeURIComponent(escape(atob(mFile.content.replace(/\s/g,'')))));
+    if (action==='add') { manifest.logos.push(logo); }
+    else if (action==='update') { const i=manifest.logos.findIndex(l=>l.id===logo.id); if(i!==-1)manifest.logos[i]=logo; else manifest.logos.push(logo); }
+    else { manifest.logos=manifest.logos.filter(l=>l.id!==logo.id); }
     manifest.totalLogos  = manifest.logos.length;
     manifest.lastUpdated = new Date().toISOString();
-
-    const manifestB64 = btoa(unescape(encodeURIComponent(JSON.stringify(manifest, null, 2))));
-    const mOk = await ghPut(token, owner, repo, mPath, manifestB64, `chore: update manifest (${action} ${logo.name})`, mFile.sha);
-    if (!mOk) return { ok: false, error: 'Asset saved but manifest update failed.' };
-
-    return { ok: true };
-  } catch (e) {
-    return { ok: false, error: String(e) };
-  }
+    const ok2 = await ghPut(token, owner, repo, mPath,
+      btoa(unescape(encodeURIComponent(JSON.stringify(manifest,null,2)))),
+      `chore: update manifest (${action} ${logo.name})`, mFile.sha);
+    if (!ok2) return { ok:false, error:'Asset saved but manifest update failed.' };
+    return { ok:true };
+  } catch(e) { return { ok:false, error:String(e) }; }
 }
 
 // ══════════════════════════════════════════════════
@@ -979,20 +1105,19 @@ async function ghCommit(action, logo, assetContent, isSvg, ext, { token, owner, 
 // ══════════════════════════════════════════════════
 function sanitizeSvg(raw) {
   try {
-    const parser = new DOMParser();
-    const doc = parser.parseFromString(raw, 'image/svg+xml');
+    const doc = new DOMParser().parseFromString(raw, 'image/svg+xml');
     const root = doc.documentElement;
-    if (root.nodeName === 'parsererror') return raw;
-    root.querySelectorAll('script, foreignObject').forEach(el => el.remove());
+    if (root.nodeName==='parsererror') return raw;
+    root.querySelectorAll('script,foreignObject').forEach(el=>el.remove());
     root.querySelectorAll('*').forEach(el => {
-      const toRemove = [];
-      for (const attr of el.attributes) {
-        if (attr.name.startsWith('on')) toRemove.push(attr.name);
-        if (['href','src','xlink:href'].includes(attr.name) && /^https?:\/\//.test(attr.value)) toRemove.push(attr.name);
+      const rm=[];
+      for(const a of el.attributes){
+        if(a.name.startsWith('on')) rm.push(a.name);
+        if(['href','src','xlink:href'].includes(a.name)&&/^https?:\/\//.test(a.value)) rm.push(a.name);
       }
-      toRemove.forEach(n => el.removeAttribute(n));
+      rm.forEach(n=>el.removeAttribute(n));
     });
-    if (!root.getAttribute('xmlns')) root.setAttribute('xmlns', 'http://www.w3.org/2000/svg');
+    if(!root.getAttribute('xmlns')) root.setAttribute('xmlns','http://www.w3.org/2000/svg');
     return new XMLSerializer().serializeToString(root);
   } catch { return raw; }
 }
@@ -1000,12 +1125,8 @@ function sanitizeSvg(raw) {
 // ══════════════════════════════════════════════════
 // FILE READERS
 // ══════════════════════════════════════════════════
-function readAsText(file) {
-  return new Promise((res, rej) => { const r = new FileReader(); r.onload = () => res(r.result); r.onerror = rej; r.readAsText(file); });
-}
-function readAsBase64(file) {
-  return new Promise((res, rej) => { const r = new FileReader(); r.onload = () => res(r.result.split(',')[1]); r.onerror = rej; r.readAsDataURL(file); });
-}
+const readAsText   = f => new Promise((res,rej) => { const r=new FileReader(); r.onload=()=>res(r.result); r.onerror=rej; r.readAsText(f); });
+const readAsBase64 = f => new Promise((res,rej) => { const r=new FileReader(); r.onload=()=>res(r.result.split(',')[1]); r.onerror=rej; r.readAsDataURL(f); });
 
 // ══════════════════════════════════════════════════
 // SETTINGS
@@ -1015,30 +1136,21 @@ function loadSettings() {
   document.getElementById('s_owner').value = localStorage.getItem('gh-owner') || CFG.DEFAULT_OWNER;
   document.getElementById('s_repo').value  = localStorage.getItem('gh-repo')  || CFG.DEFAULT_REPO;
 }
-
 function saveSettings() {
-  const t = document.getElementById('s_token').value.trim();
-  const o = document.getElementById('s_owner').value.trim();
-  const r = document.getElementById('s_repo').value.trim();
-  if (t) localStorage.setItem('gh-token', t);
-  if (o) localStorage.setItem('gh-owner', o);
-  if (r) localStorage.setItem('gh-repo', r);
+  const t=document.getElementById('s_token').value.trim(), o=document.getElementById('s_owner').value.trim(), r=document.getElementById('s_repo').value.trim();
+  if(t) localStorage.setItem('gh-token',t);
+  if(o) localStorage.setItem('gh-owner',o);
+  if(r) localStorage.setItem('gh-repo',r);
   toast('✅ Settings saved');
 }
-
 async function changePassword() {
-  const pw1 = document.getElementById('s_pw1').value;
-  const pw2 = document.getElementById('s_pw2').value;
-  const err = document.getElementById('s_pwErr');
-  if (!pw1 || !pw2) { err.textContent = 'Fill both fields.'; return; }
-  if (pw1 !== pw2)  { err.textContent = 'Passwords do not match.'; return; }
+  const pw1=document.getElementById('s_pw1').value, pw2=document.getElementById('s_pw2').value, err=document.getElementById('s_pwErr');
+  if(!pw1||!pw2){err.textContent='Fill both fields.';return;}
+  if(pw1!==pw2){err.textContent='Passwords do not match.';return;}
   localStorage.setItem('admin-pw-hash', await sha256(pw1));
-  document.getElementById('s_pw1').value = '';
-  document.getElementById('s_pw2').value = '';
-  err.textContent = '';
+  document.getElementById('s_pw1').value=''; document.getElementById('s_pw2').value=''; err.textContent='';
   toast('✅ Password updated');
 }
-
 function openSettingsModal() { loadSettings(); openModal('settingsModal'); }
 
 // ══════════════════════════════════════════════════
@@ -1046,29 +1158,20 @@ function openSettingsModal() { loadSettings(); openModal('settingsModal'); }
 // ══════════════════════════════════════════════════
 function openModal(id)  { document.getElementById(id).classList.remove('hidden'); }
 function closeModal(id) { document.getElementById(id).classList.add('hidden'); }
-function overlayClose(e, id) { if (e.target === document.getElementById(id)) closeModal(id); }
+function overlayClose(e,id) { if(e.target===document.getElementById(id)) closeModal(id); }
 document.addEventListener('keydown', e => {
-  if (e.key === 'Escape') ['replaceModal','addModal','settingsModal'].forEach(id => closeModal(id));
+  if(e.key==='Escape') ['expandModal','replaceModal','addModal','settingsModal'].forEach(id=>closeModal(id));
 });
 
 // ══════════════════════════════════════════════════
-// TOAST
+// TOAST + UTILS
 // ══════════════════════════════════════════════════
 let toastTimer;
-function toast(msg, duration = 3500) {
-  const el = document.getElementById('toast');
-  el.textContent = msg;
-  el.classList.add('show');
-  clearTimeout(toastTimer);
-  toastTimer = setTimeout(() => el.classList.remove('show'), duration);
+function toast(msg, dur=3500) {
+  const el=document.getElementById('toast'); el.textContent=msg; el.classList.add('show');
+  clearTimeout(toastTimer); toastTimer=setTimeout(()=>el.classList.remove('show'),dur);
 }
-
-// ══════════════════════════════════════════════════
-// UTILITIES
-// ══════════════════════════════════════════════════
-function slugify(s) {
-  return s.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '') || 'logo';
-}
+function slugify(s) { return s.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/(^-|-$)/g,'')||'logo'; }
 </script>
 </body>
 </html>
