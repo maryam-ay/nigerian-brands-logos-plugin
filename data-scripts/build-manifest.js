@@ -65,7 +65,8 @@ function main() {
     const now = new Date().toISOString();
 
     const isSvg = ext === '.svg';
-    const quality = existing ? existing.quality : (isSvg ? 'svg' : 'png-lq');
+    const quality = isSvg ? 'svg'
+      : (existing && existing.quality === 'png-hq' ? 'png-hq' : 'png-lq');
 
     logos.push({
       id,
