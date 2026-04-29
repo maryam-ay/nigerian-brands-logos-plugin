@@ -65,8 +65,7 @@ function main() {
     const now = new Date().toISOString();
 
     const isSvg = ext === '.svg';
-    const quality = isSvg ? 'svg'
-      : (existing && existing.quality === 'png-hq' ? 'png-hq' : 'png-lq');
+    const quality = isSvg ? 'svg' : 'png';
 
     logos.push({
       id,
@@ -74,8 +73,8 @@ function main() {
       brand: existing ? existing.brand : name.split(' ')[0],
       category,
       tags: existing ? existing.tags : [category.toLowerCase()],
-      svgUrl: isSvg ? `${RAW_BASE}/${id}.svg` : (existing ? existing.svgUrl : null),
-      pngUrl: !isSvg ? `${RAW_BASE}/${id}${ext}` : (existing ? existing.pngUrl : null),
+      svgUrl: isSvg ? `${RAW_BASE}/${id}.svg` : null,
+      pngUrl: !isSvg ? `${RAW_BASE}/${id}${ext}` : null,
       quality,
       figmaNodeId: existing ? existing.figmaNodeId : '0:0',
       figmaComponentKey: existing ? existing.figmaComponentKey : '',
@@ -97,12 +96,11 @@ function main() {
   fs.writeFileSync(MANIFEST_PATH, JSON.stringify(manifest, null, 2));
 
   const svgCount = logos.filter(l => l.quality === 'svg').length;
-  const hqCount = logos.filter(l => l.quality === 'png-hq').length;
-  const lqCount = logos.filter(l => l.quality === 'png-lq').length;
+  const pngCount = logos.filter(l => l.quality === 'png').length;
 
   console.log('\n──────────────────────────────');
   console.log(`✅  Total: ${logos.length} logos`);
-  console.log(`   SVG: ${svgCount} · PNG HQ: ${hqCount} · PNG LQ (needs upgrade): ${lqCount}`);
+  console.log(`   SVG: ${svgCount} · PNG: ${pngCount}`);
   console.log(`📄  Saved to public/logos.json`);
 }
 
