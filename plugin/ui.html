@@ -708,8 +708,8 @@ async function loadManifest(force = false) {
 
   try {
     if (!force) {
-      const cached = await cacheGet('manifest-data');
-      const cachedAt = await cacheGet('manifest-at');
+      const cached = await cacheGet('manifest-data-v2');
+      const cachedAt = await cacheGet('manifest-at-v2');
       if (cached && cachedAt && (Date.now() - cachedAt) < CONFIG.MANIFEST_CACHE_TTL) {
         S.manifest = JSON.parse(cached);
         S.logos = S.manifest.logos;
@@ -722,8 +722,8 @@ async function loadManifest(force = false) {
     const data = await res.json();
     S.manifest = data;
     S.logos = data.logos || [];
-    cacheSet('manifest-data', JSON.stringify(data));
-    cacheSet('manifest-at', Date.now());
+    cacheSet('manifest-data-v2', JSON.stringify(data));
+    cacheSet('manifest-at-v2', Date.now());
     onManifestLoaded();
   } catch (err) {
     S.loading = false;
@@ -807,7 +807,6 @@ function renderGrid() {
       if (entry.isIntersecting) {
         const img = entry.target;
         if (img.dataset.src) {
-          console.log('Setting src:', img.dataset.src, 'for logo:', img.alt);
           img.src = img.dataset.src;
           img.removeAttribute('data-src');
           observer.unobserve(img);
