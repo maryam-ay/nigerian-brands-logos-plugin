@@ -42,9 +42,9 @@ header{display:flex;align-items:center;justify-content:space-between;padding:0 1
 /* Browse tab — always visible regardless of .hidden */
 #tab-browse{display:flex!important;flex:1;overflow:hidden;flex-direction:column}
 /* Search */
-.search-wrap{padding:12px 16px 8px;position:relative;flex-shrink:0}
-.search-icon{position:absolute;left:28px;top:50%;transform:translateY(-50%);color:#8B5CF6;pointer-events:none;font-style:normal;display:flex;align-items:center}
-.search-wrap .search-input{width:100%;height:48px;padding:0 16px 0 44px;border:1.5px solid var(--border);border-radius:14px;background:#FFFFFF;color:#0D0B1E;font-size:14px;outline:none;transition:border-color .15s,box-shadow .15s;font-family:inherit}
+.search-wrap{padding:12px 16px 8px;position:relative;display:flex;align-items:center;flex-shrink:0}
+.search-icon{position:absolute;left:28px;top:50%;transform:translateY(-50%);color:#8B5CF6;pointer-events:none;display:flex;align-items:center;font-style:normal}
+.search-wrap .search-input{width:100%;height:48px;padding:0 16px 0 42px;line-height:48px;display:block;border:1.5px solid var(--border);border-radius:14px;background:#FFFFFF;color:#0D0B1E;font-size:14px;outline:none;transition:border-color .15s,box-shadow .15s;font-family:inherit}
 .search-wrap .search-input::placeholder{color:#B0AECA}
 .search-wrap .search-input:focus{border-color:#7C3AED;box-shadow:0 0 0 3px rgba(124,58,237,.12)}
 /* Category chips */
