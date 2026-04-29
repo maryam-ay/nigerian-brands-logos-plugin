@@ -717,7 +717,7 @@ async function loadManifest(force = false) {
         return;
       }
     }
-    const res = await fetch(CONFIG.MANIFEST_URL);
+    const res = await fetch(`${CONFIG.MANIFEST_URL}?v=${Date.now()}`);
     if (!res.ok) throw new Error('HTTP ' + res.status);
     const data = await res.json();
     S.manifest = data;
