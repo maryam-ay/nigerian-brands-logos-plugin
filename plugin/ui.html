@@ -571,31 +571,6 @@ const CONFIG = {
 const CATEGORIES = ['All','Banking','Telecom','FMCG','Media','Energy','Tech','Insurance','Transport','Retail','Other'];
 
 // ============================================================
-// RASTER IMAGE LOADER — bypasses GitHub's wrong Content-Type header
-// ============================================================
-async function loadRasterImage(imgElement, url) {
-  try {
-    const response = await fetch(url);
-    const buffer = await response.arrayBuffer();
-    const bytes = new Uint8Array(buffer);
-
-    let mimeType = 'image/png'; // default
-    if (bytes[0] === 0xFF && bytes[1] === 0xD8 && bytes[2] === 0xFF) {
-      mimeType = 'image/jpeg';
-    } else if (bytes[0] === 0x89 && bytes[1] === 0x50 &&
-               bytes[2] === 0x4E && bytes[3] === 0x47) {
-      mimeType = 'image/png';
-    }
-
-    const blob = new Blob([buffer], { type: mimeType });
-    const objectUrl = URL.createObjectURL(blob);
-    imgElement.src = objectUrl;
-  } catch (e) {
-    console.error('Failed to load image:', url, e);
-  }
-}
-
-// ============================================================
 // STATE
 // ============================================================
 const S = {
@@ -832,14 +807,9 @@ function renderGrid() {
       if (entry.isIntersecting) {
         const img = entry.target;
         if (img.dataset.src) {
-          const rawUrl = img.dataset.src;
+          img.src = img.dataset.src;
           img.removeAttribute('data-src');
           observer.unobserve(img);
-          if (img.dataset.raster) {
-            loadRasterImage(img, rawUrl);
-          } else {
-            img.src = rawUrl;
-          }
         }
       }
     });
@@ -849,12 +819,11 @@ function renderGrid() {
 
 function renderCard(logo) {
   const rawSrc = logo.svgUrl || logo.pngUrl || '';
-  const isRaster = logo.quality !== 'svg';
   const contrib = logo.contributedBy && logo.contributedBy.source === 'community'
     ? `<div class="contrib-tip">by ${logo.contributedBy.handle}</div>` : '';
   return `<div class="logo-card" onclick="insertLogo(${JSON.stringify(logo).replace(/"/g,'&quot;')})">
     <div class="card-img-wrap">
-      <img data-src="${rawSrc}" src="" alt="${logo.name}" loading="lazy" ${isRaster ? 'data-raster="1"' : ''} onerror="this.style.opacity='.3'" />
+      <img data-src="${rawSrc}" src="" alt="${logo.name}" loading="lazy" onerror="this.style.opacity='.3'" />
     </div>
     <div class="card-info">
       <div class="card-name" title="${logo.name}">${logo.name}</div>
