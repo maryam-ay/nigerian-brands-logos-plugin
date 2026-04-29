@@ -20,8 +20,10 @@ const MANIFEST_PATH = path.join(__dirname, '../public/logos.json');
 const PROGRESS_PATH = path.join(__dirname, '../public/assets/export-progress.json');
 const RAW_BASE      = `https://raw.githubusercontent.com/${GITHUB_OWNER}/${GITHUB_REPO}/main/public/assets/logos`;
 
-const BATCH_SIZE  = 5;
-const BATCH_DELAY = 65000; // ms between batches — Figma export endpoint: ~1 req/min safe rate
+const BATCH_SIZE   = 20;
+const BATCH_DELAY  = 2000;  // ms between batches
+const CALL_DELAY   = 500;   // ms between individual API calls
+const RATE_WAIT    = 30000; // ms to wait on 429
 
 if (!FIGMA_TOKEN) { console.error('❌  FIGMA_TOKEN not set in .env'); process.exit(1); }
 
@@ -92,9 +94,8 @@ async function fetchWithRetry(url, options, retries = 12) {
     try {
       const res = await fetch(url, options);
       if (res.status === 429) {
-        // 5-minute flat wait — Figma image-export lockouts last 20-40 min after heavy use
-        console.log(`\n  ⏳ Rate limited (attempt ${i + 1}/${retries}) — waiting 300s…`);
-        await delay(300000);
+        console.log(`\n  ⏳ Rate limited (attempt ${i + 1}/${retries}) — waiting ${RATE_WAIT / 1000}s…`);
+        await delay(RATE_WAIT);
         continue;
       }
       return res;
@@ -107,6 +108,7 @@ async function fetchWithRetry(url, options, retries = 12) {
 }
 
 async function batchGetSvgUrls(nodeIds) {
+  await delay(CALL_DELAY);
   const url = `https://api.figma.com/v1/images/${FILE_KEY}?ids=${nodeIds.map(encodeURIComponent).join(',')}&format=svg&svg_include_id=false`;
   const res = await fetchWithRetry(url, { headers: figmaHeaders });
   const data = await res.json();
@@ -114,6 +116,7 @@ async function batchGetSvgUrls(nodeIds) {
 }
 
 async function batchGetPngUrls(nodeIds, scale = 2) {
+  await delay(CALL_DELAY);
   const url = `https://api.figma.com/v1/images/${FILE_KEY}?ids=${nodeIds.map(encodeURIComponent).join(',')}&format=png&scale=${scale}`;
   const res = await fetchWithRetry(url, { headers: figmaHeaders });
   const data = await res.json();
@@ -123,7 +126,7 @@ async function batchGetPngUrls(nodeIds, scale = 2) {
 // ── main ──────────────────────────────────────────────────────────────────────
 
 async function main() {
-  console.log('🚀  Starting Figma logo export  (batch=5, skip existing, resumable)');
+  console.log('🚀  Starting Figma logo export  (batch=20, 500ms/call, 2s between batches, resumable)');
   console.log(`    File: ${FILE_KEY}\n`);
 
   if (!fs.existsSync(OUT_DIR)) fs.mkdirSync(OUT_DIR, { recursive: true });
@@ -177,6 +180,9 @@ async function main() {
       const batch    = remaining.slice(i, i + BATCH_SIZE);
       const batchNum = Math.floor(i / BATCH_SIZE) + 1;
       console.log(`\n📦  Batch ${batchNum}/${totalBatches}  (logos ${i + 1}–${Math.min(i + BATCH_SIZE, remaining.length)} of ${remaining.length})`);
+      if (i > 0 && i % 10 === 0) {
+        console.log(`📊  Progress: ${i}/${remaining.length} processed — ${svgCount} SVG, ${lqCount} PNG, ${failCount} failed`);
+      }
 
       // Step 1: get SVG export URLs for this batch (1 API call)
       let svgUrls = {};
