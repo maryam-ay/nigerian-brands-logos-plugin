@@ -712,7 +712,8 @@ function renderGrid() {
 
   grid.innerHTML = ST.filtered.map(logo => {
     const isSvg = logo.quality === 'svg';
-    const badge = isSvg ? `<span class="q-badge svg">SVG</span>` : `<span class="q-badge png">PNG</span>`;
+    const ext = logoExt(logo);
+    const badge = `<span class="q-badge ${ext}">${ext.toUpperCase()}</span>`;
     const ej = encodeURIComponent(JSON.stringify(logo));
 
     // SVG logos can use the direct URL immediately; raster logos get a skeleton
@@ -757,6 +758,10 @@ async function loadRasterThumbnails(logos) {
 function escHtml(s) {
   return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#39;');
 }
+function logoExt(logo) {
+  const url = logo.svgUrl || logo.pngUrl || '';
+  return url.toLowerCase().endsWith('.png') ? 'png' : 'svg';
+}
 
 // ══════════════════════════════════════════════════
 // EXPAND MODAL
@@ -773,8 +778,9 @@ async function openExpand(safeJson) {
   document.getElementById('ex_name').textContent  = logo.name;
   document.getElementById('ex_cat').textContent   = logo.category || '';
   const b = document.getElementById('ex_badge');
-  b.textContent = logo.quality === 'svg' ? 'SVG' : 'PNG';
-  b.className = 'q-badge ' + (logo.quality === 'svg' ? 'svg' : 'png');
+  const bExt = logoExt(logo);
+  b.textContent = bExt.toUpperCase();
+  b.className = 'q-badge ' + bExt;
 
   openModal('expandModal');
 
@@ -839,8 +845,9 @@ async function openReplace(safeJson) {
   cImg.src = '';
   document.getElementById('r_currentName').textContent = logo.name;
   const b = document.getElementById('r_currentBadge');
-  b.textContent = logo.quality === 'svg' ? 'SVG' : 'PNG';
-  b.className = 'q-badge ' + (logo.quality === 'svg' ? 'svg' : 'png');
+  const rExt = logoExt(logo);
+  b.textContent = rExt.toUpperCase();
+  b.className = 'q-badge ' + rExt;
   document.getElementById('r_category').value = logo.category || 'Other';
   document.getElementById('r_tags').value = (logo.tags||[]).join(', ');
   document.getElementById('r_svg').value = '';
