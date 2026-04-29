@@ -122,6 +122,7 @@ header {
 }
 .q-badge.svg { background: var(--badge-svg-bg); color: var(--badge-svg); }
 .q-badge.png { background: var(--badge-png-bg); color: var(--badge-png); }
+.q-badge.img { background: #fee2e2; color: #dc2626; }
 .card-actions {
   position: absolute; top: 6px; right: 6px; opacity: 0; transition: opacity .15s;
   display: flex; gap: 4px;
@@ -712,8 +713,8 @@ function renderGrid() {
 
   grid.innerHTML = ST.filtered.map(logo => {
     const isSvg = logo.quality === 'svg';
-    const ext = logoExt(logo);
-    const badge = `<span class="q-badge ${ext}">${ext.toUpperCase()}</span>`;
+    const q = logo.quality || 'svg';
+    const badge = `<span class="q-badge ${q}">${q.toUpperCase()}</span>`;
     const ej = encodeURIComponent(JSON.stringify(logo));
 
     // SVG logos can use the direct URL immediately; raster logos get a skeleton
