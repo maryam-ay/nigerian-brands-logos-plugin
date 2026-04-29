@@ -807,6 +807,7 @@ function renderGrid() {
       if (entry.isIntersecting) {
         const img = entry.target;
         if (img.dataset.src) {
+          console.log('Setting src:', img.dataset.src, 'for logo:', img.alt);
           img.src = img.dataset.src;
           img.removeAttribute('data-src');
           observer.unobserve(img);
