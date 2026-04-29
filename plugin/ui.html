@@ -34,8 +34,8 @@ header{display:flex;align-items:center;justify-content:space-between;padding:0 1
 .h-actions{display:flex;align-items:center;gap:2px}
 .icon-btn{background:none;border:none;cursor:pointer;padding:7px;border-radius:8px;color:var(--text-faint);transition:color .15s,background .15s;display:flex;align-items:center;justify-content:center;position:relative}
 .icon-btn:hover{color:var(--accent);background:var(--accent-glow)}
-.req-btn{color:var(--accent);background:var(--accent-surface)}
-.req-btn:hover{background:var(--accent-glow);color:var(--accent-h)}
+.req-pill{background:#7C3AED;color:#FFFFFF;border:none;border-radius:20px;padding:6px 14px;font-size:12px;font-weight:600;cursor:pointer;display:inline-flex;align-items:center;gap:5px;transition:background .15s;font-family:inherit;position:relative}
+.req-pill:hover{background:#6D28D9}
 .notif-dot{position:absolute;top:4px;right:4px;background:#DC2626;width:6px;height:6px;border-radius:50%;border:1.5px solid var(--surface)}
 /* Hidden nav — keeps JS listeners alive */
 .main-tabs{display:none}
@@ -43,10 +43,10 @@ header{display:flex;align-items:center;justify-content:space-between;padding:0 1
 #tab-browse{display:flex!important;flex:1;overflow:hidden;flex-direction:column}
 /* Search */
 .search-wrap{padding:12px 16px 8px;position:relative;flex-shrink:0}
-.search-icon{position:absolute;left:28px;top:50%;transform:translateY(-50%);color:var(--accent-light);pointer-events:none;font-style:normal;display:flex;align-items:center}
-.search-input{width:100%;height:48px;padding:0 14px 0 44px;border:1.5px solid var(--border);border-radius:14px;background:var(--surface);color:var(--text);font-size:13px;outline:none;transition:border-color .15s,box-shadow .15s;font-family:inherit}
-.search-input::placeholder{color:var(--text-faint)}
-.search-input:focus{border-color:var(--accent);box-shadow:0 0 0 3px rgba(124,58,237,.15)}
+.search-icon{position:absolute;left:28px;top:50%;transform:translateY(-50%);color:#8B5CF6;pointer-events:none;font-style:normal;display:flex;align-items:center}
+.search-wrap .search-input{width:100%;height:48px;padding:0 16px 0 44px;border:1.5px solid var(--border);border-radius:14px;background:#FFFFFF;color:#0D0B1E;font-size:14px;outline:none;transition:border-color .15s,box-shadow .15s;font-family:inherit}
+.search-wrap .search-input::placeholder{color:#B0AECA}
+.search-wrap .search-input:focus{border-color:#7C3AED;box-shadow:0 0 0 3px rgba(124,58,237,.12)}
 /* Category chips */
 .cat-wrap{display:flex;gap:6px;padding:0 16px 10px;overflow-x:auto;flex-shrink:0;scrollbar-width:none}
 .cat-wrap::-webkit-scrollbar{display:none}
@@ -58,8 +58,8 @@ header{display:flex;align-items:center;justify-content:space-between;padding:0 1
 .logo-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
 .logo-card{display:flex;flex-direction:column;border:1px solid var(--border-subtle);border-radius:14px;overflow:hidden;cursor:pointer;transition:border-color .2s,box-shadow .2s,transform .15s;background:var(--surface);box-shadow:0 1px 4px rgba(13,11,30,.06);aspect-ratio:5/6;position:relative}
 .logo-card:hover{border-color:var(--accent-light);box-shadow:0 4px 16px rgba(124,58,237,.12);transform:translateY(-1px)}
-.card-img-wrap{flex:1;display:flex;align-items:center;justify-content:center;padding:20px;background:#F9F8FF;overflow:hidden}
-.card-img-wrap img{max-width:100%;max-height:100%;object-fit:contain}
+.card-img-wrap{flex:1;display:flex;align-items:center;justify-content:center;padding:20px;background:#FFFFFF;overflow:hidden}
+.card-img-wrap img{width:100%;height:100%;object-fit:contain;opacity:1}
 .card-info{height:48px;padding:0 12px;background:var(--surface);display:flex;align-items:center;justify-content:space-between;gap:8px;border-top:1px solid var(--border-subtle);flex-shrink:0}
 .card-name{font-size:12px;font-weight:500;color:var(--text);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;flex:1;min-width:0}
 .q-badge{font-size:10px;font-weight:700;padding:2px 7px;border-radius:5px;text-transform:uppercase;letter-spacing:.05em;flex-shrink:0;white-space:nowrap}
@@ -196,16 +196,13 @@ textarea{resize:vertical;min-height:80px}
   <!-- HEADER -->
   <header>
     <div class="h-brand">
-      <span class="ng-mono">NG</span>
+      <span class="ng-mono" id="gearBtn">NG</span>
       <span class="h-title">Nigerian Brands Logos</span>
     </div>
     <div class="h-actions">
-      <button class="icon-btn req-btn" onclick="switchTab('suggest')" title="Suggest / Request a logo">
+      <button class="req-pill" onclick="switchTab('suggest')" title="Suggest / Request a logo">
         <span id="suggestDot" class="notif-dot hidden"></span>
-        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-      </button>
-      <button class="icon-btn" id="gearBtn" title="Settings">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+        + Request
       </button>
     </div>
   </header>
@@ -574,6 +571,27 @@ const CONFIG = {
 const CATEGORIES = ['All','Banking','Telecom','FMCG','Media','Energy','Tech','Insurance','Transport','Retail','Other'];
 
 // ============================================================
+// BLOB URL CACHE — fixes GitHub serving raster files as image/svg+xml
+// ============================================================
+const blobUrlCache = new Map();
+
+async function fixRasterLogos() {
+  const rasters = S.logos.filter(l => l.quality !== 'svg');
+  await Promise.all(rasters.map(async (logo) => {
+    const url = logo.pngUrl || logo.svgUrl;
+    if (!url || blobUrlCache.has(url)) return;
+    try {
+      const res = await fetch(url);
+      const buf = await res.arrayBuffer();
+      const b = new Uint8Array(buf);
+      const mime = (b[0]===0xFF && b[1]===0xD8 && b[2]===0xFF) ? 'image/jpeg' : 'image/png';
+      blobUrlCache.set(url, URL.createObjectURL(new Blob([buf], { type: mime })));
+    } catch { /* keep original url */ }
+  }));
+  renderGrid();
+}
+
+// ============================================================
 // STATE
 // ============================================================
 const S = {
@@ -742,6 +760,7 @@ function onManifestLoaded() {
   buildCategoryChips();
   applyFilters();
   updateFooter();
+  fixRasterLogos();
 }
 
 function applyFilters() {
@@ -821,10 +840,9 @@ function renderGrid() {
 }
 
 function renderCard(logo) {
-  const imgSrc = logo.svgUrl || logo.pngUrl || '';
-  const badge = logo.quality === 'svg' ? '<span class="q-badge svg">SVG</span>'
-    : logo.quality === 'png-hq' ? '<span class="q-badge png-hq">PNG HQ</span>'
-    : '<span class="q-badge png-lq">PNG LQ</span>';
+  const rawSrc = logo.svgUrl || logo.pngUrl || '';
+  const imgSrc = (logo.quality !== 'svg' && blobUrlCache.has(rawSrc))
+    ? blobUrlCache.get(rawSrc) : rawSrc;
   const contrib = logo.contributedBy && logo.contributedBy.source === 'community'
     ? `<div class="contrib-tip">by ${logo.contributedBy.handle}</div>` : '';
   return `<div class="logo-card" onclick="insertLogo(${JSON.stringify(logo).replace(/"/g,'&quot;')})">
@@ -833,7 +851,6 @@ function renderCard(logo) {
     </div>
     <div class="card-info">
       <div class="card-name" title="${logo.name}">${logo.name}</div>
-      ${badge}
     </div>
     <div class="ins-overlay"><button class="ins-btn" onclick="event.stopPropagation();insertLogoByData(this)" data-logo='${JSON.stringify(logo).replace(/'/g,"&#39;")}'>Insert</button></div>
     ${contrib}
