@@ -65,7 +65,10 @@ function main() {
     const now = new Date().toISOString();
 
     const isSvg = ext === '.svg';
-    const quality = isSvg ? 'svg' : 'png';
+    const filePath = path.join(LOGOS_DIR, file);
+    const content = isSvg ? fs.readFileSync(filePath, 'utf8') : '';
+    const hasEmbeddedImage = content.includes('<image');
+    const quality = !isSvg ? 'png' : hasEmbeddedImage ? 'img' : 'svg';
 
     logos.push({
       id,
@@ -96,11 +99,12 @@ function main() {
   fs.writeFileSync(MANIFEST_PATH, JSON.stringify(manifest, null, 2));
 
   const svgCount = logos.filter(l => l.quality === 'svg').length;
+  const imgCount = logos.filter(l => l.quality === 'img').length;
   const pngCount = logos.filter(l => l.quality === 'png').length;
 
   console.log('\n──────────────────────────────');
   console.log(`✅  Total: ${logos.length} logos`);
-  console.log(`   SVG: ${svgCount} · PNG: ${pngCount}`);
+  console.log(`   SVG: ${svgCount} · IMG (embedded raster): ${imgCount} · PNG: ${pngCount}`);
   console.log(`📄  Saved to public/logos.json`);
 }
 
